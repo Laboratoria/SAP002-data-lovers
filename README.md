@@ -25,7 +25,7 @@ grandes quantidades de dados se convertam em **informação** fácil de ler para
 os usuários, temos que entendê-los e processá-los. Uma maneira simples
 de se fazer isso seria criando _interfaces_ e _visualizações_.
 Na seguinte imagem, você pode ver de que forma, com os dados que vemos na parte
-esquerda, é possível construir uma interface amigável e legível para o usuário.
+esquerda, é possível construir uma interface amigável e legível para o usuário .
 
 ![json-interface](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
 
