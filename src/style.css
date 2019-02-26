@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+body {
+  background-image: url("lol.jpg");
+  font-family: 'Roboto Condensed', 'Times New Roman', serif;
+
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: right;   
+    font-weight: 700;
+    background-color: #1f1f1f; 
+    height: 50px;
+  }
+/* .menu:hover{
+  background-color:#ddd;
+  cursor:pointer
+
+  nÃ£o pegou ver pq
+} */
+
+
+  .drop-menu {
+    font-family: 'Roboto Condensed', 'Times New Roman', serif;
+    background-color: #1f1f1f;
+    color: #c9aa71;
+  }
+
+  .logo-container{
+    display: flex;
+    justify-content: center;
+
+    padding: 100px 0 0 0;
+  }
+
+  
+  .champions-container {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    background-color: #1f1f1f;
+    margin-top: 6vw;
+    background-image: url('texturaAmassado.jpg')
+    
+    /*! padding: 20px 0 20px 0;  dÃ³*/
+  }
+  
+  
+  .show-champions{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    
+  }
+  
+  .show-champions img {
+    margin: 5px;
+    padding: 5px;
+  
+    width: 160px;
+    height: 120px;
+    
+  }
