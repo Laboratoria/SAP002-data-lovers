@@ -8,6 +8,17 @@ body {
     flex-direction: column;
     align-items: center;
     align-items: space-around;
-    position: fixed;
     background-color: white;
+}
+
+#pokemons-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.pokemon {
+    width: 4%
 }
