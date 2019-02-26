@@ -1,18 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img src="#" alt="logo">
+    <h1>Explore informações sobre seus Pokémons favoritos!</h1>
+  </header>
+
+  <nav>
+    <select id="filter">
+      <option value="none" selected>Filtrar</option>
+      <option value="type">Tipo</option>
+      <option value="weakness">Fraquezas</option>
+    </select>
+    <select id="choose-type">
+      <option value="">Escolha Tipo</option>
+      <option value="">Fogo</option>
+      <option value="">Grama</option>
+      <option value="">Água</option>
+    </select>
+    <select id="choose-weakness">
+      <option value="">Escolha Fraqueza</option>
+      <option value="">Fogo</option>
+      <option value="">Grama</option>
+      <option value="">Água</option>
+    </select>
+    <select id="sort">
+      <option value="none">Ordenar</option>
+      <option value="alphabetical">A > Z</option>
+      <option value="numerical">Número</option>
+      <option value="candy">Candy</option>
+      <option value="spawn-chance">Spawn Chance</option>
+      <option value="spawn-time">Spawn Time</option>
+    </select>
+  </nav>
+
+  <section>
+    <h3>DADOS GERAIS</h3>
+    <p>TOTAL: <span id="total-number"></span></p>
+    <p>TIPO: <span id="type-filter"></span></p>
+  </section>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Candy</th>
+      <th>Spawn Chance</th>
+      <th>Spawn Time</th>
+    </tr>
+    <tr>
+      <th>Mín</th>
+      <th id="min-candy"></th>
+      <th id="min-spawn-chance"></th>
+      <th id="min-spawn-time"></th>
+    </tr>
+    <tr>
+      <th>Média</th>
+      <th id="med-candy"></th>
+      <th id="med-spawn-chance"></th>
+      <th id="med-spawn-time"></th>
+    </tr>
+    <tr>
+      <th>Máx</th>
+      <th id="max-candy"></th>
+      <th id="max-spawn-chance"></th>
+      <th id="max-spawn-time"></th>
+    </tr>
+  </table>
+  <main>
+    <section id="pokemon-container">
+      <div>
+        <img src="" alt="">
+        <h3>Bulbasaur</h3>
+        <p>001</p>
+        <div>
+          <p>Grama</p>
+          <p>Poison</p>
+        </div>
+        <p>Candy: 25</p>
+        <p>Spawn-Chance 69%</p>
+        <p>Spawn-Time 20:00</p>
+      </div>
+    </section>
+  </main>
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
