@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Data Lovers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-spawm">
+        <img class="poke-logo" src="assets/images/logo.png" alt="pokemon go" />
+        <ul class="links-header">
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Spawn Chance</a>
+            <div class="dropdown-content">
+              <a href="#">Super raro</a>
+              <a href="#">Raro</a>
+              <a href="#">Comum</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Spawn Time</a>
+            <div class="dropdown-content">
+              <a href="#">Manhã</a>
+              <a href="#">Tarde</a>
+              <a href="#">Noite</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Ordenar</a>
+            <div class="dropdown-content">
+              <a href="#" id="orderUp"> Alfabética crescente</a>
+              <a href="#"> Alfabética decrescente</a>
+            </div>
+            <div id="divBusca">
+              <input type="text" id="txtBusca" placeholder="Buscar"> </input>
+              <input type="submit" value="buscar" id="btnsubmit" ></input>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="pokemons-list">
+      <div id="pokemons-div" class="pokemons"></div>
+    </section>
+
+  </main>
+
+  <script type="text/javascript" src="data/pokemon/pokemon.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  width: 100vw;
+  font-family: 'Niramit', sans-serif;
+  font-size: 1.2rem;
+  background-color: #c5f7d6;
+
+}
+
+#divBusca{
+  background-color:#2F4F4F;
+  border:solid 1px;
+  border-radius:15px;
+  width:300px;
+}
+ 
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:260px;
+}
+
+.links-header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.dropdown a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.poke-logo {
+  width: 7%;
+  height: 7%;
+}
+
+.pokemons {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-spawm {
+  background-color: #FFCC29;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.each_pokemon {
+  background-color: #fff;
+  width: 25%;
+  margin: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemon-img {
+  width: 70%;
+}
+
+.pokemon-name {
+  text-align: center;
+  margin: auto;
+  font-size: 1rem;
+  width: 70%;
+  padding: 15px;
+}
