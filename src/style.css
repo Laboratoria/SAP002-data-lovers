@@ -5,10 +5,16 @@ body {
 
 .pokemon-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    align-items: space-around;
-    background-color: white;
+    background-color: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pokedex {
+    font-size: 330%;
+    font-weight: bolder;
 }
 
 #pokemons-div {
