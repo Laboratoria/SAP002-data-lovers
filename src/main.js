@@ -80,3 +80,20 @@ function showPokemons() {
 
 chooseType.addEventListener('change', showPokemons);
 
+function ordering() {
+let sort = document.getElementById('sort')
+let filtered =  filtrando().sort(function(a, b, key){
+  if(a.key < b.key) { return -1; }
+  if(a.key > b.key) { return 1; }
+  return 0;
+})
+  console.log(filtered);
+}
+
+
+// filtered.sort(function(a, b){
+//   if(a.name < b.name) { return -1; }
+//   if(a.name > b.name) { return 1; }
+//   return 0;
+// })
+
