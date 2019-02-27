@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+</head>
+
+<header class="page-title">
+    <h1>Nosso título aqui</h1>
+</header>
+<main class="main-content">
+    <section class="proposal">para que serve blablabla aqui</section>
+    <section class="choose-countries">
+        <nav class="choose-countries-list">
+            <form class="choose-countries-form" id="countriesForm"></form>
+            <li><button type="button" name="brasil" form="counstriesForm" id="brasil">Brasil</button></li>
+            <li><button type="button" name="chile" form="counstriesForm" id="chile">Chile</button></li>
+            <li><button type="button" name="mexico" form="counstriesForm" id="mexico">México</button></li>
+            <li><button type="button" name="Peru" form="counstriesForm" id="peru">Peru</button></li>
+        </nav>
+    </section>
+    <section class="form-filters">
+
+        <div>
+            <label> select statement</label>
+            <select id="select-statement"></select>
+        </div>
+        <div id="select-year">
+            <!-- <label> select year</label>
+            <select id="select-year"></select> -->
+        </div>
+
+    </section>
+    <section class="show-content">
+
+
+    </section>
+
+
+</main>
+
+<div id="root"></div>
+<script src="./data/worldbank/worldbank.js"></script>
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+</body>
+
 </html>
