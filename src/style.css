@@ -5,16 +5,45 @@ body {
 
 .pokemon-header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     background-color: whitesmoke;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .pokedex {
-    font-size: 330%;
+    display: flex;
+    font-size: 380%;
     font-weight: bolder;
+    margin-block-end: 8px;
+    margin-block-start: 4px;
+}
+
+.dropdown {
+    display: flex;
+}
+
+.dropdown-types {
+    padding-right: 8%;
+    text-align: center;
+}
+
+.dropdown-order {
+    padding-left: 8%;
+    text-align: center;
+}
+
+select {
+    background-color: rgb(181, 143, 216);
+    color: whitesmoke;
+    -webkit-appearance: menulist-button;
+    box-sizing: border-box;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(30, 3, 56);
 }
 
 #pokemons-div {
