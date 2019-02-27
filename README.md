@@ -1,5 +1,40 @@
 # Data Lovers
 
+Primeiro projeto desenvolvido para o curso de Desenvolvedora Front-End no Bootcamp **Laboratória** - campus SP - Brasil.
+
+## A organização
+
+No primeiro sprint foi utilizado a ferramenta **Trello**.
+
+Em ambas situações, dividimos o projeto em mini partes e as mesmas foram priorizadas utilizando **x quantidade critérios**: o que era necessário para formar o _esqueleto_ do site e o que "nós" como desenvolvedoras tínhamos mais facilidade em desenvolver, deixando o que demandaria mais tempo de aprendizagem e de desenvolvimento por último. Todos os itens tinham data definida / prevista para término.
+
+![Trello Data Lovers](https://trello.com/invite/b/qJ3Bf00s/8a48912b62a88909ed1dbd86afe2aa93/data-lovers)
+
+## Checklist
+
+* [ ] Usar VanillaJS.
+* [ ] Inclui _Definição de produto_ clara e informativa no `README.md`.
+* [X] Inclui esboço da solução (protótipo de baixa fidelidade e de alta fidelidade, se houver) no
+  `README.md`.
+* [ ] Inclui a lista de problema detectados através dos testes de usabilidade
+  no `README.md`.
+* [ ] UI: Mostra lista e/ou tabela com dados e/ou indicadores.
+* [ ] UI: Permite ordenar os dados por meio de um ou mais campos
+  (asc e desc).
+* [ ] UI: Permite filtrar os dados com base em uma condição.
+
+
+
+#### Protótipo
+[Link do Protótipo](https://marvelapp.com/b2cg16h)
+
+Durante seu trabalho você deverá ter feito esboços de sua solução usando papel
+e lápis. Recomendamos que você tire fotos de todas as iterações que faça, suba
+para seu repositório, e as mencione em seu`README.md`. Caso queira, pode
+desenhar protótipos de média fidelidade usando o [Marvel](https://marvelapp.com/)
+ou o [Figma](https://www.figma.com/).
+
+
 ## Índice
 
 * [Preâmbulo](#preâmbulo)
@@ -25,7 +60,7 @@ grandes quantidades de dados se convertam em **informação** fácil de ler para
 os usuários, temos que entendê-los e processá-los. Uma maneira simples
 de se fazer isso seria criando _interfaces_ e _visualizações_.
 Na seguinte imagem, você pode ver de que forma, com os dados que vemos na parte
-esquerda, é possível construir uma interface amigável e legível para o usuário.
+esquerda, é possível construir uma interface amigável e legível para o usuário .
 
 ![json-interface](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
 
@@ -45,22 +80,11 @@ necessita saber ou ver exatamente; assim já poderá criar uma interface que o
 ajude a interagir e entender melhor os dados.
 Estes são os dados que propomos:
 
-* [Indicadores de desenvolvimento](src/data/worldbank/worldbank.json):
-  Indicadores de desenvolvimento do Banco Mundial de alguns países (Brasil, Chile, México e Peru). Estes dados incluim indicadores
-  demográficos, econômicos e comerciais.
+
 * [Pokémon](src/data/pokemon/pokemon.json):
   Neste set você encontrará uma lista com os 151 Pokémons da região de Kanto,
   junto com suas respectivas estatísticas usadas no jogo [Pokémon GO](pokemongolive.com).
-* [Steam notícias](src/data/steam/steam.json):
-  Lista de notícias relacionadas aos jogos presentes na plataforma [Steam](https://store.steampowered.com/).
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de dados mostra a lista de jogadores em uma liga do
-  jogo League of Legends (LoL). Você pode revisar a documentação de sua API
-  neste link [link](https://developer.riotgames.com/api-methods/).
-* [Pessoas feridas por meios de transporte nos EUA](src/data/injuries/injuries.json).
-  Este set nos mostra o número de pessoas feridas em acidentes em
-  meios de transporte, com a data anual desde 1960 e categorizada por
-  tipo de transporte (aéreo, barco, automóvel, moto, bicicleta, etc).
+
 
 Como produto final você terá que criar uma página web que permita **visualizar
 os dados, filtrá-los, ordená-los e fazer algum cálculo agregado**. Como esclarecimento,
@@ -118,12 +142,9 @@ acredita que seu produto resolve o problema (os problemas) do seu usuário.
 
 ### Desenho da interface de usuário
 
-#### Protótipo
-Durante seu trabalho você deverá ter feito esboços de sua solução usando papel
-e lápis. Recomendamos que você tire fotos de todas as iterações que faça, suba
-para seu repositório, e as mencione em seu`README.md`. Caso queira, pode
-desenhar protótipos de média fidelidade usando o [Marvel](https://marvelapp.com/)
-ou o [Figma](https://www.figma.com/).
+
+Protótipo utilizando o app [Marvel](https://marvelapp.com/) 
+![Protótipo](https://marvelapp.com/b2cg16h)
 
 #### Testes de usabilidade
 
@@ -311,15 +332,3 @@ Quando já estiver pronta para codar, te recomendamos começar desta forma:
 
 ***
 
-## Checklist
-
-* [ ] Usar VanillaJS.
-* [ ] Inclui _Definição de produto_ clara e informativa no `README.md`.
-* [ ] Inclui esboço da solução (protótipo de baixa fidelidade e de alta fidelidade, se houver) no
-  `README.md`.
-* [ ] Inclui a lista de problema detectados através dos testes de usabilidade
-  no `README.md`.
-* [ ] UI: Mostra lista e/ou tabela com dados e/ou indicadores.
-* [ ] UI: Permite ordenar os dados por meio de um ou mais campos
-  (asc e desc).
-* [ ] UI: Permite filtrar os dados com base em uma condição.
