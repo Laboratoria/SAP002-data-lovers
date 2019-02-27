@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <script src="./data/pokemon/pokemon.js"></script>
-   
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>PokeLab - Data Lovers</title>
+  <link rel="shortcut icon" href="http://www.serebii.net/pokemongo/pokemon/025.png" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="root"> </div>
+
+    <header>
+      <nav>
+        <div class="nav-items">
+          <img class="logo-pokelab" src="http://www.serebii.net/pokemongo/pokemon/025.png" alt="image pikachu" />
+          <img class="logo-pokelab" src="https://fontmeme.com/permalink/190226/64d8143d729610e4de1b9977081d530b.png" alt="logo pokelab"/>
+          <img class="logo-pokelab" src="http://www.serebii.net/pokemongo/pokemon/025.png" />
+
+          <h1 class="poke-heading">PokeLab</h1>
+          <ul class="links-header">
+            <li class="links-header-item"><a class="anchor" href="#">produtos</a></li>
+            <li class="links-header-item"><a class="anchor" href="#">contato</a></li>
+            <li class="links-header-item"><a class="anchor" href="#">sobre</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="pokemons-list">
+        <div id="pokemons-div" class="pokemons"></div>
+      </section>
+
+      <section id="add-pokemon-section" class="add-pokemon">
+        <h3 class="add-pokemon-title">Incluir novo pokemon</h3>
+        <form id="form-add-pokemon" class="form-add-pokemon">
+          <input value="" id="pokemon-name" class="pokemon-input-style" type="text" placeholder="nome do pokemon">
+          <input value="" id="pokemon-price" class="pokemon-input-style" type="number" placeholder="número do pokemon">
+          <input value="" id="pokemon-img" class="pokemon-input-style" type="url" name=""
+            placeholder="link com foto do pokemon">
+          <input id="btn-submit" class="btn-submit-style" type="submit" value="incluir">
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <ul class="links-footer">
+        <h3>Pokemon nas redes sociais:</h3>
+        <li><a class="anchor" href="#">mapa do site</a></li>
+        <li><a class="anchor" href="#">contato</a></li>
+        <li><a class="anchor" href="#">franquias</a></li>
+      </ul>
+    </footer>
+    <script type="text/javascript" src="data/pokemon/pokemon.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  
+</body>
+
 </html>

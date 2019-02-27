@@ -1,13 +1,14 @@
 # Data Lovers
 
-Primeiro projeto desenvolvido para o curso de Desenvolvedora Front-End no Bootcamp
-**Laboratória** - campus SP - Brasil.
+Primeiro projeto desenvolvido para o curso de Desenvolvedora Front-End no Bootcamp **Laboratória** - campus SP - Brasil.
 
 ## A organização
 
-No primeiro sprint foi utilizado a ferramenta **Trello**. Em ambas situações, dividimos o projeto em mini partes e as mesmas foram priorizadas utilizando dois critérios: o que era necessário para formar o _esqueleto_ do site e o que eu como desenvolvedora tinha mais facilidade em desenvolver, deixando o que demandaria mais tempo de aprendizagem e de desenvolvimento por último. Todos os itens tinham data definida / prevista para término.
-[Print Trello Data Lovers](http://prntscr.com/mqfv00)
-[Trello Data Lovers](https://trello.com/invite/b/qJ3Bf00s/8a48912b62a88909ed1dbd86afe2aa93/data-lovers)
+No primeiro sprint foi utilizado a ferramenta **Trello**.
+
+Em ambas situações, dividimos o projeto em mini partes e as mesmas foram priorizadas utilizando **x quantidade critérios**: o que era necessário para formar o _esqueleto_ do site e o que "nós" como desenvolvedoras tínhamos mais facilidade em desenvolver, deixando o que demandaria mais tempo de aprendizagem e de desenvolvimento por último. Todos os itens tinham data definida / prevista para término.
+
+![Trello Data Lovers](https://trello.com/invite/b/qJ3Bf00s/8a48912b62a88909ed1dbd86afe2aa93/data-lovers)
 
 ## Checklist
 
@@ -25,6 +26,8 @@ No primeiro sprint foi utilizado a ferramenta **Trello**. Em ambas situações, 
 
 
 #### Protótipo
+[Link do Protótipo](https://marvelapp.com/b2cg16h)
+
 Durante seu trabalho você deverá ter feito esboços de sua solução usando papel
 e lápis. Recomendamos que você tire fotos de todas as iterações que faça, suba
 para seu repositório, e as mencione em seu`README.md`. Caso queira, pode
