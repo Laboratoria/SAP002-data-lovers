@@ -1,3 +1,11 @@
 *{
     font-family: sans-serif;
 }
+
+#choose-type{
+    visibility: hidden;
+}
+
+#choose-weakness{
+    visibility: hidden;
+}
