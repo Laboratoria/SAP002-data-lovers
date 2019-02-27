@@ -1,18 +1,257 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="root">
+  </div>
+  <!--Nav -->
+  <header>
+    <nav>
+      <ul class="container-nav">
+        <li class="item-nav-left"><a>Indicadores de Desenvolvimento</a></li>
+        <li class="item-nav-right"><a>Países</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--Main -->
+  <main>
+    <!--Breve Explicação -->
+    <section class="container-article">
+      <h1>Indicadores de Desenvolvimento</h1>
+      <article>
+        <p></p>
+      </article>
+    </section>
+    <!--Bandeiras do Países-->
+    <section class="countries">
+      <h2>Países</h2>
+      <ul class="container-flags">
+        <li class="flags-list"><img src="img-flags/flag-of-brazil.png" alt="Bandeira do Brasil" class="flags" /></li>
+        <li class="flags-list"><img src="img-flags/flag-of-mexico.png" alt="Bandeira do México" class="flags" /></li>
+        <li class="flags-list"><img src="img-flags/flag-of-chile.png" alt="Bandeira do Chile" class="flags" /></li>
+        <li class="flags-list"><img src="img-flags/flag-of-peru.png" alt="Bandeira do Perú" class="flags" /></li>
+      </ul>
+    </section>
+    <!-- Indicadores do Brasil-->
+    <section id="sectionBrazil" class="container-brazil">
+      <nav class="nav-btn">
+        <ul class="container-btn">
+          <li><button type="button" name="button" data-tabEnable="tabJob" class="tab">Emprego</button></li>
+          <li><button type="button" name="button" data-tabEnable="tabUnemployed" class="tab">Desemprego</button></li>
+          <li><button type="button" name="button" data-tabEnable="tabEducation" class="tab">Educação</button></li>
+        </ul>
+      </nav>
+      <div class="">
+        <article id="jobBr" class="container-tab-br">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="unemployedBr" class="container-tab-br">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="educationBr" class="container-tab-br">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+      </div>
+      <aside>
+        <table>
+          <thead>
+            <tr>
+              <th>Brasil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="img-flags/flag-of-brazil.png" alt="Bandeira do Brasil" class="flags-sections" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </section>
+    <!--Indicadores do México-->
+    <section id="sectionMéxico" class="container-mexico">
+      <nav class="nav-btn">
+        <ul class="container-btn">
+          <li><button type="button" name="button" data-tab-enable="tabJob" class="tab">Emprego</button></li>
+          <li><button type="button" name="button" data-tab-enable="tabUnemployed" class="tab">Desemprego</button></li>
+          <li><button type="button" name="button" data-tab-enable="tabEducation" class="tab">Educação</button></li>
+        </ul>
+      </nav>
+      <div class="">
+        <article id="jobMex" class="container-tab-mex">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="unemployedMex" class="container-tab-mex">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="educationMex" class="container-tab-Mex">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+      </div>
+      <aside>
+        <table>
+          <thead>
+            <tr>
+              <th>México</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="img-flags/flag-of-mexico.png" alt="Bandeira do México" class="flags-sections" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </section>
+    <!--Indicadores do Chile-->
+    <section id="sectionChile" class="container-chile">
+      <nav class="nav-btn">
+        <ul class="container-btn">
+          <li><button type="button" name="button" data-tab-enable="tabJob" class="tab">Emprego</button></li>
+          <li><button type="button" name="button" data-tab-enable="tabUnemployed" class="tab">Desemprego</button></li>
+          <li><button type="button" name="button" data-tab-enable="tabEducation" class="tab">Educação</button></li>
+        </ul>
+      </nav>
+      <div class="">
+        <article id="jobCL" class="container-tab-cl">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="unemployedCl" class="container-tab-cl">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="educationCl" class="container-tab-cl">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+      </div>
+      <aside>
+        <table>
+          <thead>
+            <tr>
+              <th>Chile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="img-flags/flag-of-chile.png" alt="Bandeira do Chile" class="flags-sections" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </section>
+    <!--Indicadores do Perú -->
+    <section id="sectionPeru" class="container-peru">
+      <nav class="nav-btn">
+        <ul class="container-btn">
+          <li><button type="button" name="button" data-tab-enable="tabJob" class="tab">Emprego</button></li>
+          <li><button type="button" name="button" data-tab-enable="tabUnemployed" class="tab">Desemprego</button></li>
+          <li><button type="button" name="button" data-tab-enable="tabEducation" class="tab">Educação</button></li>
+        </ul>
+      </nav>
+      <div class="">
+        <article id="jobPe" class="container-tab-pe">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="unemployedPe" class="container-tab-pe">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+        <article id="educationPe" class="container-tab-pe">
+          <div class="">
+            <img src="" alt="">
+          </div>
+          <div class="">
+            <p></p>
+          </div>
+        </article>
+      </div>
+      <aside>
+        <table>
+          <thead>
+            <tr>
+              <th>Perú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="img-flags/flag-of-peru.png" alt="Bandeira do Perú" class="flags-sections" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script src="./data/worldbank/worldbank.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
