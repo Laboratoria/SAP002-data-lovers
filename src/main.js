@@ -13,7 +13,9 @@ const dropDownFilter = document.getElementById("dropdown-type")
 
 dropDownFilter.addEventListener('change',
     function() {
+
         let type = dropDownFilter.value
+        console.log(type)
         if (type != "All") {
             pokemons = pokemons.filter(pokemon => pokemon["type"].includes(type))
         }
