@@ -4,20 +4,22 @@ window.onload = function () {
 
 let filterMenu = document.getElementById('filter-menu');
 let chooseType = document.getElementById('choose-type');
-let chooseWeakness = document.getElementById('choose-weakness');
+// let chooseWeakness = document.getElementById('choose-weakness');
 
 function showFilter(){
   let chooseFilter = filterMenu.value;  
   if(chooseFilter === 'none'){
     chooseType.style.visibility = 'hidden';
-    chooseWeakness.style.visibility = 'hidden';    
-  } else if(chooseFilter === 'type'){    
+    // chooseWeakness.style.visibility = 'hidden';    
+  } else if(chooseFilter === 'type' || chooseFilter === 'weakness'){    
     chooseType.style.visibility = 'visible';
-    chooseWeakness.style.visibility = 'hidden';
-  } else if(chooseFilter === 'weakness'){    
-    chooseWeakness.style.visibility = 'visible';
-    chooseType.style.visibility = 'hidden';
-  }
+    // chooseWeakness.style.visibility = 'hidden';
+  } 
+  
+  // else if(chooseFilter === 'weakness'){    
+  //   // chooseWeakness.style.visibility = 'visible';
+  //   chooseType.style.visibility = 'hidden';
+  // }
   showPokemons()
 }
 
@@ -38,7 +40,13 @@ function filtrando() {
     let filtered = getPokemons().filter(tipo => tipo['type'].indexOf(typeFilter) >= 0)  ;
     console.log(filtered);
     array = filtered;
-  } else if(chooseFilter === 'type' && typeFilter === 'none'){
+  } else if(chooseFilter === 'weakness' && typeFilter != 'none'){
+    console.log('entrou filtrando por fraqueza');
+    console.log(typeFilter);
+    let filtered = getPokemons().filter(tipo => tipo['weaknesses'].indexOf(typeFilter) >= 0)  ;
+    console.log(filtered);
+    array = filtered;
+  } else if(chooseFilter != 'none' && typeFilter === 'none'){
     console.log('entrou filtrando none');
     array = POKEMON["pokemon"];
   } 
