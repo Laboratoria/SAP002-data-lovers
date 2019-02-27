@@ -1,0 +1,171 @@
+body {
+    margin: 0px;
+}
+/*
+aside { 
+    display: block;
+}
+  */
+
+
+.container-nav {
+    background-color: #20B2AA;
+    display: flex;
+    margin: auto;
+    list-style: none;
+    justify-content: space-around;
+    padding: 2vw;
+}
+  
+.item-nav-left {
+    font-size: 25px;
+}
+  
+.item-nav-right {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.item-nav-right a:hover  {
+  background-color: #008B8B ;
+}
+
+.container-article {
+    text-align: center;
+}
+  
+.countries {
+    margin: 0;
+    text-align: center;
+    background-color: #E0FFFF;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+  
+.container-flags {
+    padding: 5vw;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #E0FFFF;
+   
+}
+  
+.flags-list {
+    width: 40%;
+    height: auto;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.flags {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    margin-right: 0px;
+    margin-left: 0px;
+    border: 5px outset #E0FFFF;
+    cursor: pointer;
+}
+
+.container-btn {
+    width: 60%;
+    color: blue;
+    display: flex;
+    margin: auto;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+}
+
+.tab {
+    color: #191970;
+    background-color: #F5F5F5;
+    border-radius: 7%;
+    border-bottom: none;
+    border: none;
+    padding: 15px;
+    width: 100px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.container-btn li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.nav-btn {
+   border-bottom: 1 px solid blue;
+   width: 70%;
+   height: auto
+}
+
+.container-brazil {
+    background-color: white;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    height: 300px;
+    border-bottom: 1px solid black;
+}
+
+.container-tab-br {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.container-mexico {
+    background-color: white;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    height: 300px;
+    border-bottom: 1px solid black;
+}
+
+.container-tab-mex {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.container-chile {
+    background-color: white;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    height: 300px;
+    border-bottom: 1px solid black;
+}
+
+.container-tab-cl {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.container-peru {
+    background-color: white;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    height: 300px;
+    border-bottom: 1px solid black;
+}
+.container-tab-pe {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.flags-sections {
+    width: 150px;
+    height: 120px;
+    border: 1px solid #20B2AA
+}
+
