@@ -11,7 +11,7 @@ function selectStatement() {
 };
 
 
-let statement = document.getElementById("view").addEventListener("click", capture() {
+let statement = document.getElementById("view").addEventListener("change", capture() {
     aquilo que estiver selecionado no select-statement.value
     
 }   )
