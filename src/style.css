@@ -1,0 +1,37 @@
+.body{
+    background-color: blue;
+    margin: 0;
+    width: 100vw;
+}
+
+
+.top-nav{
+    background-color: #04dabe;
+    margin:auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.general-pokemon {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.list-pokemon{
+    background-color: aliceblue;
+    width: 20%;
+    margin: 20px;
+    padding-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.pokemon-img{
+    width: 70%;
+}
