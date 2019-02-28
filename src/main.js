@@ -5,6 +5,7 @@ window.onload = function () {
 let filterMenu = document.getElementById('filter-menu');
 let chooseType = document.getElementById('choose-type');
 // let chooseWeakness = document.getElementById('choose-weakness');
+let sort = document.getElementById('sort');
 
 function showFilter(){
   let chooseFilter = filterMenu.value;  
@@ -51,7 +52,6 @@ function filtrando() {
     array = POKEMON["pokemon"];
   } 
 
-  console.log(array);
   return array
 }
 
@@ -61,7 +61,7 @@ function showPokemons() {
   console.log('entrou SHOWPOKEMONS');
   let pokemonDiv = document.getElementById("pokemons-div")
   pokemonDiv.innerHTML = `
-    ${filtrando().map((pokemon) => `
+    ${ordering().map((pokemon) => `
     <div>
         <img src="${pokemon["img"]}"
         <h3>${pokemon["name"]}</h3>
@@ -81,13 +81,31 @@ function showPokemons() {
 chooseType.addEventListener('change', showPokemons);
 
 function ordering() {
-let sort = document.getElementById('sort')
-let filtered =  filtrando().sort(function(a, b, key){
-  if(a.key < b.key) { return -1; }
-  if(a.key > b.key) { return 1; }
+let sortOption = sort.value;
+console.log('valor');
+console.log(sortOption);
+let ordered =  filtrando().sort(function(a, b){
+  
+  if(a[sortOption] < b[sortOption]) { 
+    // console.log(a[sortOption]);
+    // console.log(b[sortOption]);
+    console.log('entrou if');
+    return -1; }
+  if(a[sortOption] > b[sortOption]) { console.log('entrou if else');
+   return 1; }
   return 0;
 })
-  console.log(filtered);
+console.log('ordenada');
+console.log(ordered);
+
+  return ordered
+}
+
+sort.addEventListener('change', changeOrderingShow);
+
+function changeOrderingShow(){
+  showPokemons();
+  ordering();
 }
 
 
