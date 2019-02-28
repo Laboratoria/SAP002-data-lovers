@@ -10,10 +10,12 @@ function getAno(){
   
   
   function showIndicadores(){
-    let productDiv = document.getElementById('products-div');
+    let productDiv = document.getElementById('indicators-div');
     productDiv.innerHTML = `
     ${getAno().map((indicador) => `
       <div class="product-item">
         <p>${indicador["indicators"][0]["indicatorName"]}</p>
-      </div>`)}`
+        <p>${indicador["indicators"][0]["countryName"]}</p>
+        <p>${indicador["indicators"][0].data[2015]}</p>
+      </div>`).join('')}`
   }
