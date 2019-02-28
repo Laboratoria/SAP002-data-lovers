@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(rgba(245, 220, 245, 0.867), rgba(226, 180, 226, 0.867));
+    background-image: linear-gradient(rgba(245, 238, 245, 0.867), rgba(226, 180, 226, 0.867));
 }
 
 .pokedex {
@@ -36,7 +36,7 @@ body {
     text-align: center;
 }
 
-section {
+.section-dropdown {
     display: flex;
     align-self: baseline;
     text-align: center;
