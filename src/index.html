@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
 
-</head>
+<body>
 
-<header class="page-title">
-    <h1>Nosso título aqui</h1>
+<header class="main-title">
+    <h1 class ="page-title">Geography Helper</h1>
 </header>
 <main class="main-content">
-    <section class="proposal">para que serve blablabla aqui</section>
-    <section class="choose-countries">
-        <nav class="choose-countries-list">
-            <form class="choose-countries-form" id="countriesForm"></form>
-            <li><button type="button" name="brasil" form="counstriesForm" id="brasil">Brasil</button></li>
-            <li><button type="button" name="chile" form="counstriesForm" id="chile">Chile</button></li>
-            <li><button type="button" name="mexico" form="counstriesForm" id="mexico">México</button></li>
-            <li><button type="button" name="Peru" form="counstriesForm" id="peru">Peru</button></li>
-        </nav>
-    </section>
+   
+    <section class="proposal">Dados Demográficos para facilitar seus estudos</section>
+    
+    <section class="filters"></section>
+    <nav class="choose-countries-list">
+        <h2>Choose the Country that you want to check here:</h2>
+        <form class="choose-countries-form" id="countriesForm">
+        <li><button type="button" name="brasil" form="counstriesForm" class="form-btns" id="brasil">Brasil</button></li>
+        <li><button type="button" name="chile" form="counstriesForm" class="form-btns" id="chile">Chile</button></li>
+        <li><button type="button" name="mexico" form="counstriesForm"class="form-btns" id="mexico">México</button></li>
+        <li><button type="button" name="Peru" form="counstriesForm" class="form-btns" id="peru">Peru</button></li>
+        </form>
+    </nav>
+    
     <section class="form-filters">
 
         <div>
@@ -29,11 +35,12 @@
             <select id="select-statement"></select>
         </div>
         <div id="select-year">
-            <!-- <label> select year</label>
-            <select id="select-year"></select> -->
+            <label> select year</label>
+            <select id="select-year"></select>
         </div>
 
     </section>
+</section>
     <section class="show-content">
 
 
