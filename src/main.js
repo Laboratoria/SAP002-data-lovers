@@ -30,6 +30,8 @@ dropDownOrder.addEventListener('change',
         let order = dropDownOrder.value
         switch (order) {
             case "pokedex-num":
+                pokemons = pokemons.sort(compareById)
+
                 showPokemons(pokemons)
                 break
             case "height":
@@ -53,6 +55,10 @@ dropDownOrder.addEventListener('change',
 
     }
 )
+
+function compareById(a, b) {
+    return Number(a["id"]) - Number(b["id"])
+}
 
 function compareByHeight(a, b) {
     return Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
@@ -81,9 +87,14 @@ function showPokemons(pokemons) {
     ${pokemons.map((pokemon)=> `
       <figure class="pokemon">
         <img src= "${pokemon["img"]}"
-          class ="pokemon-img"/>
+          class ="pokemon-img" id = "${pokemon["id"]}/>
          </figure>
       `).join("")}
   `
-
 }
+
+pokemonFigures= document.querySelectorAll(".pokemon-img")
+pokemonFigures.addEventListener('click',
+function(){
+
+})
