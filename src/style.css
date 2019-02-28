@@ -3,7 +3,7 @@
     padding:0;
 } */
 body {
-    font-family: Lato, sans-serif;
+    font-family: Khula, sans-serif;
     color: #47525E;
 }
 
@@ -16,14 +16,14 @@ body {
 
 .pokedex {
     display: flex;
-    font-size: 380%;
+    font-size: 410%;
     margin-block-end: 20px;
     margin-block-start: 30px;
 }
 
 .dropdown {
     display: flex;
-    padding-bottom: 5%
+    padding-bottom: 3%;
 }
 
 .dropdown-types {
@@ -36,32 +36,49 @@ body {
     text-align: center;
 }
 
+section {
+    display: flex;
+    align-self: baseline;
+    text-align: center;
+}
+
 select {
     background-color: rgb(181, 143, 216);
     color: whitesmoke;
-    -webkit-appearance: menulist-textfield;
-    box-sizing: border-box;
-    /* white-space: pre; */
-    -webkit-rtl-ordering: logical;
+    width: 115px;
+    height: 50px;
+    -webkit-appearance: listbox;
     cursor: pointer;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgb(30, 3, 56);
+    border-radius: 15px;
+    font-size: 17px;
 }
+
+option {
+    font-size: 16px;
+    text-align: center;
+}
+
+.pulaLinha1{
+    width: 100%;
+    height: 4px;
+    border: 0px;
+    border-top: 1px solid rgba(226, 180, 226, 0.582);
+    background-color: rgba(180, 143, 180, 0.521);
+    margin-bottom: 7%;
+  }
 
 main {
     background-image: linear-gradient(rgba(226, 180, 226, 0.867),rgb(182, 199, 228));
+    display:flex;
 }
 
 #pokemons-div {
     display: flex;
     flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
-    width: 90%;
+    align-content: space-between;
 }
-
+/* 
 .pokemon {
-    width: 4%
-}
+    width: 20%;
+} */
