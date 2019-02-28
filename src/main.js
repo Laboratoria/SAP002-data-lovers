@@ -1,15 +1,6 @@
 const selectTypeElement = document.getElementById("select-type");
 let filteredPokemon;
-let htmlPokemonsFiltrados;
-
-selectTypeElement.addEventListener("change",pokemonsFilter);
-
-function pokemonsFilter(){
-    filteredPokemon = POKEMON.pokemon.filter(pokemon => {
-    return (pokemon.type.includes(selectTypeElement.value));
-});
-showPokemons();
-};
+selectTypeElement.addEventListener("change", typeFilter);
 
 function showPokemons(){
     document.getElementById("pokemons").innerHTML = `${filteredPokemon.map(pokemon => `
@@ -17,14 +8,30 @@ function showPokemons(){
         <img src="${pokemon.img}" class="pokemon-img"/>
         <div class="text-name">
             <h3 class="pokemon-name">${pokemon.name}</h3>
-            <span>Tipo: ${pokemon.type.join(", ")}</span>
         </div>
         </div>
     `
     ).join('')
  }
 `}
-    
+
+function typeFilter(){
+    filteredPokemon = POKEMON.pokemon.filter(pokemon => {
+    return (pokemon.type.includes(selectTypeElement.value));
+});
+    showPokemons();
+}
+  
+const selectWeaknessesElement = document.getElementById("select-weaknesses");
+selectWeaknessesElement.addEventListener("change", weaknessesFilter);
+
+function weaknessesFilter(){
+    filteredPokemon = POKEMON.pokemon.filter(pokemon => {
+        return (pokemon.weaknesses.includes(selectWeaknessesElement.value));
+    })
+    showPokemons();
+}
+
 
 
 
