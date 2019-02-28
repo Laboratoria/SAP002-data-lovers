@@ -6,13 +6,70 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
+    <div class="type-filter">
+      <select id="select-type">
+        <option disabled selected>Escolha o tipo</option>
+        <option value="Water">Água</option>
+        <option value="Dragon">Dragão</option>
+        <option value="Electric">Elétrico</option>
+        <option value="Ghost">Fantasma</option>
+        <option value="Fire">Fogo</option>
+        <option value="Ice">Gelo</option>
+        <option value="Grass">Grama</option>
+        <option value="Bug">Inseto</option>
+        <option value="Fighting">Lutador</option>
+        <option value="Steel">Metal</option>
+        <option value="Normal">Normal</option>
+        <option value="Rock">Pedra</option>
+        <option value="Psychic">Psíquico</option>
+        <option value="Ground">Terrestre</option>
+        <option value="Poison">Veneno</option>
+        <option value="Flying">Voador</option>
+      </select>
+    </div>
+    <div class="weakness-filter">
+      <select id="select-weakness">
+        <option disabled selected>Escolha a fraqueza</option>
+        <option value="Water">Água</option>
+        <option value="Dragon">Dragão</option>
+        <option value="Electric">Elétrico</option>
+        <option value="Ghost">Fantasma</option>
+        <option value="Fire">Fogo</option>
+        <option value="Ice">Gelo</option>
+        <option value="Grass">Grama</option>
+        <option value="Bug">Inseto</option>
+        <option value="Fighting">Lutador</option>
+        <option value="Steel">Metal</option>
+        <option value="Normal">Normal</option>
+        <option value="Rock">Pedra</option>
+        <option value="Psychic">Psíquico</option>
+        <option value="Ground">Terrestre</option>
+        <option value="Poison">Veneno</option>
+        <option value="Flying">Voador</option>
+        <option value="Dark">Noturno</option>
+        <option value="Fairy">Fada</option>
+
+      </select>
+    </div>
+    <div class="hour-filter">
+      <select id="select-hour">
+        <option disable selected>Escolha o horário</option>
+        <option value="">00:00 - 02:00 </option>
+        <option value="">02:01 - 04:00 </option>
+        <option value="">04:01 - 06:00 </option>
+        <option value="">06:01 - 08:00 </option>
+        <option value="">08:01 - 10:00 </option>
+        <option value="">10:01 - 12:00 </option>
+        <option value="">12:01 - 14:00 </option>
+        <option value="">14:01 - 16:00 </option>
+        <option value="">16:01 - 18:00 </option>
+        <option value="">18:01 - 20:00 </option>
+        <option value="">20:01 - 22:00 </option>
+        <option value="">22:01 - 23:59 </option>
+      </select>    
+    </div>
+    <section id="pokemons"></section>
+    <script src="./data/pokemon/pokemon.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
