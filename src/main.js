@@ -1,64 +1,20 @@
 
- let dropMenu = document.querySelector(".drop-menu");
- dropMenu.addEventListener("change", showChampions);
+/*window.onload = function () {
+  showChampions();
+}; */
  
-// //----------------------FUNÇÃO FUNCIONANDO ----------------------------------
+let dropMenu = document.querySelector(".drop-menu");
+dropMenu.addEventListener("change", showChampions);
 
-// function showChampions(){
-//     let typeChampion = dropMenu.value;    
-//     let type;
-//     let listChampions = document.querySelector(".show-champions"); 
-//     let championName = document.querySelector(".champion-name")
+//----------------------FUNÇÃO FUNCIONANDO ----------------------------------
+function getProducts() {
+ return LOL["data"];
+}
 
-//         listChampions.innerHTML = ""
-//         for (let champion in LOL.data) {
-//             for(i in LOL.data[champion]["tags"]){
-//                 type = LOL.data[champion]["tags"][i]
-//                 if( typeChampion === type){
-//                     let img = document.createElement("img");
-//                     img.src = LOL.data[champion]["splash"];
-//                     listChampions.appendChild(img);
-                           
-//                     //---ALGO DE ERRADO NÃO ESTÁ CERTO! =( ----
-//                     // ---NÃO ESTÁ BUSCANDO O NOME---
-//                     // for(i in LOL.data[champion]["name"])   {
-//                     //     let name = document.createElement('h1');
-//                     //     name = LOL.data[champion]["name"];
-//                     //     championName.appendChild(name);
-//                 }
-
-                
-    
-                
-
-//             }
-    
-//         }
- 
-// };
-
-// -------- NÃO ROLOU PQ A ESTRUTURA DO OBJ É DIFERENTE, NÃO ACEITA MAP NEM FILTER-----
-
- 
-// function objToArray(obj){
-//     let result = [];
-//     for (key of Object.keys(obj)){
-//         result.push([key, obj[key]])
-//     }
-//     return result
-
-// }
-
-
-  
-  
-
-  
-
-   
-       
-    
-
+function clearResult(){
+ document.querySelector(".show-champions").innerHTML = ""; 
+}
+      
 function showChampions(){
     clearResult();
     let typeChampion = dropMenu.value;    
@@ -88,9 +44,3 @@ function showChampions(){
         }
     }
 }
-
-
-
-function clearResult(){
-    document.querySelector(".show-champions").innerHTML = ""; 
-  }
