@@ -41,6 +41,6 @@ eggKmSelect.addEventListener('change', function(){
         console.log('aqui é a funcao 4')
     }else{
         return alert('Selecione uma opção!')
-    }''
+    }
 })
 
