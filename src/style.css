@@ -1,15 +1,27 @@
-.body{
-    background-color: blue;
+body{
     margin: 0;
     width: 100vw;
 }
 
-
 .top{
     background-color: #04dabe;
-    margin:auto;
+   
     display: flex;
     justify-content: space-evenly;
+}
+
+.top-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.select-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px;
+    
 }
 
 .general-pokemon {
