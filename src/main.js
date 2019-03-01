@@ -7,9 +7,24 @@ function getPokemon (){
     
 }
 
-let showPokemon = document.getElementById('show-pokemon');
+let eggKmSelect = document.getElementById('eggKm')
+eggKmSelect.addEventListener('change', function(){
+   
+   if(eggKmSelect.selectedIndex === 1){
+       console.log("aqui é a funcao 1")
+   }else if(eggKmSelect.selectedIndex === 2){
+       console.log(showKm2())
+    }else if(eggKmSelect.selectedIndex === 3){
+        console.log('aqui é a funcao 3')
+    }else if(eggKmSelect.selectedIndex === 4){
+        console.log('aqui é a funcao 4')
+    }else{
+        return alert('Selecione uma opção!')
+    }
+})
 
 function allPokemon (){
+    let showPokemon = document.getElementById('show-pokemon');
 
     showPokemon.innerHTML= `
     ${getPokemon().map((monster) =>`
@@ -28,19 +43,38 @@ function allPokemon (){
 };
 
 
-let eggKmSelect = document.getElementById('eggKm')
-eggKmSelect.addEventListener('change', function(){
-   
-   if(eggKmSelect.selectedIndex === 1){
-       console.log("aqui é a funcao 1")
-   }else if(eggKmSelect.selectedIndex === 2){
-       console.log('aqui é a funcao 2')
-    }else if(eggKmSelect.selectedIndex === 3){
-        console.log('aqui é a funcao 3')
-    }else if(eggKmSelect.selectedIndex === 4){
-        console.log('aqui é a funcao 4')
-    }else{
-        return alert('Selecione uma opção!')
-    }
-})
+function showKm2 (){
+    let showPokemon = document.getElementById('show-pokemon');
+    let monsterAll = getPokemon();
+    let data = getPokemon().map(monster => monster.egg)
+    
+    for(let i of data){
+        if(i === '2 km'){
+            // console.log(i)
+            showPokemon.innerHTML=` ${data.map((i) => `
+                <div class='list-pokemon'>
+                        <img src='${monsterAll['img']}' class= 'pokemon-img'/>
+                    <div class= text-name> 
+                        <h3 class='pokemon-name'>${monsterAll['name']}</h3 >
+                    </div>
+                    <div class='text-type'>
+                        <p class='pokemon-type'>${i}</p>
+                    </div>
+                </div>
+                
+                `).join('')
+            }`
+        
+        };
+    }   
 
+}
+
+
+
+//     showPokemon.innerHTML=`
+//         |<div>${dataIndex['i']}</div>
+    
+//     `
+    
+// }
