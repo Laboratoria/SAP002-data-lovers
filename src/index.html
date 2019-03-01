@@ -6,35 +6,38 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root">
-      <ul id="ulIndicatorsPeru">PERU</ul>
-      <ul id="ulIndicatorsMexico">MEXICO</ul>
-      <ul id="ulIndicatorsChile">CHILE</ul>
-      <ul id="ulIndicatorsBrasil">BRASIL</ul>
-    </div>
-    <script src="./data/worldbank/worldbank.js"></script>
-    <script src="main.js"></script>
 
-
-    <nav id=>
-
+    <nav id="filterControls">
+        <label>Selecione o país:</label>
+        <select id="country">
+          <option value="BRA">Brasil</option>
+          <option value="CHL">Chile</option>
+          <option value="MEX">México</option>
+          <option value="PER">Perú</option>
+        </select>
+  
+        <label>Informe o filtro dos indicadores:</label>
+        <input type="text" id="dataFilter" value="Empleo" />
+  
+        <label>Informe o ano inicial:</label>
+        <input id="initialYear" type="number" min="2000" max="2017" value="2000" />
+  
+        <button id="btnIndicators">Mostrar Indicadores</button>
     </nav>
+
     <header>
-
-
     </header>
+
     <aside>
-
-
     </aside>
 
-    <content>
-
-    </content>
+    <section id="indicatorsTableSection">
+    </section>
 
     <footer>
-
-
     </footer>
-    </body>
-    </html>
+
+    <script src="./data/worldbank/worldbank.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

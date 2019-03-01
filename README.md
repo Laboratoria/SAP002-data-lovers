@@ -22,7 +22,7 @@ O usuário precisa acessar as informações de forma rápida, simples e objetiva
 * Quando utilizam seu produto?
 A exposição dos dados de forma clara ajuda nosso usuário em suas diferentes decisões em seus diferentes espaços organizacionais.
 
-Foi desenvolido um prototipo. Descrição do Layout da página de acordo com a previsão de funcionalidades.
+Foi desenvolvido um prototipo. Descrição do Layout da página de acordo com a previsão de funcionalidades.
 
 Foi realizado o teste de usabilidade.
 
