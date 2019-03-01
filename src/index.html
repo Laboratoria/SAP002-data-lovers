@@ -6,31 +6,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>   
-    <nav class="nav">
-      <select class="drop-menu">
-        <option class="menu" value="none" selected>SELECIONE O TIPO DE CAMPEÃO</option>
-        <option class="menu" value="Assassin">ASSASSINO</option>
-        <option class="menu" value="Marksman">ATIRADOR</option>
-        <option class="menu" value="Fighter">LUTADOR</option>
-        <option class="menu" value="Mage">MAGO</option>
-        <option class="menu"value="Tank">TANQUE</option>
-        <option  class="menu" value="Support">SUPORTE</option>
+    <nav class='nav nav-color '>
+      <div class='select-icon' ></div>
+      <div class='tilte'> FILTER CHAMPION</div>
+      <select class="drop-menu drop-color box-drop" >        
+        <option class="menu" value="none" selected>TYPE OF CHAMPION</option>
+        <option class="menu" value="none">ALL</option>
+        <option class="menu" value="Assassin" >ASSASSIN</option>
+        <option class="menu" value="Marksman">MARKSMAN</option>
+        <option class="menu" value="Fighter">FIGHTER</option>
+        <option class="menu" value="Mage">MAGE</option>
+        <option class="menu"value="Tank">TANK</option>
+        <option  class="menu" value="Support">SUPPORT</option>
+      </select>
+      <select class="drop-menu-strengths drop-color box-drop" >
+        <option class="menu" value="none" selected>TYPE OF STRENGTHS</option>
+        <option class="menu" value=" attack" >Attack</option>
+        <option class="menu" value="defence">Defence</option>
+        <option class="menu" value="magic">Magic</option>  
+      </select>
+      <select class="drop-menu-strengths drop-color box-drop" >
+        <option class="menu" value="none" selected>STATISTICS</option>
+        <option class="menu" value=" attack" >Attack</option>
+        <option class="menu" value="defence">Defence</option>
+        <option class="menu" value="magic">Magic</option>  
       </select>
     </nav>
     <section class="logo-container">
-        <img src="assets\lol_logo.png" alt="">
+        <img src="assets\header.png" alt="">
     </section>  
     <section class="champions-container">
-        <div  class="show-champions"></div>
-        <div class="champion-name"><h1 class="champion-name"></h1></div>
-    </section>
-
-
-    
-          
+        <div  class="show-champions" class="div-show-champions"></div>
+           </section>           
     <script src="./data/lol/lol.js"></script>
     <!-- <script src="./data/lol/lol.json"></script>  -->
-    
-    <script src="main.js"></script>
+     <script src="main.js"></script>
   </body>
 </html>
