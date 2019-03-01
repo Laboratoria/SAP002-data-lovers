@@ -6,21 +6,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="top-nav">
-      <h1>POKÉMON</h1>
-      <select >
-        <!-- <option>peso</option>
-        <option>tamanho</option>
-        <option>candy</option> -->
-      </select>
-    </nav>
+    <header class="top"> 
+      <h1 class="title-h1">POKÉMON</h1>
+      <nav class="top-nav">
+				<select>
+					<option selected>Ordenar</option>
+					<option>A a Z</option>
+				</select>
+				<select id="eggKm">
+					<option selected>Selecione KM/ovos</option>
+					<option value="0">0 KM</option>
+					<option value="1">2 KM</option>
+					<option value="2">5 KM</option>
+					<option value="3">10 KM</option>
+				</select>
+      </nav>
+  	</header>
     <main>
       <section id="general-pokemon">
         <div id="show-pokemon" class="general-pokemon" ></div>
       </section>
     </main>
-
-    
 
     <script src="./data/pokemon/pokemon.js"></script>
     <!-- <script src="data/pokemon/pokemon.js"></script> -->

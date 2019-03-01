@@ -28,9 +28,19 @@ function allPokemon (){
 };
 
 
-// function orderAlphabetic(){
-//     getPokemon().map((monster['name']) =>
-//     let saveName = 
+let eggKmSelect = document.getElementById('eggKm')
+eggKmSelect.addEventListener('change', function(){
+   
+   if(eggKmSelect.selectedIndex === 1){
+       console.log("aqui é a funcao 1")
+   }else if(eggKmSelect.selectedIndex === 2){
+       console.log('aqui é a funcao 2')
+    }else if(eggKmSelect.selectedIndex === 3){
+        console.log('aqui é a funcao 3')
+    }else if(eggKmSelect.selectedIndex === 4){
+        console.log('aqui é a funcao 4')
+    }else{
+        return alert('Selecione uma opção!')
+    }''
+})
 
-    
-// }
