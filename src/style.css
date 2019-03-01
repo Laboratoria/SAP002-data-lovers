@@ -1,118 +1,129 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
 body {
-  background-image: url("lol.jpg");
+  background-image: url("back.jpg");
+  background-repeat: no-repeat;
+  background-color: black;
   font-family: 'Roboto Condensed', 'Times New Roman', serif;
-
 }
 
 * {
     box-sizing: border-box;
   }
 
-  .nav {
+.nav {
     display: flex;
     justify-content: right;   
-    font-weight: 700;
-    background-color: #1f1f1f; 
-    height: 50px;
-  }
-/* .menu:hover{
-  background-color:#ddd;
-  cursor:pointer
-<<<<<<< HEAD
-=======
+    height: 60px;
+}
 
->>>>>>> 01f1ddc360ff619d67176b3bb5e18a05dedc897a
-  nÃ£o pegou ver pq
-} */
+.champion-history {
+    text-align: right;
+}
 
-
-  .drop-menu {
-    font-family: 'Roboto Condensed', 'Times New Roman', serif;
-    background-color: #1f1f1f;
-    color: #c9aa71;
+.champion-history:hover {
+    cursor:pointer;
+    color:#d1d3d5;
   }
 
-  .logo-container{
+.select-icon {
+    background-image: url("icon-game-lol.png");
+    background-repeat: no-repeat;
+    padding: 30px 20px 10px 500px;
+    margin-top: 0.5vw;
+}
+
+.tilte {
+  text-align: center;
+  color:#d1d3d5;
+  display: flex;
+  padding: 16px;
+  width: 200px;
+}
+
+.h1-header{
+    text-align: center;
+    color:#d1d3d5;
     display: flex;
     justify-content: center;
+    margin-top: -7.5%;
+    font-weight: 400;
+}
 
-    padding: 100px 0 0 0;
-  }
+.drop-color,
+.nav-color{
+    background-color:black;
+    border: 1px black;
+    color: #c9aa71;
+    font-weight: 700;
+    text-align: right;
+    padding: 4px;
+}
+
+.box-drop{
+  width:200px;
+
+}
+.card-color {
+    text-align: left;
+    border: 1px rgba(10,10,12,.9);
+    /*! width: 200px; */
+    font-weight: 700;
+    background-color:  rgba(10,10,12,.9);
+    color: #c9aa71;
+    transition: .4s;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 0 0;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;  
+}
 
   
-  .champions-container {
-    /* background-color: #fff;
-    width: 25%;
-    margin: 20px;
-    padding-top: 20px;
-    */ display: flex; /*! flex-direction: column; */ /*
-    justify-content: space-between;
-    align-items: center; */
+.champions-container {
+    display: flex; 
+    margin-top: 1vw;    
+}
 
 
-
-    /*! margin-left: 20vw; */
-    /*! margin-right: 20vw; */
-    /*! background-color: #1f1f1f; */
-    margin-top: 6vw;
-    /*! background-image: url('texturaAmassado.jpg'); */
-    
-    /*! padding: 20px 0 20px 0;  dÃ³*/
-  }
-
-
-  .champions-img{
-    width: 160px;
-    height: 120px;
+.champions-img{
+    width: 280px;
+    height: 320px;
     margin: 5px;
     padding: 5px;
-
-
-  }
+}
 
   
-  
-  .champion-name .champion-tag {
+.champion-name .champion-tag {
     text-align: center;
     margin: auto;
     font-size: 1rem;
     width: 70%;
     padding: 15px;
-  }
+}
   
-  .card{
-    background-color:black;
-    
+.card {   
     padding: 15px;
-    /*! border: gray; */
-  }
+    text-align: center;
+    transition: .4s;
+}
 
-  .show-champions{
-    /* display: flex;
-    flex-wrap: wrap;
-    */ /*! align-items: flex-end; */ justify-content: space-around;
-
-
+ .show-champions {
+    justify-content: space-around;    
     width: 80%;
-     margin: auto;
+    margin: auto;
     display: flex;
-    flex-wrap: wrap;
-    /*! justify-content: center; */
-    
-    /*! background-image: url('texturaAmassado.jpg'); */
-    /*! background-color: black; */
-    color: orange;
-  }
-  
-  /* .show-champions img {
-    margin: 5px;
-    padding: 5px;
-  
-    width: 160px;
-    height: 120px;
-    
-  } */
+    flex-wrap: wrap;    
+}
 
+.tex-name {
+    border-top: 1px solid #927345;
+}
+  
+ 
   
