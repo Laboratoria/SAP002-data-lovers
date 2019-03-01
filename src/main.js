@@ -47,28 +47,29 @@ function showKm2 (){
     let showPokemon = document.getElementById('show-pokemon');
     let monsterAll = getPokemon();
     let data = getPokemon().map(monster => monster.egg)
+    // console.log(data)
     
-    for(let i of data){
-        if(i === '2 km'){
-            // console.log(i)
-            showPokemon.innerHTML=` ${data.map((i) => `
-                <div class='list-pokemon'>
-                        <img src='${monsterAll['img']}' class= 'pokemon-img'/>
-                    <div class= text-name> 
-                        <h3 class='pokemon-name'>${monsterAll['name']}</h3 >
-                    </div>
-                    <div class='text-type'>
-                        <p class='pokemon-type'>${i}</p>
-                    </div>
-                </div>
+    let eggFilter = monsterAll.filter((pokemon) => {return pokemon.egg.includes('2 km')})
+    console.log(eggFilter)
+
+    //  showPokemon.innerHTML=` ${monsterAll.map((i) => `
+    //             <div class='list-pokemon'>
+    //                     <img src='${monsterAll['img']}' class= 'pokemon-img'/>
+    //                 <div class= text-name> 
+    //                     <h3 class='pokemon-name'>${monsterAll['name']}</h3 >
+    //                 </div>
+    //                 <div class='text-type'>
+    //                     <p class='pokemon-type'>${i}</p>
+    //                 </div>
+    //             </div>
                 
-                `).join('')
-            }`
+    //             `).join('')
+    //         }`
         
-        };
+    //     };
     }   
 
-}
+
 
 
 
