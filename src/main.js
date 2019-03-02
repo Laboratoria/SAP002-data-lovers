@@ -14,14 +14,29 @@ function showIndicadores(){
   productDiv.innerHTML = `
   ${getAno().map((indicador) => `
     <div class="product-item">
-      <p>${indicador["indicators"][0]["indicatorName"]}</p>
-      <p>${indicador["indicators"][0]["countryName"]}</p>
-      <p>${indicador["indicators"][0].data[2015]}</p>
+      <p>${indicador["indicators"][74]["indicatorName"]}</p>
+      <p>${indicador["indicators"][74]["countryName"]}</p>
+      <p>${indicador["indicators"][74].data[2013]}</p>
+      <p>${indicador["indicators"][74].data[2014]}</p>
+      <p>${indicador["indicators"][74].data[2015]}</p>
     </div>`).join('')}`
 }
 
 
+const array = WORLDBANK.MEX.indicators
 
+function indexIndicator(array, attr, value) {
+    for(var i = 0; i < array.length; i++) {
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+
+console.log(indexIndicator(array, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)'))
 
 /*EDUCACAO
 INDICADORES 

@@ -2,3 +2,34 @@ section {
     background-color: orange;
     height: 660px;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 35px 0px;
+}
+
+.box-select {
+    display: flex;
+    width: 49%;
+    /* flex-wrap: wrap; */
+}
+
+.img-bra, .img-mex, .img-per, .img-chi {
+    width: 20%;
+}
+
+.p-country {
+    position: relative;
+    color: aqua;
+    bottom: 70px;
+    left: 37px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+
+}
+

@@ -1,52 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    
-    <div id="root"></div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="root"></div>
 
 
-    <section id="top" class="container">
-        <div class="container-top">
-          <div class="ball-left"></div>
-          <div class="ball-right"></div>
-          <h1>DATA LOVERS | IDH</h1>
-          <h2>WorldBank Data Explorer</h2>
+  <section id="top" class="container">
+    <div class="container-top">
+      <div class="ball-left"></div>
+      <div class="ball-right"></div>
+      <h1>DATA LOVERS | IDH</h1>
+      <h2>WorldBank Data Explorer</h2>
+    </div>
+    <aside>
+      <a href="#topic">EXPLORAR</a>
+      <a href="#">PERFIL USUÁRIOS</a>
+    </aside>
+  </section>
+
+  <section id="topic" class="topic-selection">
+    <div class="topic-list">
+      <h2 class="section-title">DATALOVERS - The World Bank</h2>
+      <h1 class="section-text">Indicadores de Desenvolvimento Humano (IDH), exibido em uma guia on-line: escolha um tema
+        para observar informações de desenvolvimento.</h1>
+      <div class="topic-btn">
+        <a href="#" class="btn-violence">VIOLÊNCIA</a>
+        <a href="#" class="btn-educacion">EDUCAÇÃO</a>
+        <a href="#" class="btn-population">POPULAÇÃO</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container country-selection">
+
+    <div class="box-select">
+      <div class="box-country">
+        <div class="bra">
+          <a class="btn-coun*4try bra" href="#"><img class="img-bra" src="img/bra.png" alt=""></a>
+          <p class="p-country">Brasil</p>
+
         </div>
-        <aside>
-          <a href="#topic">EXPLORAR</a>
-          <a href="#">PERFIL USUÁRIOS</a>
-        </aside>
-      </section>
-    
-      <section id="topic" class="topic-selection">
-        <div class="topic-list">
-          <h2 class="section-title">DATALOVERS - The World Bank</h2>
-          <h1 class="section-text">Indicadores de Desenvolvimento Humano (IDH), exibido em uma guia on-line: escolha um tema
-            para observar informações de desenvolvimento.</h1>
-          <div class="topic-btn">
-            <a href="#" class="btn-violence">VIOLÊNCIA</a>
-            <a href="#" class="btn-educacion">EDUCAÇÃO</a>
-            <a href="#" class="btn-population">POPULAÇÃO</a>
-          </div>
+        <div class="mex">
+          <a class="btn-country mex" href="#"><img class="img-mex" src="img/mex.png" alt=""></a>
+          <p class="p-country">México</p>
         </div>
-      </section>
-    
-      <h1>Filtro - ETAPA I</h1>
-      <div id="indicators-div"></div>
+
+        <div class="Perú">
+          <a class="btn-country per" href=""><img class="img-per" src="img/per.png" alt=""></a>
+          <p class="p-country">Perú</p>
+        </div>
+        <div class="Chile">
+          <a class="btn-country chi" href=""><img class="img-chi" src="img/chi.png" alt=""></a>
+          <p class="p-country">Chile</p>
+        </div>
+      </div>
+
+      <div class="btn country">
+        <a href="#">PANORAMA GERAL</a>
+        <a href="#">INICIAR</a>
+      </div>
+
+      <article>
+        <div class="ball-topic"></div>
+        <h1>EDUCAÇÃO</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam numquam sit facilis odit magnam nulla rem fugiat consequuntur perferendis explicabo, amet ipsa ex dolor vitae sed quasi totam, veritatis nihil?</p>
+        <div class="zig-topic"></div>
+      </div>
+    </article>
+
+
+  </section>
+
+  <h1>Filtro - ETAPA I</h1>
+  <div id="indicators-div"></div>
 
 
 
 
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <script src="./data/worldbank/worldbank.js"></script>
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="main.js"></script>
-  </body>
+
+
+  <!-- <script src="./data/injuries/injuries.js"></script> -->
+  <!-- <script src="./data/pokemon/pokemon.js"></script> -->
+  <!-- <script src="./data/steam/steam.js"></script> -->
+  <script src="./data/worldbank/worldbank.js"></script>
+  <!-- <script src="./data/lol/lol.js"></script> -->
+  <script src="main.js"></script>
+</body>
+
 </html>
