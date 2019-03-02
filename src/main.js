@@ -15,18 +15,24 @@ function createIndicatorsTable() {
 
     // monta a tabela de indicadores
     let indicatorsTable = document.createElement("table");
+
     countryData.forEach(indicator => {
-        // monta linha com o nome do indicador
+        // monta linha com o código e nome do indicador
         let row = document.createElement('tr');
         let cell = document.createElement('td');
         let qtyYearCols = 2018 - parseInt(initialYear);
-        cell.setAttribute("colSpan", qtyYearCols);
+        cell.textContent = indicator.indicatorCode;
+        row.appendChild(cell);
+        row.setAttribute("class", "indicator");
+        cell = document.createElement('td');
+        cell.setAttribute("colSpan", qtyYearCols - 1);
         cell.textContent = indicator.indicatorName;
         row.appendChild(cell);
         indicatorsTable.appendChild(row);
 
         // monta linhas com os anos e valores do indicador
         let rowYear = document.createElement('tr');
+        rowYear.setAttribute("class", "year");
         let rowValue = document.createElement('tr');
         for(let year = parseInt(initialYear); year < 2018; year++) {
             // cria célula do ano
