@@ -2,17 +2,17 @@ window.onload = function(){
   showIndicadores();
 }
 
-function getAno(){
+function getData(){
   return Object.values(WORLDBANK)
   
 }
-console.log(getAno())
+console.log(getData())
 
 
 function showIndicadores(){
   let productDiv = document.getElementById('indicators-div');
   productDiv.innerHTML = `
-  ${getAno().map((indicador) => `
+  ${getData().map((indicador) => `
     <div class="product-item">
       <p>${indicador["indicators"][74]["indicatorName"]}</p>
       <p>${indicador["indicators"][74]["countryName"]}</p>
@@ -23,7 +23,7 @@ function showIndicadores(){
 }
 
 
-const array = WORLDBANK.MEX.indicators
+const array = WORLDBANK.BRA.indicators
 
 function indexIndicator(array, attr, value) {
     for(var i = 0; i < array.length; i++) {
@@ -34,9 +34,11 @@ function indexIndicator(array, attr, value) {
     return -1;
 }
 
+const verData = WORLDBANK["BRA"]["indicators"][72]["data"][2015]
+const nomeIndicador = WORLDBANK["MEX"]["indicators"][72]["indicatorName"]
+console.log(verData)
 
-
-console.log(indexIndicator(array, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)'))
+console.log(indexIndicator(array, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación terciaria (%)'))
 
 /*EDUCACAO
 INDICADORES 
@@ -57,4 +59,3 @@ SERIE TEMPORAL : 2013 até 2015
 Mujeres que creen que está justificado que un marido golpee a su esposa (cualquiera de las cinco razones) (%)
 Proporción de mujeres víctimas de violencia física o sexual en los últimos 12 meses (% de mujeres de entre 15 y 49 años)
 Dados somente em PERU - Lembrar ideia dashboars para este tema*/
-
