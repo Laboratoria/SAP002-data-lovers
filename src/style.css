@@ -7,6 +7,7 @@
  body {
      font-family: Khula, sans-serif;
      color: #47525E;
+     background-image: linear-gradient(rgba(245, 235, 245, 0.867), rgba(226, 173, 226, 0.867));
  }
  
  .pokemon-header {
@@ -94,5 +95,6 @@
  .pokemon-img:hover {
      border: 0.5px solid rgb(148, 129, 254);
      border-radius: 7px;
+     box-shadow: 20px;
  }
  /*
