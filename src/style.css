@@ -1,100 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ /
+body {
+    font-family: Khula, sans-serif;
+    color: #47525E;
+}
 
- * {
-     margin: 0;
-     padding: 0;
- }
- 
- body {
-     font-family: Khula, sans-serif;
-     color: #47525E;
-     background-image: linear-gradient(rgba(245, 235, 245, 0.867), rgba(226, 173, 226, 0.867));
- }
- 
- .pokemon-header {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     background-image: linear-gradient(rgba(245, 220, 245, 0.867), rgba(226, 180, 226, 0.867));
- }
- 
- .pokedex {
-     display: flex;
-     font-size: 410%;
-     margin-block-end: 20px;
-     margin-block-start: 30px;
- }
- 
- .dropdown {
-     display: flex;
-     padding-bottom: 3%;
- }
- 
- .dropdown-types {
-     padding-right: 8%;
-     text-align: center;
- }
- 
- .dropdown-order {
-     padding-left: 8%;
-     text-align: center;
- }
- 
- section {
-     display: flex;
-     align-self: baseline;
-     text-align: center;
- }
- 
- select {
-     background-color: rgb(181, 143, 216);
-     color: whitesmoke;
-     width: 115px;
-     height: 50px;
-     -webkit-appearance: listbox;
-     cursor: pointer;
-     border-radius: 15px;
-     font-size: 17px;
- }
- 
- option {
-     font-size: 16px;
-     text-align: center;
- }
- 
- .pulaLinha1 {
-     width: 100%;
-     height: 4px;
-     border: 0px;
-     border-top: 1px solid rgba(226, 180, 226, 0.582);
-     background-color: rgba(180, 143, 180, 0.521);
-     margin-bottom: 7%;
- }
- 
- main {
-     background-image: linear-gradient(rgba(226, 180, 226, 0.867), rgb(182, 199, 228));
-     display: flex;
- }
- 
- #pokemons-div {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     align-content: space-between;
-     width: 75%;
-     margin-left: auto;
-     margin-right: auto;
- }
- 
- .pokemon-img {
-     background-image: radial-gradient(rgba(148, 129, 254, 0.5), rgba(148, 129, 254, 0.01), rgba(255, 255, 255, 0));
-     width: 11%;
-     border: 0.5px solid rgba(148, 129, 254, 0);
-     padding: 6px;
- }
- 
- .pokemon-img:hover {
-     border: 0.5px solid rgb(148, 129, 254);
-     border-radius: 7px;
-     box-shadow: 20px;
- }
- /*
+.pokemon-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(white, rgba(226, 180, 226, 0.867));
+}
+
+.pokedex {
+    display: flex;
+    font-size: 410%;
+    margin-block-end: 20px;
+    margin-block-start: 30px;
+}
+
+.dropdown {
+    display: flex;
+    padding-bottom: 3%;
+}
+
+.dropdown-types {
+    padding-right: 8%;
+    text-align: center;
+}
+
+.dropdown-order {
+    padding-left: 8%;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    align-self: baseline;
+    text-align: center;
+}
+
+select {
+    background-color: rgb(181, 143, 216);
+    color: whitesmoke;
+    width: 115px;
+    height: 50px;
+    -webkit-appearance: listbox;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 17px;
+}
+
+option {
+    font-size: 16px;
+    text-align: center;
+}
+
+.pulaLinha1 {
+    width: 100%;
+    height: 4px;
+    border: 0px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(180, 143, 180, 1), rgba(180, 143, 180, 1), rgba(180, 143, 180, 1), rgba(180, 143, 180, 1), rgba(180, 143, 180, 1), rgba(0, 0, 0, 0));
+    margin-bottom: 7%;
+    width: 90%;
+}
+
+main {
+    background-image: linear-gradient(rgba(226, 180, 226, 0.867), rgb(182, 199, 228));
+    display: flex;
+}
+
+#pokemons-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pokemon-img {
+    background-image: radial-gradient(rgba(148, 129, 254, 0.5), rgba(148, 129, 254, 0.01), rgba(255, 255, 255, 0));
+    width: 11%;
+    border: 0.5px solid rgba(148, 129, 254, 0);
+    padding: 6px;
+}
+
+.pokemon-img:hover {
+    border: 0.5px solid rgb(148, 129, 254);
+    border-radius: 7px;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
