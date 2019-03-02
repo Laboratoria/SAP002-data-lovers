@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
 </head>
 
 <body>
@@ -13,27 +15,30 @@
   <div id="root"></div>
 
 
-  <section id="top" class="container">
-    <div class="container-top">
-      <div class="ball-left"></div>
+  <section id="top" class="container top">
+    <div class="container-capa">
+      
+
+      
+     
       <div class="ball-right"></div>
-      <h1>DATA LOVERS | IDH</h1>
-      <h2>WorldBank Data Explorer</h2>
+      <div class="ball-left"><h1>DATA LOVERS | IDH <br>
+        WorldBank Data Explorer </h1></div>
     </div>
     <aside>
-      <a href="#topic">EXPLORAR</a>
-      <a href="#">PERFIL USUÁRIOS</a>
+      <a class="menu" href="#topic">EXPLORAR</a>
+      <a class="menu" href="#">PERFIL USUÁRIOS</a>
     </aside>
   </section>
 
   <section id="topic" class="topic-selection">
     <div class="topic-list">
-      <h2 class="section-title">DATALOVERS - The World Bank</h2>
-      <h1 class="section-text">Indicadores de Desenvolvimento Humano (IDH), exibido em uma guia on-line: escolha um tema
+      <h3 class="section-title">DATALOVERS - The World Bank</h2>
+      <h4 class="section-text">Indicadores de Desenvolvimento Humano (IDH), exibido em uma guia on-line: escolha um tema
         para observar informações de desenvolvimento.</h1>
       <div class="topic-btn">
         <a href="#" class="btn-violence">VIOLÊNCIA</a>
-        <a href="#" class="btn-educacion">EDUCAÇÃO</a>
+        <a href="#" class="btn-education">EDUCAÇÃO</a>
         <a href="#" class="btn-population">POPULAÇÃO</a>
       </div>
     </div>
@@ -71,9 +76,10 @@
       <article>
         <div class="ball-topic"></div>
         <h1>EDUCAÇÃO</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam numquam sit facilis odit magnam nulla rem fugiat consequuntur perferendis explicabo, amet ipsa ex dolor vitae sed quasi totam, veritatis nihil?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam numquam sit facilis odit magnam nulla rem
+          fugiat consequuntur perferendis explicabo, amet ipsa ex dolor vitae sed quasi totam, veritatis nihil?</p>
         <div class="zig-topic"></div>
-      </div>
+    </div>
     </article>
 
 
@@ -81,7 +87,7 @@
 
   <h1>Filtro - ETAPA I</h1>
   <div id="indicators-div">
-      
+
   </div>
   <div id="curve_chart" style="width: 900px; height: 500px"></div>
   <div id="barchart_material" style="width: 900px; height: 500px;"></div>
@@ -95,7 +101,7 @@
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="main.js"></script>
   <script src="charts.js"></script>
-  
+
 </body>
 
 </html>
