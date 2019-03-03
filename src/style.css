@@ -1,0 +1,17 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+td { 
+    border: 1px solid black; 
+}
+
+tr.indicator {
+    background-color: darkgray;
+    font-weight: bold;
+}
+
+tr.year {
+    background-color: chocolate;
+    font-weight: bold;
+}
