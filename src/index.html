@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,52 +9,52 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
 
-<body>
+    <body>
 
-<header class="main-title">
-    <h1 class ="page-title">Geography Helper</h1>
-</header>
-<main class="main-content">
-   
-    <section class="proposal">Dados Demográficos para facilitar seus estudos</section>
-    
-    <section class="filters"></section>
-    <nav class="choose-countries-list">
-        <h2>Choose the Country that you want to check here:</h2>
-        <form class="choose-countries-form" id="countriesForm">
-        <li><button type="button" name="brasil" form="counstriesForm" class="form-btns" id="brasil">Brasil</button></li>
-        <li><button type="button" name="chile" form="counstriesForm" class="form-btns" id="chile">Chile</button></li>
-        <li><button type="button" name="mexico" form="counstriesForm"class="form-btns" id="mexico">México</button></li>
-        <li><button type="button" name="Peru" form="counstriesForm" class="form-btns" id="peru">Peru</button></li>
-        </form>
-    </nav>
-    
-    <section class="form-filters">
+        <header class="main-title">
+            <h1 class="page-title">Geography Helper</h1>
+        </header>
+        <main class="main-content">
 
-        <div>
-            <label> select statement</label>
-            <select id="select-statement"></select>
-        </div>
-        <div id="select-year">
-            <label> select year</label>
-            <select id="select-year"></select>
-        </div>
+            <section class="proposal">Dados Demográficos para facilitar seus estudos</section>
 
-    </section>
-</section>
-    <section class="show-content">
+            <section class="filters"></section>
+            <nav class="choose-countries-list">
+                <h2>Choose the Country that you want to check here:</h2>
+                <form class="choose-countries-form" id="countriesForm">
+                    <li><button type="button" name="brasil" form="counstriesForm" class="form-btns" id="brasil">Brasil</button></li>
+                    <li><button type="button" name="chile" form="counstriesForm" class="form-btns" id="chile">Chile</button></li>
+                    <li><button type="button" name="mexico" form="counstriesForm" class="form-btns" id="mexico">México</button></li>
+                    <li><button type="button" name="Peru" form="counstriesForm" class="form-btns" id="peru">Peru</button></li>
+                </form>
+            </nav>
 
+            <section class="form-filters">
 
-    </section>
+                <div>
+                    <label> select statement</label>
+                    <select id="select-statement"></select>
+                </div>
+                <div id="year">
+                    <label> select year</label>
+                    <select id="select-input"></select>
+                </div>
+
+            </section>
+            </section>
+            <section class="show-content">
 
 
-</main>
+            </section>
 
-<div id="root"></div>
-<script src="./data/worldbank/worldbank.js"></script>
-<script src="main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
-</body>
+        </main>
+
+        <div id="root"></div>
+        <script src="./data/worldbank/worldbank.js"></script>
+        <script src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+    </body>
 
 </html>
