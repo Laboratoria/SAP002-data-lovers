@@ -10,14 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
 
     <body>
-
         <header class="main-title">
             <h1 class="page-title">Geography Helper</h1>
         </header>
         <main class="main-content">
-
             <section class="proposal">Dados Demográficos para facilitar seus estudos</section>
-
             <section class="filters"></section>
             <nav class="choose-countries-list">
                 <h2>Choose the Country that you want to check here:</h2>
@@ -28,33 +25,27 @@
                     <li><button type="button" name="Peru" form="counstriesForm" class="form-btns" id="peru">Peru</button></li>
                 </form>
             </nav>
-
+            </section>
             <section class="form-filters">
-
                 <div>
                     <label> select statement</label>
                     <select id="select-statement"></select>
                 </div>
                 <div id="year">
                     <label> select year</label>
-                    <select id="select-input"></select>
+                    <select id="select-year"></select>
                 </div>
-
+                <button id="public"> public </button>
+                </div>
             </section>
+            <section id="show-content">
+                <div onload="drawChart()"></div>
             </section>
-            <section class="show-content">
-
-
-            </section>
-
-
         </main>
 
         <div id="root"></div>
         <script src="./data/worldbank/worldbank.js"></script>
         <script src="main.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
     </body>
 
 </html>
