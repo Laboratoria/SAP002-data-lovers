@@ -1,112 +1,92 @@
+const productDiv = document.querySelector(".show-champions");
+
+const categories = document.querySelector(".drop-menu-categories");
+const forcas = document.querySelector(".drop-menu-strengths");
+
+categories.addEventListener("change", changeCategories);
+forcas.addEventListener("change", changeStrengths);
 
 window.onload = function() {
-   
-  showAllChampions();
+    showAllChampions();
+};
+
+function changeCategories(){
+    clear();
+    filteres();
+    showAllChampions();
+}
+
+function changeStrengths(){
+    clear();
+    filteres();
+    showAllChampions();
 }
 
 
-let dropMenu = document.querySelector(".drop-menu");
-dropMenu.addEventListener("change", showChampions);
+function getChampions(){
+  const lolData = LOL.data;
+  const champions = Object.keys(lolData).reduce((list, champion) => { 
+   return list.concat(lolData[champion]);
+   }, []);
+   return champions;
+}
+//console.log(getChampions())
 
-// let dropMenuStrengths = document.querySelector(".drop-menu-strengths");
-// dropMenuStrengths.addEventListener("change", showStrengths);
-
-
-function showAllChampions(){       
-  let listChampions = document.querySelector(".show-champions");     
-  for (let champion in LOL.data) {
-       listChampions.innerHTML += `
-       <section class="champions-container">
-          <div  class="show-champions">
-              <div class='card card-color'>
-                  <img src="${LOL.data[champion]['splash']}" class='champions-img' />
-                  <div class="tex-name">
-                      <h2 class="champion-name">${LOL.data[champion]['name']}</h2>
-                      <h4 class="champion-history"><u>History</u> >>></h4>
-                              
-                  </div>
-              </div>
-          </div>
-       </section>
- 
-      `
-  }
- 
+function filteres(){
+    let categoria = categories.value;
+    let forca = forcas.value;
+    let tag = [];
+    let tag2 = [];
+    if(categoria !== 'none' && forca !== 'none'){
+        tag2 = getChampions().filter(championTag => (championTag['tags'].indexOf(categoria) >= 0));
+        tag = tag2.sort((a, b) => (a.info[forca] > b.info[forca] ? 1 : -1));
+    }else if(categoria !== 'none' && forca == 'none'){
+        tag = getChampions().filter(championTag => (championTag['tags'].indexOf(categoria) >= 0));
+    }else if(categoria == 'none' && forca !== 'none'){
+        tag = getChampions().sort((a, b) => (a.info[forca] > b.info[forca] ? 1 : -1));
+    console.log(tag);
+    }else{
+        tag = getChampions();
+    }
+    return tag;
 }
 
 
-function showChampions(){
-  clearResult();
-  let typeChampion = dropMenu.value;    
-  let type;   
-  let listChampions = document.querySelector(".show-champions");     
-  
-  for (let champion in LOL.data) {
-      for(i in LOL.data[champion]["tags"]){
-          type = LOL.data[champion]["tags"][i]
-          if( typeChampion === type){ 
-
-              listChampions.innerHTML += `
-             
-              <section class="champions-container">
-                  <div  class="show-champions">
-                      <div class='card card-color'>
-                          <img src="${LOL.data[champion]['splash']}" class='champions-img' />
-                          <div class="tex-name">
-                              <h2 class="champion-name">${LOL.data[champion]['name']}</h2>
-                              <h1 class="champion-name">${LOL.data[champion]['tags'].join(' - ')}</h1>
-                          </div>
-                      </div>
-                  </div>
-               </section>
- 
-              ` 
-          }
-      }
-  }
-}
-
-// function showStrengths(){
-//     clearResult();
-//     let typeStrengths = dropMenuStrengths.value;    
-//     let type;   
-//     let key;
-//     let listStrengths = document.querySelector(".show-champions");     
-  
-//     for (let champion in LOL.data) {
-//         for(i in LOL.data[champion]["info"]){
-//             type = Object.keys(LOL.data[champion]['info'])
-//             console.log("o que tem em type"+type)
-          
-//             if( typeStrengths === type){ 
-//                 //filtrar quem é o tem o maior valor do tipo selecionado
-
-//                 listStrengths.innerHTML += `
-               
-//                 <section class="champions-container">
-//                     <div  class="show-champions">
-//                         <div class='card card-color'>
-//                             <img src="${LOL.data[champion]['splash']}" class='champions-img' />
-//                             <div class="tex-name">
-//                                 <h2 class="champion-name">${LOL.data[champion]['name']}</h2>
-//                                 <h1 class="champion-name">${LOL.data[champion]['info']}</h1>
-//                             </div>
-//                         </div>
-//                     </div>
-//                  </section>
- 
-//                 `
-//             }
-//         }
-//     }
+// function ordering(){
+//   let orderingCampeaoes =  filteres().sort(function(a, b) {
+//     return +(a['name'].value > b['name'].value) || +(a['name'].value === b['name'].value) - 1;
+//   }
+//   ); 
+//   return orderingCampeaoes;
 // }
 
+// console.log(ordering());
 
-//console.log("objeto"+Object.keys(LOL.data.Aatrox.info))
+function showAllChampions(){       
+ productDiv.innerHTML += `
+   ${filteres().map((champion) =>  `
+    <section class="champions-container">
+       <div  class="show-champions">
+         <div class='card card-color'>
+           <img src="${champion['splash']}" class='champions-img' />
+           <div class="tex-name">
+             <h2 class="champion-name">${champion['name']}</h2>
+             <h3 class="champion-name">${champion['tags']}</h3>
+           </div>
+           <div>
+             <h3 class="champion-info">Attack ${champion.info['attack']}</h3>
+             <h3 class="champion-info">defense ${champion.info['defense']}</h3>
+             <h3 class="champion-info">Magic ${champion.info['magic']}</h3>
+             <h3 class="champion-info">Difficulty ${champion.info['difficulty']}</h3>
+             <h4 class="champion-history"><u>History</u> >>></h4>            
+           </div>
+         </div>
+       </div>
+     </section>
+    `).join("")}
+ `
+}
 
-
-function clearResult(){
-
-  document.querySelector(".show-champions").innerHTML = ""; 
-
+function clear(){
+ productDiv.innerHTML= "";
 }
