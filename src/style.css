@@ -1,23 +1,122 @@
-section {
-    background-color: orange;
-    height: 660px;
+body, .container {
+    margin: 0px;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.container {
+
+.top {
     display: flex;
-    flex-direction: row;
-    margin: 35px 0px;
+    align-items: center;
+    background: url(img/background-data-lovers.png) no-repeat center center;
+    background-size: 100%;
+    background-attachment: fixed;
+    /* opacity: .4; */
 }
+
+.container-capa{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+
+
+h1, h2 {
+    color: #FFFFFF;
+    left: 27%;
+}
+
+.ball-left, .ball-right, h1, h2 {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    opacity: .9;
+    
+
+}
+
+.ball-left, .ball-right {
+    animation:rotate 20s linear infinite
+
+}
+
+.ball-right::before{
+    animation:rotate 3s linear reverse infinite; }
+@keyframes rotate { 100% { transform:rotate(-360deg); }
+
+}
+
+
+.ball-left{
+    background-color: #FC9453;
+    left: 27%;
+}
+.ball-right{
+    background-color: #52514E;
+    left: 50%;
+}
+
+.menu, .btn-violence, .btn-education, .btn-population, .country * {
+    background-color: #FC9453;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+  }
+
+  .menu{
+    border-radius: 25px;
+  }
+
+ 
+
+  .btn-violence, .btn-education, .btn-population {
+    background-color: #4B4A47;
+    border-radius: 145px;
+    width: 210px;
+    height: 235px;
+  }
+
+  .menu:hover {
+    background-color: rgb(224, 189, 167);
+  }
+
+  aside {
+      display: flex;
+      flex-direction: column;
+  }
+
 
 .box-select {
     display: flex;
     width: 49%;
-    /* flex-wrap: wrap; */
+    flex-direction: column;
 }
 
-.img-bra, .img-mex, .img-per, .img-chi {
-    width: 20%;
+.box-country * {
+    width: 100%;
+    flex-basis: 49%;
 }
+
+.box-country {
+    display: flex;
+    flex-wrap: wrap;
+    width: 49%;
+
+}
+
+.country-selection, .indicator-selection{
+    display: flex;
+    flex-direction: row;
+}
+
 
 .p-country {
     position: relative;
@@ -26,7 +125,7 @@ section {
     left: 37px;
 }
 
-article {
+article, .country {
     display: flex;
     flex-direction: column;
     width: 49%;
