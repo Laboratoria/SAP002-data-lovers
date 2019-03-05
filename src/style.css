@@ -1,11 +1,13 @@
-body {
+body, .container {
     margin: 0px;
+    height: 100vh;
     font-family: 'Montserrat', sans-serif;
 }
+
+
 .top {
     display: flex;
     align-items: center;
-    height: 85vh;
     background: url(img/background-data-lovers.png) no-repeat center center;
     background-size: 100%;
     background-attachment: fixed;
@@ -14,9 +16,12 @@ body {
 
 .container-capa{
     display: flex;
-    align-items: center
+    align-items: center;
+    flex-direction: row;
 
 }
+
+
 
 h1, h2 {
     color: #FFFFFF;
@@ -29,6 +34,11 @@ h1, h2 {
     height: 360px;
     border-radius: 50%;
     opacity: .9;
+    
+
+}
+
+.ball-left, .ball-right {
     animation:rotate 20s linear infinite
 
 }
@@ -49,7 +59,7 @@ h1, h2 {
     left: 50%;
 }
 
-.menu, .btn-violence, .btn-education, .btn-population {
+.menu, .btn-violence, .btn-education, .btn-population, .country * {
     background-color: #FC9453;
     border: none;
     color: white;
@@ -70,8 +80,8 @@ h1, h2 {
   .btn-violence, .btn-education, .btn-population {
     background-color: #4B4A47;
     border-radius: 145px;
-    width: 250px;
-    height: 250px;
+    width: 210px;
+    height: 235px;
   }
 
   .menu:hover {
@@ -84,23 +94,29 @@ h1, h2 {
   }
 
 
-
-
-.container {
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 35px 0px;
-}
-
 .box-select {
     display: flex;
     width: 49%;
-    /* flex-wrap: wrap; */
+    flex-direction: column;
 }
 
-.img-bra, .img-mex, .img-per, .img-chi {
-    width: 20%;
+.box-country * {
+    width: 100%;
+    flex-basis: 49%;
 }
+
+.box-country {
+    display: flex;
+    flex-wrap: wrap;
+    width: 49%;
+
+}
+
+.country-selection, .indicator-selection{
+    display: flex;
+    flex-direction: row;
+}
+
 
 .p-country {
     position: relative;
@@ -109,7 +125,7 @@ h1, h2 {
     left: 37px;
 }
 
-article {
+article, .country {
     display: flex;
     flex-direction: column;
     width: 49%;
