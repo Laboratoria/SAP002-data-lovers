@@ -1,6 +1,15 @@
-let btnIndicators = document.querySelector("#btnIndicators");
-btnIndicators.addEventListener("click", createIndicatorsTable);
+function init() {
+    // declara variável que é um ponteiro para o elemento button no HTML
+    // estou usando o método querySelector do DOM para buscar o elemento pelo seu ID (#btnIndicators)
+    // o hash # indica que está usando um id, seria identico a usar o método getElementById
+    let btnIndicators = document.querySelector("#btnIndicators");
 
+    // adicionando um "escutador de eventos" para o evento click do mouse no botão que tem o id btnIndicators
+    // falando para executar a função de nome createIndicatorsTable
+    btnIndicators.addEventListener("click", createIndicatorsTable);
+}
+
+// declaração da função createIndicatorsTable e da lógica dela
 function createIndicatorsTable() {
     let countrySelect = document.querySelector("#country");
     let countryCode = countrySelect.options[countrySelect.selectedIndex].value;
@@ -12,6 +21,16 @@ function createIndicatorsTable() {
     let countryData = WORLDBANK[countryCode].indicators.filter(indicator => {
         return indicator.indicatorName.toUpperCase().includes(dataFilter.toUpperCase());
     });
+    // let countryData = WORLDBANK[countryCode].indicators.filter(indicator => {
+    //     // if (indicator.indicatorName.toUpperCase().includes("EMPLEO")) return true;
+    //     // if (indicator.indicatorName.toUpperCase().includes("MUJERES")) return true;
+    //     // if (indicator.indicatorName.toUpperCase().includes("LABORAL")) return true;
+    //     // if (indicator.indicatorName.toUpperCase().includes("EDUCACION")) return true;
+    //     if (indicator.indicatorCode === "GAFGFA.JHHJHA.GHGH") return true;
+    //     return false;
+    // });
+
+    countryData.sort(function(a, b) {return a.indicatorName.localeCompare(b.indicatorName);});
 
     // monta a tabela de indicadores
     let indicatorsTable = document.createElement("table");

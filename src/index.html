@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./data/worldbank/worldbank.js"></script>
+    <script src="main.js"></script>
   </head>
-  <body>
+  <body onload="init();">
      <nav id="filterControls">
         <label>Selecione o país:</label>
         <select id="country">
@@ -16,7 +18,7 @@
         </select>
   
         <label>Informe o filtro dos indicadores:</label>
-        <input type="text" id="dataFilter" value="Empleo" />
+        <input type="text" id="dataFilter" value="" />
   
         <label>Informe o ano inicial:</label>
         <input id="initialYear" type="number" min="2000" max="2017" value="2000" />
@@ -36,7 +38,5 @@
     <footer>
     </footer>
 
-    <script src="./data/worldbank/worldbank.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>
