@@ -24,13 +24,13 @@ body {
 .champion-history:hover {
     cursor:pointer;
     color:#d1d3d5;
-  }
+}
 
 .select-icon {
-    background-image: url("icon-game-lol.png");
-    background-repeat: no-repeat;
-    padding: 30px 20px 10px 500px;
-    margin-top: 0.5vw;
+  background-image: url("icon-game-lol.png");
+  background-repeat: no-repeat;
+  padding: 3vw 2vw 1vw 50vw;
+  margin-top: 0.5vw;
 }
 
 .tilte {
@@ -42,87 +42,140 @@ body {
 }
 
 .h1-header{
-    text-align: center;
-    color:#d1d3d5;
-    display: flex;
-    justify-content: center;
-    margin-top: -7.5%;
-    font-weight: 400;
+  text-align: center;
+  color:#d1d3d5;
+  display: flex;
+  justify-content: center;
+  margin-top: -7.5%;
+  font-weight: 400;
 }
 
 .drop-color,
 .nav-color{
-    background-color:black;
-    border: 1px black;
-    color: #c9aa71;
-    font-weight: 700;
-    text-align: right;
-    padding: 4px;
+  background-color:black;
+  border: 1px black;
+  color: #c9aa71;
+  font-weight: 700;
+  text-align: right;
+  padding: 4px;
 }
 
 .box-drop{
   width:200px;
-
 }
+
 .card-color {
-    text-align: left;
-    border: 1px rgba(10,10,12,.9);
-    /*! width: 200px; */
-    font-weight: 700;
-    background-color:  rgba(10,10,12,.9);
-    color: #c9aa71;
-    transition: .4s;
+  text-align: left;
+  border: 1px rgba(10,10,12,.9);
+  font-weight: 700;
+  background-color:  rgba(10,10,12,.9);
+  color: #c9aa71;
+  transition: .4s;
 }
 
 .logo-container{
-    display: flex;
-    justify-content: center;
-    padding: 30px 0 0 0;
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;  
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 0 0;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;  
 }
 
   
 .champions-container {
-    display: flex; 
-    margin-top: 1vw;    
+  display: flex; 
+  margin-top: 1vw;    
 }
 
 
 .champions-img{
-    width: 280px;
-    height: 320px;
-    margin: 5px;
-    padding: 5px;
+  width: 18vw;
+  height: 20vw;
+  margin: 1vw;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.champions-img-back{
+  width: 12vw;
+  height: 10vw;
+  padding: 10px;
+  border-radius: 20px;
 }
 
   
 .champion-name .champion-tag {
-    text-align: center;
-    margin: auto;
-    font-size: 1rem;
-    width: 70%;
-    padding: 15px;
+  text-align: center;
+  margin: auto;
+  font-size: 1rem;
+  width: 70%;
+  padding: 15px;
+}
+
+.champion-info{
+  color:#d1d3d5;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
   
 .card {   
-    padding: 15px;
-    text-align: center;
-    transition: .4s;
+  padding: 15px;
+  text-align: center;
+  transition: .4s;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  width: 20vw;
+  height: 40vw;
+  padding: 5px;
+  border-radius: 20px;
 }
 
- .show-champions {
-    justify-content: space-around;    
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;    
+.card:hover{
+    transform: rotateY(180deg);
+}
+  
+  
+.thefront{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+  
+ 
+.theback{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
+  backface-visibility: hidden;
+  overflow: hidden;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  background-color: #b6a079;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.show-champions {
+  justify-content: center;    
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;    
+  padding: 10px;
 }
 
 .tex-name {
-    border-top: 1px solid #927345;
+  border-top: 1px solid #927345;
 }
   
  
