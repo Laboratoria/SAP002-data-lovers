@@ -28,7 +28,7 @@ h1, h2 {
     left: 27%;
 }
 
-.ball-left, .ball-right, h1, h2 {
+.ball-left, .ball-right, .ball-topic, h1, h2 {
     position: absolute;
     width: 360px;
     height: 360px;
@@ -37,6 +37,14 @@ h1, h2 {
     
 
 }
+
+.ball-topic {
+    opacity: 1.9;
+    position: absolute;
+    width: 340px;
+    height: 340px;
+}
+
 
 .ball-left, .ball-right {
     animation:rotate 20s linear infinite
@@ -54,10 +62,45 @@ h1, h2 {
     background-color: #FC9453;
     left: 27%;
 }
-.ball-right{
+.ball-right, .ball-topic{
     background-color: #52514E;
     left: 50%;
 }
+
+.element {
+    display:flex;
+  }
+      
+      
+      .elemA, .elemB {
+        position: relative;
+        text-align: center;
+        padding: 50px;
+        margin-bottom: 6px;
+        height: 60px;
+        width: 200px;
+      }
+      .elemA:before, .elemB:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 80%;
+        width: 50%;
+        background: #FF914D;
+        transform: skew(0deg, -50deg);
+      }
+      .elemA:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 80%;
+        width: 50%;
+        background: #FF914D;
+        transform: skew(0deg, 50deg);
+      }
+  
 
 .menu, .btn-violence, .btn-education, .btn-population, .country * {
     background-color: #FC9453;
@@ -88,7 +131,7 @@ h1, h2 {
     background-color: rgb(224, 189, 167);
   }
 
-  aside {
+  aside. .text-topic {
       display: flex;
       flex-direction: column;
   }
@@ -115,6 +158,7 @@ h1, h2 {
 .country-selection, .indicator-selection{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 
@@ -125,10 +169,20 @@ h1, h2 {
     left: 37px;
 }
 
+.topic-text-element {
+    color: white;
+    position: relative;
+    left: 5%;
+}
+
 article, .country {
     display: flex;
     flex-direction: column;
     width: 49%;
 
+}
+
+.country-selection {
+    background-color: red;
 }
 
