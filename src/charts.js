@@ -14,6 +14,12 @@ const dataTresPaisDois = WORLDBANK["BRA"]["indicators"][74]["data"][2015]
 const nomeIndicPaisDois = WORLDBANK["BRA"]["indicators"][74]["indicatorName"]
 const nomePaisPaisDois = WORLDBANK["BRA"]["indicators"][74]["countryName"]
 
+//BRASIL
+
+const nomePaisPaisTres = ''
+const dataUmsPaisTres = ''
+const dataDoisPaisTres = ''
+const dataTresPaisTres = ''
 
 
       google.charts.load('current', {'packages':['bar']});
@@ -21,10 +27,10 @@ const nomePaisPaisDois = WORLDBANK["BRA"]["indicators"][74]["countryName"]
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', nomePaisUm, nomePaisPaisDois],
-          ['2013', dataPaisUm, dataUmPaisDois],
-          ['2014', dataDoisPaisUm, dataDoisPaisDois],
-          ['2015', dataTresPaisUm, dataTresPaisDois]
+          ['Year', nomePaisUm, nomePaisPaisDois, nomePaisPaisTres],
+          ['2013', dataPaisUm, dataUmPaisDois, dataUmsPaisTres],
+          ['2014', dataDoisPaisUm, dataDoisPaisDois, dataDoisPaisTres],
+          ['2015', dataTresPaisUm, dataTresPaisDois, dataTresPaisTres]
         ]);
 
         var options = {
