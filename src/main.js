@@ -1,4 +1,3 @@
-
 const divShowChampions = document.querySelector(".show-champions");
 const categoriesChampions = document.querySelector(".drop-menu-categories");
 const sortChampions = document.querySelector(".drop-menu-order");
@@ -87,3 +86,8 @@ function ordering(filteres){
     `)}
  `
 }
+//tirou o join testar 
+
+//    `).join("")}
+// `
+//}
