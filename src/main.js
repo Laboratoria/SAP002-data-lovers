@@ -4,7 +4,7 @@
 
 // function getData(){
 //   return Object.values(WORLDBANK)
-  
+
 // }
 // console.log(getData())
 
@@ -63,8 +63,8 @@ Dados somente em PERU - Lembrar ideia dashboars para este tema*/
 
 
 
-function indicaEduca (array, attr) {
-  for (let elem of arrayIndica){
+function indicaEduca(array, attr) {
+  for (let elem of arrayIndica) {
     console.log(array, attr);
     console.log(elem)
   }
@@ -72,12 +72,12 @@ function indicaEduca (array, attr) {
 
 
 function indexIndicator(array, attr, value) {
-    for(var i = 0; i < array.length; i++) {
-        if(array[i][attr] === value) {
-            return i;
-        }
+  for (var i = 0; i < array.length; i++) {
+    if (array[i][attr] === value) {
+      return i;
     }
-    return -1;
+  }
+  return -1;
 }
 
 const arrayIndicaBra = WORLDBANK.BRA.indicators
@@ -85,11 +85,43 @@ const arrayIndicaPer = WORLDBANK.PER.indicators
 const arrayIndicaMex = WORLDBANK.MEX.indicators
 const arrayIndicaChi = WORLDBANK.CHL.indicators
 
-let indicaEducaABra = indexIndicator(arrayIndicaBra, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)')
+function getEducaBra() {
+  indexIndicator(arrayIndicaBra, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)')
 
-let indicaEducaBBra = indexIndicator(arrayIndicaBra, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación secundaria (%)')
+  indexIndicator(arrayIndicaBra, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación secundaria (%)')
 
-let indicaEducaCBra = indexIndicator(arrayIndicaBra, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación terciaria (%)')
+  indexIndicator(arrayIndicaBra, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación terciaria (%)')
+
+}
+
+function getEducaChl() {
+  indexIndicator(arrayIndicaChi, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)')
+
+  indexIndicator(arrayIndicaChi, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación secundaria (%)')
+
+  indexIndicator(arrayIndicaChi, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación terciaria (%)')
+
+}
+
+function getEducaMex() {
+  indexIndicator(arrayIndicaMex, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)')
+
+  indexIndicator(arrayIndicaMex, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación secundaria (%)')
+
+  indexIndicator(arrayIndicaMex, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación terciaria (%)')
+
+}
+
+
+function getEducaMex() {
+  indexIndicator(arrayIndicaMex, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación primaria (%)')
+
+  indexIndicator(arrayIndicaMex, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación secundaria (%)')
+
+  indexIndicator(arrayIndicaMex, 'indicatorName', 'Proporción de inscripciones de mujeres con respecto a varones en la educación terciaria (%)')
+
+}
+
 
 console.log(indicaEducaABra, indicaEducaBBra, indicaEducaCBra)
 
