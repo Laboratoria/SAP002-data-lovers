@@ -11,7 +11,6 @@ body {
 .navegation {
     background-color: yellow;
     position: fixed;
-    
     /* align-items:center; */
     height: 80px;
     width: 100%;
@@ -45,7 +44,9 @@ header {
     height:auto;
     margin: 0;
     padding: 0;
+    
 }
+
 .logo {
     width: 50%;
     height: auto;
@@ -67,7 +68,7 @@ aside ul {
     padding-left: 0px;
 }
 
-aside li {
+.active, aside li {
     padding: 5px;
     padding-left: 20px;
     border: 1px solid black;
@@ -78,6 +79,32 @@ aside li {
 
 aside li:hover {
     background-color: rgb(14, 199, 231);
+}
+
+.collapsible {
+    padding: 5px;
+    padding-left: 20px;
+    border: 1px solid black;
+    font-size: 18x;
+    background-color: #005797;
+    color: white;
+}
+
+.activeMenu, .collapsible:hover {
+    background-color: rgb(14, 199, 231);
+}
+
+/* add icon */
+.collapsible:after {
+    content: '\2193'; /* Unicode caracter */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2191"; /* Unicode caracter */
 }
 
 .sideBarSubMenu {
