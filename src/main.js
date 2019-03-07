@@ -239,5 +239,15 @@ for(let el of elements) {
 
 function printValue(event) {
   valor = document.getElementById("formEduca").indicator.value;
-  console.log(valor);
+  document.getElementById('escolha').innerHTML = valor;
+  return valor
 }
+
+function getContent() {
+  return document.getElementById("escolha").innerHTML;
+}
+
+console.log()
+const verData = WORLDBANK["BRA"]["indicators"][74]["data"][2015]
+
+
