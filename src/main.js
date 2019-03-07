@@ -79,10 +79,10 @@ function showPokemons(pokemons) {
                 document.getElementById("pokemon-container").innerHTML=`
 
                 <img src = "${getPokemons()[e.target.id-1]["img"]}"/>
-                <div>
-                <p>${getPokemons()[e.target.id-1]["name"]}</p>
-                <p>Altura: ${getPokemons()[e.target.id-1]["height"]}</p>
-                <p>Peso: ${getPokemons()[e.target.id-1]["weight"]}</p>
+                <div class="functionGetPokemons">
+                <p><strong>${getPokemons()[e.target.id-1]["name"]}</strong></p>
+                <p><strong>Altura: </strong>${getPokemons()[e.target.id-1]["height"]}</p>
+                <p><strong>Peso: </strong>${getPokemons()[e.target.id-1]["weight"]}</p>
                 </div>
                 `}
         )
