@@ -4,10 +4,13 @@ body{
 }
 
 .top{
-    background-color: #04dabe;
-   
+    background-color: #54C3D7;
     display: flex;
     justify-content: space-evenly;
+}
+
+.top-img{
+    padding: 10px;
 }
 
 .top-nav{
@@ -21,6 +24,7 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
     margin: 20px;
+    border-radius: 50px;
     
 }
 
