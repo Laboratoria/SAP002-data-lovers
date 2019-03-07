@@ -1,15 +1,17 @@
 window.onload = function() {
     // alert("carregou");
-    showPokemons(getPokemons());
+    showPokemons(getPokemons())
 
-};
-let pokemons = getPokemons()
-let selectedPokemons = pokemons
+}
 
 function getPokemons() {
     return POKEMON["pokemon"]
 }
 
+let pokemons = getPokemons()
+let selectedPokemons = pokemons
+const dropDownOrder = document.getElementById("dropdown-order")
+let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
 
 dropDownFilter.addEventListener('change',
@@ -20,81 +22,69 @@ dropDownFilter.addEventListener('change',
         if (type != "All") {
             pokemons = pokemons.filter(pokemon => pokemon["type"].includes(type))
         }
+        orderPokemons(order)
         showPokemons(pokemons)
     }
 )
-const dropDownOrder = document.getElementById("dropdown-order")
 
 dropDownOrder.addEventListener('change',
     function() {
-        let order = dropDownOrder.value
-        switch (order) {
-            case "pokedex-num":
-                pokemons = pokemons.sort(compareById)
-
-                showPokemons(pokemons)
-                break
-            case "height":
-                pokemons = pokemons.sort(compareByHeight)
-                showPokemons(pokemons)
-                break
-            case "weight":
-                pokemons = pokemons.sort(compareByWeight)
-                showPokemons(pokemons)
-                break
-            case "spawn_chance":
-                pokemons = pokemons.sort(compareBySpawnChance)
-                showPokemons(pokemons)
-                break
-            case "alpha":
-                pokemons = pokemons.sort(compareByName)
-                showPokemons(pokemons)
-                break
-
-        }
-
+        order = dropDownOrder.value
+        orderPokemons(order)
+        showPokemons(pokemons)
     }
+
 )
 
-function compareById(a, b) {
-    return Number(a["id"]) - Number(b["id"])
+function orderPokemons(order) {
+    switch (order) {
+        case "pokedex-num":
+            pokemons = pokemons.sort(compareById)
+            break
+        case "height":
+            pokemons = pokemons.sort(compareByHeight)
+            break
+        case "weight":
+            pokemons = pokemons.sort(compareByWeight)
+            break
+        case "spawn_chance":
+            pokemons = pokemons.sort(compareBySpawnChance)
+            break
+        case "alpha":
+            pokemons = pokemons.sort(compareByName)
+            break
+    }
 }
 
-function compareByHeight(a, b) {
-    return Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
-}
+compareById = (a, b) => Number(a["id"]) - Number(b["id"])
+compareByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+compareByWeight = (a, b) => Number(a["weight"].split(" ")[0]) - Number(b["weight"].split(" ")[0])
+compareByName = (a, b) => a["name"].localeCompare(b["name"])
+compareBySpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
+compareByPokedexNum = (a, b) => Number(a["num"]) - Number(b["num"])
 
-function compareByWeight(a, b) {
-    return Number(a["weight"].split(" ")[0]) - Number(b["weight"].split(" ")[0])
-}
-
-function compareByName(a, b) {
-    return a["name"].localeCompare(b["name"])
-
-}
-
-function compareBySpawnChance(a, b) {
-    return Number(a["spawn_chance"]) - Number(b["spawn_chance"])
-}
-
-function compareByPokedexNum(a, b) {
-    return Number(a["num"]) - Number(b["num"])
-}
 
 function showPokemons(pokemons) {
-    const pokemonDiv = document.getElementById("pokemons-div")
-    pokemonDiv.innerHTML = `
-    ${pokemons.map((pokemon)=> `
-      <figure class="pokemon">
-        <img src= "${pokemon["img"]}"
-          class ="pokemon-img" id = "${pokemon["id"]}/>
-         </figure>
-      `).join("")}
-  `
+    document.querySelector(".pokemons-div").innerHTML = `
+    ${pokemons.map((pokemon)=>
+`      <div class="pokemon">
+         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
+       </div>`).join("")}`
+
+       pokemonFigures= document.querySelectorAll(".pokemon-img")
+    for(pokemonFigure of pokemonFigures){
+        pokemonFigure.addEventListener('click',
+            function(e){
+
+                document.getElementById("pokemon-container").innerHTML=`
+
+                <img src = "${getPokemons()[e.target.id-1]["img"]}"/>
+                <div>
+                <p>${getPokemons()[e.target.id-1]["name"]}</p>
+                <p>Altura: ${getPokemons()[e.target.id-1]["height"]}</p>
+                <p>Peso: ${getPokemons()[e.target.id-1]["weight"]}</p>
+                </div>
+                `}
+        )
+    }
 }
-
-pokemonFigures= document.querySelectorAll(".pokemon-img")
-pokemonFigures.addEventListener('click',
-function(){
-
-})
