@@ -13,22 +13,17 @@ function init() {
 function createIndicatorsTable() {
     let countrySelect = document.querySelector("#country");
     let countryCode = countrySelect.options[countrySelect.selectedIndex].value;
-    let dataFilter = document.querySelector("#dataFilter").value;
+    let filterSelect = document.querySelector("#filter");
+    let filterWord = filterSelect.options[filterSelect.selectedIndex].value;
     let initialYear = document.querySelector("#initialYear").value;
 
     // seleciona os indicadores do país escolhido
     // e aplica o flitro de indicadores
     let countryData = WORLDBANK[countryCode].indicators.filter(indicator => {
-        return indicator.indicatorName.toUpperCase().includes(dataFilter.toUpperCase());
+        if (indicator.indicatorName.toUpperCase().includes(filterWord)) return true;
+        //if (indicator.indicatorCode === "GAFGFA.JHHJHA.GHGH") return true;
+        return false;
     });
-    // let countryData = WORLDBANK[countryCode].indicators.filter(indicator => {
-    //     // if (indicator.indicatorName.toUpperCase().includes("EMPLEO")) return true;
-    //     // if (indicator.indicatorName.toUpperCase().includes("MUJERES")) return true;
-    //     // if (indicator.indicatorName.toUpperCase().includes("LABORAL")) return true;
-    //     // if (indicator.indicatorName.toUpperCase().includes("EDUCACION")) return true;
-    //     if (indicator.indicatorCode === "GAFGFA.JHHJHA.GHGH") return true;
-    //     return false;
-    // });
 
     countryData.sort(function(a, b) {return a.indicatorName.localeCompare(b.indicatorName);});
 
