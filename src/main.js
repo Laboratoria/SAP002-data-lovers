@@ -9,7 +9,6 @@ function getPokemons() {
 }
 
 let pokemons = getPokemons()
-let selectedPokemons = pokemons
 const dropDownOrder = document.getElementById("dropdown-order")
 let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
@@ -19,7 +18,6 @@ dropDownFilter.addEventListener('change',
     function() {
         let type = dropDownFilter.value
         pokemons = getPokemons()
-        console.log(type)
         if (type != "All") {
             pokemons = pokemons.filter(pokemon => pokemon["type"].includes(type))
         }
@@ -34,25 +32,27 @@ dropDownOrder.addEventListener('change',
         orderPokemons(order)
         showPokemons(pokemons)
     }
-
 )
 
 function orderPokemons(order) {
+
     switch (order) {
         case "pokedex-num":
-            pokemons = pokemons.sort(compareById)
+            pokemons.sort(compareById)
+
             break
         case "height":
-            pokemons = pokemons.sort(compareByHeight)
+            pokemons.sort(compareByHeight)
+            console.log('entrou height')
             break
         case "weight":
-            pokemons = pokemons.sort(compareByWeight)
+            pokemons.sort(compareByWeight)
             break
         case "spawn_chance":
-            pokemons = pokemons.sort(compareBySpawnChance)
+            pokemons.sort(compareBySpawnChance)
             break
         case "alpha":
-            pokemons = pokemons.sort(compareByName)
+            pokemons.sort(compareByName)
             break
     }
 }
@@ -66,24 +66,23 @@ compareByPokedexNum = (a, b) => Number(a["num"]) - Number(b["num"])
 
 
 function showPokemons(pokemons) {
+    orderPokemons(order)
     document.querySelector(".pokemons-div").innerHTML = `
     ${pokemons.map((pokemon)=>
 `      <div class="pokemon">
          <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
        </div>`).join("")}`
 
-       pokemonFigures= document.querySelectorAll(".pokemon-img")
-    for(pokemonFigure of pokemonFigures){
+       for(pokemonFigure of document.querySelectorAll(".pokemon-img")){
         pokemonFigure.addEventListener('click',
             function(e){
-
+                selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
                 document.getElementById("pokemon-container").innerHTML=`
-
-                <img src = "${getPokemons()[e.target.id-1]["img"]}"/>
+                <img src = "${selectedPokemon["img"]}"/>
                 <div class="functionGetPokemons">
-                <p><strong>${getPokemons()[e.target.id-1]["name"]}</strong></p>
-                <p><strong>Altura: </strong>${getPokemons()[e.target.id-1]["height"]}</p>
-                <p><strong>Peso: </strong>${getPokemons()[e.target.id-1]["weight"]}</p>
+                <p><strong>${selectedPokemon["name"]}</strong></p>
+                <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
+                <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
                 </div>
                     `
                 modal.classList.add('display-block')
