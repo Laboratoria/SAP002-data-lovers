@@ -13,6 +13,7 @@ let selectedPokemons = pokemons
 const dropDownOrder = document.getElementById("dropdown-order")
 let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
+const modal = document.querySelector(".modal")
 
 dropDownFilter.addEventListener('change',
     function() {
@@ -84,7 +85,17 @@ function showPokemons(pokemons) {
                 <p><strong>Altura: </strong>${getPokemons()[e.target.id-1]["height"]}</p>
                 <p><strong>Peso: </strong>${getPokemons()[e.target.id-1]["weight"]}</p>
                 </div>
-                `}
+                    `
+                modal.classList.add('display-block')
+            }
         )
     }
+}
+
+window.addEventListener('click', outsideClick)
+
+function outsideClick(e){
+    if (e.target == modal) {
+        modal.classList.remove('display-block')
+      }
 }
