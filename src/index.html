@@ -2,48 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Amantes de los Datos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
+</head>
 
-    <body>
-        <header class="main-title">
-            <h1 class="page-title">Geography Helper</h1>
-        </header>
-        <main class="main-content">
-            <section class="proposal">Dados Demográficos para facilitar seus estudos</section>
-            <section class="filters"></section>
-            <nav class="choose-countries-list">
-                <h2>Choose the Country that you want to check here:</h2>
-                <form class="choose-countries-form" id="countriesForm">
-                    <li><button type="button" name="brasil" form="counstriesForm" class="form-btns" id="brasil">Brasil</button></li>
-                    <li><button type="button" name="chile" form="counstriesForm" class="form-btns" id="chile">Chile</button></li>
-                    <li><button type="button" name="mexico" form="counstriesForm" class="form-btns" id="mexico">México</button></li>
-                    <li><button type="button" name="Peru" form="counstriesForm" class="form-btns" id="peru">Peru</button></li>
-                </form>
-            </nav>
-            </section>
-            <section class="form-filters">
-                <div>
-                    <label> select statement</label>
-                    <select id="select-statement"></select>
-                </div>
-                <div id="year">
-                    <label> select year</label>
-                    <select multiple id="select-year"></select>
-                </div>
-            </section>
-            <section id="show-content">
-                <div onload="drawChart()"></div>
-            </section>
-        </main>
+<body>
+  <header class="main-title">
+    <h1 class="page-title">Ayudante de Geopolítica</h1>
+    <p class="proposal">Datos demográficos para facilitar sus estudios</p>
+  </header>
 
-        <div id="root"></div>
-        <script src="./data/worldbank/worldbank.js"></script>
-        <script src="main.js"></script>
-    </body>
+  <nav class="choose-countries-list">
+    <h2>Elige el país que desea consultar aquí:</h2>
+    <ul class="nav-countries" id="countries-list">
+      <button class="nav-btn"  id="brasil" >Brasil</button>
+      <button class="nav-btn"  id="chile">Chile</button>
+      <button class="nav-btn"  id="mexico">México</button>
+      <button class="nav-btn"  id="peru">Peru</button>
+    </ul>
+
+    <form class="nav-filters">
+      <label>
+          Elige el indicador geopolítico
+          <select  class="custom-select" id="select-indicator"></select>
+        </label>
+
+      <label>
+        Eligir el año
+        <select class="custom-select" multiple id="select-year"></select>
+        </label>
+    </form>
+  </nav>
+
+  <main class="main-content" id="main-content">
+    <section class="content-map"> <img id="maps" class="map"src="/src/img/wrd.png" alt="mapa" > </section>
+    <section class="content-graph" id=> </section>
+    <section class="content-table">        
+      <div id="indicator"> </div>
+      <table class="table" id="table"></table>
+    </section>
+      
+  </main>
+
+  <footer>
+    ¡Hola Mundo!
+  </footer>
+
+  <script src="./data/worldbank/worldbank.js"></script>
+  <script src="main.js"></script>
+ </body>
 
 </html>

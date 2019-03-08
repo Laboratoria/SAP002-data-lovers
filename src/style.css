@@ -1,70 +1,104 @@
-body {
-    margin: 0;
-    background: gray
+*{
+margin: 0;
+padding: 0;
 }
+
+body {
+  background: #F1F1F1;
+  font-family: Raleway;
+ }
 
 .main-title {
-    background-color: #1E90FF;
-    padding: 5px;
-    font-family: Oswald;
-    font-size: 20px;
-}
-
-.main-content {
-    width: 100%;
-    height: auto;
+background-color: #8AC6E2;
+padding: 10px;
+font-family: Oswald;
+font-size: 20px;
 }
 
 .proposal {
-    width: 60%;
-    height: 50px;
-    margin: 30px auto;
-    /* padding: 30px; */
-    display: flex;
-    box-sizing: border-box;
-    background-color: #40E0D0;
-    text-align: center;
-    font-family: Raleway;
-}
-
-.filters {
-    display: flex;
-}
+width: auto;
+height: auto;
+margin: auto;
+padding: 10px;
+ }
 
 .choose-countries-list,
-.form-filters {
-    width: 40%;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    list-style: none;
-    background-color: #F08080;
-    padding: 20px;
-    font-family: Raleway;
-    font-size: 15px;
-    color: beige;
-    flex-direction: row;
+.nav-filters {
+width:auto; 
+height: auto;
+margin-bottom: 20px;
+background-color:#F1F1F1;
+padding: 20px;
+
 }
 
-.choose-countries-form {
-    display: flex;
+.nav-btn {
+  width: 20%;
+  height: auto;
+  margin: 20px;
+  padding: 10px;
+  font-size: 30px;
+  background-color: #F1F1F1;;
+   
+  border-radius: .5em;
 }
 
-.form-btns {
-    flex-direction: row;
-    margin: 12px;
-    padding: 6px 12px;
-    font-size: 20px;
-    background-color: transparent;
-    border: 2px solid beige;
-    color: beige;
+.nav-btn:hover {
+  background-color: #92D08B;
+  text-decoration: none;
 }
 
-.form-btns:hover {
-    background-color: #40E0D0;
-    text-decoration: none;
+.nav-filters {
+  display: inline-flex;
+   flex-direction: row;
 }
 
-.form-filters {
-    display: flex;
-    flex-directiom: row;
+.custom-select {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .5em;
+  margin: .6em;   
+  padding: .6em 1.4em .5em .8em;
+  width: 98%;
+  height: 3.4em;
+  font-family: Raleway;
+  font-size: 15px;
+  overflow: hidden;
+}  
+
+.custom-select:hover {
+  border-color: #92D08B;
 }
+
+.custom-select:focus {
+  border-color:  #92D08B;
+  box-shadow: 0 0 1px 3px rgb(146, 208, 139 ,.7);
+  box-shadow: 0 0 0 3px;
+  color: #222; 
+  outline: none;
+}
+
+.main-content {
+  display: flex;
+  align-content: center;
+  width: 100%;
+  height: auto;
+}
+
+
+.map {
+width: 300px;
+height: 200px;
+box-shadow: #858585 0 3px 0 3px;
+}
+
+
+.table {
+  border-color: black;
+}
+
+ 
+
+  
