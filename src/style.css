@@ -6,6 +6,7 @@
     color: #47525E;
 }
 
+
 /* body {
     font-family: Khula, sans-serif;
     color: #47525E;
@@ -54,12 +55,12 @@ section {
 
 select {
     background-color: rgb(232, 223, 241);
-    color:  #7E459B;
+    color: #7E459B;
     width: 139px;
     height: 50px;
     /* -webkit-appearance: listbox;
     cursor: pointer; */
-    font-size: 16px; 
+    font-size: 16px;
     border: 1px solid #7E459B;
     border-radius: 30px;
     margin-left: 10px;
@@ -122,29 +123,39 @@ main {
     transform: scale(1.2);
 }
 
-
-.show-pokemon-background {
-    background-image: linear-gradient(rgb(182, 199, 228),rgb(135, 155, 189) );
+.modal {
+    display: none;
+    position: fixed;
     z-index: 1000;
-    /* width: 100vw;
-    height: 100vh; */
-    padding: 45px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .functionGetPokemons {
     padding: 45px;
-    
 }
 
 .pokemon-container {
-    background-color:  rgba(247, 233, 247, 0.867);
+    background-color: rgba(247, 233, 247, 0.867);
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 7px;
-    display: flex;
     justify-content: center;
     z-index: 2000;
     width: 50vw;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
     font-size: 20px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
 }
