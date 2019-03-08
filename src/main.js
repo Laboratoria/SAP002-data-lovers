@@ -12,30 +12,32 @@ orderAzSelect.addEventListener('change', function(){
     if(orderAzSelect.selectedIndex === 1){
         console.log(orderAz())
 
-    }else{ alert('Selecione uma opção!')}
+    }else{ alert('Selecione uma opção!')
+    }
 })
-
-
-//fazer funcao para ordenar
 
 function orderAz (){
     let showPokemon = document.getElementById('show-pokemon');
     
-    let orderPokemon = getPokemon().map((monster) => monster['name'])
-    let order = orderPokemon.sort();
-    console.log(order)
+    let orderPokemonName = getPokemon().map((monster) => {return monster['name']});
+    // console.log(orderPokemonName)
+
+    let orderName = orderPokemonName.sort()
+        console.log(orderName)
+
     showPokemon.innerHTML=`
-    ${getPokemon().map((i) =>`
+    ${orderName.map((i) =>`
     <div class='list-pokemon'>
-            <img src='${i['img']}' class= 'pokemon-img'/>
+            <img src='${i.img}' class= 'pokemon-img'/>
         <div class= text-name> 
-            <h3 class='pokemon-name'>${order}</h3>
+            <h3 class='pokemon-name'>${i}</h3>
         </div>
     </div>
 
     `).join('')
     }`
-}
+    
+};
 
 let eggKmSelect = document.getElementById('eggKm')
 eggKmSelect.addEventListener('change', function(){
@@ -56,96 +58,94 @@ eggKmSelect.addEventListener('change', function(){
 function allPokemon (){
     let showPokemon = document.getElementById('show-pokemon');
 
-    showPokemon.innerHTML= `
+    showPokemon.innerHTML= ` 
     ${getPokemon().map((monster) =>`
-    <div class='list-pokemon'>
-            <img src='${monster['img']}' class= 'pokemon-img'/>
-        <div class= text-name> 
-            <h3 class='pokemon-name'>${monster['name']}</h3>
+        <div class='list-pokemon'>
+                <img src='${monster['img']}' class= 'pokemon-img'/>
+            <div class= text-name> 
+                <h3 class='pokemon-name'>${monster['name']}</h3>
+            </div>
+            <div class='text-type'>
+                <p class='pokemon-type'>${monster['num']}</p>
+            </div>
         </div>
-        <div class='text-type'>
-            <p class='pokemon-type'>${monster['num']}</p>
-        </div>
-    </div>
-       
-    `).join('')}
+       `).join('')
+    }
     `
 };
 
 function showNotInEggs (){
     let showPokemon = document.getElementById('show-pokemon');
+    let eggFilter = getPokemon().filter((pokemon) => pokemon.egg ==='Not in Eggs')
     
-    let eggFilter = getPokemon().filter((pokemon) => {return pokemon.egg.includes('Not in Eggs')})
-    
-    showPokemon.innerHTML=` ${eggFilter.map((eggFilter)  => `
-                <div class='list-pokemon'>
-                        <img src='${eggFilter.img}' class= 'pokemon-img'/>
-                    <div class= text-name> 
-                        <h3 class='pokemon-name'>${eggFilter.name}</h3 >
-                    </div>
-                    <div class='text-type'>
-                        <p class='pokemon-type'>${eggFilter.egg}</p>
-                    </div>
-                </div>
-                 `).join('')
+    showPokemon.innerHTML=` 
+    ${eggFilter.map((eggFilter)  => `
+        <div class='list-pokemon'>
+                <img src='${eggFilter.img}' class= 'pokemon-img'/>
+            <div class= text-name> 
+                <h3 class='pokemon-name'>${eggFilter.name}</h3 >
+            </div>
+            <div class='text-type'>
+                <p class='pokemon-type'>${eggFilter.egg}</p>
+            </div>
+        </div>
+        `).join('')
     }`
 };
 
    
 function showKm2 (){
     let showPokemon = document.getElementById('show-pokemon');
-    
-    let eggFilter = getPokemon().filter((pokemon) => {return pokemon.egg.includes('2 km')})
+    let eggFilter = getPokemon().filter((pokemon) => pokemon.egg ==='2 km')
     
     showPokemon.innerHTML=` ${eggFilter.map((eggFilter)  => `
-                <div class='list-pokemon'>
-                        <img src='${eggFilter.img}' class= 'pokemon-img'/>
-                    <div class= text-name> 
-                        <h3 class='pokemon-name'>${eggFilter.name}</h3 >
-                    </div>
-                    <div class='text-type'>
-                        <p class='pokemon-type'>${eggFilter.egg}</p>
-                    </div>
-                </div>
-                 `).join('')
+        <div class='list-pokemon'>
+                <img src='${eggFilter.img}' class= 'pokemon-img'/>
+            <div class= text-name> 
+                <h3 class='pokemon-name'>${eggFilter.name}</h3 >
+            </div>
+            <div class='text-type'>
+                <p class='pokemon-type'>${eggFilter.egg}</p>
+            </div>
+        </div>
+        `).join('')
     }`
 };
    
 function showKm5 (){
     let showPokemon = document.getElementById('show-pokemon');
-    
-    let eggFilter = getPokemon().filter((pokemon) => {return pokemon.egg.includes('5 km')})
-    
+    let eggFilter = getPokemon().filter((pokemon) => pokemon.egg === '5 km')
+
     showPokemon.innerHTML=` ${eggFilter.map((eggFilter)  => `
-                <div class='list-pokemon'>
-                        <img src='${eggFilter.img}' class= 'pokemon-img'/>
-                    <div class= text-name> 
-                        <h3 class='pokemon-name'>${eggFilter.name}</h3 >
-                    </div>
-                    <div class='text-type'>
-                        <p class='pokemon-type'>${eggFilter.egg}</p>
-                    </div>
-                </div>
-                 `).join('')
+        <div class='list-pokemon'>
+                <img src='${eggFilter.img}' class= 'pokemon-img'/>
+            <div class= text-name> 
+                <h3 class='pokemon-name'>${eggFilter.name}</h3 >
+            </div>
+            <div class='text-type'>
+                <p class='pokemon-type'>${eggFilter.egg}</p>
+            </div>
+        </div>
+        `).join('')
     }`
 };
 
 function showKm10 (){
     let showPokemon = document.getElementById('show-pokemon');
     
-    let eggFilter = getPokemon().filter((pokemon) => {return pokemon.egg.includes('10 km')})
+    let eggFilter = getPokemon().filter((pokemon) => pokemon.egg ==='10 km')
     
     showPokemon.innerHTML=` ${eggFilter.map((eggFilter)  => `
-                <div class='list-pokemon'>
-                        <img src='${eggFilter.img}' class= 'pokemon-img'/>
-                    <div class= text-name> 
-                        <h3 class='pokemon-name'>${eggFilter.name}</h3 >
-                    </div>
-                    <div class='text-type'>
-                        <p class='pokemon-type'>${eggFilter.egg}</p>
-                    </div>
-                </div>
-                 `).join('')
+        <div class='list-pokemon'>
+                <img src='${eggFilter.img}' class= 'pokemon-img'/>
+            <div class= text-name> 
+                <h3 class='pokemon-name'>${eggFilter.name}</h3 >
+            </div>
+            <div class='text-type'>
+                <p class='pokemon-type'>${eggFilter.egg}</p>
+            </div>
+        </div>
+        `).join('')
     }`
 };
    
