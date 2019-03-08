@@ -10,8 +10,7 @@ function getPokemon (){
 let orderAzSelect = document.getElementById('orderAz')
 orderAzSelect.addEventListener('change', function(){
     if(orderAzSelect.selectedIndex === 1){
-        console.log(orderAz())
-
+       return orderAz();
     }else{ alert('Selecione uma opção!')
     }
 })
@@ -19,24 +18,21 @@ orderAzSelect.addEventListener('change', function(){
 function orderAz (){
     let showPokemon = document.getElementById('show-pokemon');
     
-    let orderPokemonName = getPokemon().map((monster) => {return monster['name']});
-    // console.log(orderPokemonName)
-
-    let orderName = orderPokemonName.sort()
-        console.log(orderName)
+    let orderPokemonName = getPokemon().sort(function(a,b){
+        return a.name.localeCompare(b.name);
+    });
 
     showPokemon.innerHTML=`
-    ${orderName.map((i) =>`
+    ${orderPokemonName.map((i) =>`
     <div class='list-pokemon'>
             <img src='${i.img}' class= 'pokemon-img'/>
         <div class= text-name> 
-            <h3 class='pokemon-name'>${i}</h3>
+            <h3 class='pokemon-name'>${i.name}</h3>
         </div>
     </div>
 
     `).join('')
     }`
-    
 };
 
 let eggKmSelect = document.getElementById('eggKm')
@@ -150,3 +146,12 @@ function showKm10 (){
 };
    
    
+// total de candy_count
+// media de candy por pokemons
+
+let candy =  getPokemon().map(monster => monster.candy_count)
+console.log(candy)
+let candyFilter = candy.filter((candy) => typeof candy === "number")
+console.log(candyFilter)
+let candyTotal = candyFilter.reduce((acc,cur) => (acc+cur)/candyFilter.length)
+console.log(candyTotal)

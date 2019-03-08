@@ -28,6 +28,7 @@ body{
     height: 50%;
     width: 120px;
     margin-right: 10px;    
+    cursor: pointer;
 }
 
 .icon-pokemon {
