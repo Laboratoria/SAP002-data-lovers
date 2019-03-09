@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
 body {
-  background-image: url("back.jpg");
+  background-image: url("assets/img/back.jpg");
   background-repeat: no-repeat;
   background-color: black;
   font-family: 'Roboto Condensed', 'Times New Roman', serif;
@@ -15,6 +15,10 @@ body {
     display: flex;
     justify-content: right;   
     height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+   
 }
 
 .champion-history {
@@ -27,7 +31,7 @@ body {
 }
 
 .select-icon {
-  background-image: url("icon-game-lol.png");
+  background-image: url("assets/img/icon-game-lol.png");
   background-repeat: no-repeat;
   padding: 3vw 2vw 1vw 50vw;
   margin-top: 0.5vw;
@@ -39,16 +43,10 @@ body {
   display: flex;
   padding: 16px;
   width: 200px;
+ 
 }
 
-.h1-header{
-  text-align: center;
-  color:#d1d3d5;
-  display: flex;
-  justify-content: center;
-  margin-top: -7.5%;
-  font-weight: 400;
-}
+
 
 .drop-color,
 .nav-color{
@@ -58,6 +56,7 @@ body {
   font-weight: 700;
   text-align: right;
   padding: 4px;
+  z-index: 1;
 }
 
 .box-drop{
@@ -76,17 +75,17 @@ body {
 .logo-container{
   display: flex;
   justify-content: center;
-  padding: 30px 0 0 0;
-  width: 80%;
+  padding: 60px 0 0 0;
+  width: 70%;
   margin: auto;
-  display: flex;
   flex-wrap: wrap;  
+  
 }
 
   
 .champions-container {
   display: flex; 
-  margin-top: 1vw;    
+  
 }
 
 
@@ -178,5 +177,29 @@ body {
   border-top: 1px solid #927345;
 }
   
+.bar-chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+ 
+.pie-chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding:60px;
+}
+
+.estatistic{
+  padding-top: 15vw; 
+}
+
+
+.h1-estatistic{
+  text-align: center;
+  color:#d1d3d5;
+  font-weight: 400;
+}
  
   
