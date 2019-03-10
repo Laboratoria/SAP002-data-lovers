@@ -13,7 +13,6 @@ let pokemons = getPokemons()
 const dropDownOrder = document.getElementById("dropdown-order")
 let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
-const modal = document.querySelector(".modal")
 let mypokedexArray = []
 
 dropDownFilter.addEventListener('change',
@@ -70,10 +69,10 @@ function showPokemons(pokemons) {
     document.querySelector(".pokemons-div").innerHTML = `
     ${pokemons.map((pokemon)=>
 `      <figure class="pokemon">
-<div class = "display-none pokedex-icon" id = "pokedex-icon-${pokemon["id"]}">
-<img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
-</div>
-         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
+        <div class = "display-none pokedex-icon" id = "pokedex-icon-${pokemon["id"]}">
+        <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
+        </div>
+        <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
        </figure>`).join("")}`
 
        for(pokemonFigure of document.querySelectorAll(".pokemon-img")){
@@ -95,7 +94,14 @@ function showPokemons(pokemons) {
                         `
                 setPokedexButtonValue()
                 document.querySelector(".btn-mypokedex").addEventListener('click',()=>{setMyPokedex(selectedPokemon)})
-                modal.classList.add('display-block')
+
+                document.querySelector(".modal").classList.add('display-block')
+                document.querySelector(".pokemon-container").classList.remove('display-none')
+                document.querySelector(".pokemon-container").classList.add('display-block')
+                document.querySelector(".analyzer-container").classList.remove('display-block')
+                document.querySelector(".analyzer-container").classList.add('display-none')
+
+
             }
         )
     }
@@ -121,16 +127,136 @@ function setMyPokedex(selectedPokemon){
             mypokedexArray = mypokedexArray.filter(pokemon => pokemon!=selectedPokemon)
             document.querySelector(".btn-mypokedex").value = "Adicionar à pokedex"
             document.querySelector(`#pokedex-icon-${selectedPokemon["id"]}`).classList.add('display-none')
-
     }
-
-console.log(mypokedexArray)
 }
 
+document.querySelector(".analyze-pokedex").addEventListener('click',
+function(){
+    document.querySelector(".analyzer-container").innerHTML = `
+        <h3>Minha Pokedex</h3>
+    <hr class="pulaLinha1">
+    <section class="charts">
+    <div class = "pie-chart">
+    <canvas  id="my-pokedex"></canvas>
+    </div>
+    <div class = "pie-chart">
+    <canvas id="my-weakness"></canvas>
+    </div>
+    </section>
+    <section class="means">
+        <p>Pokemon mais alto: ${findTallestPokemon(mypokedexArray)["name"]}</p>
+        <p>Pokemon mais pesado: ${findHeaviestPokemon(mypokedexArray)["name"]}</p>
+        <p>Pokemon mais raro: ${findRarestPokemon(mypokedexArray)["name"]} </p>
+        </section>
+    <section class="best-pokemons">
+    </section>
+    `
+    myPokedexChart(mypokedexArray)
+    myWeaknessChart(mypokedexArray)
+    document.querySelector(".modal").classList.add('display-block')
+    document.querySelector(".analyzer-container").classList.remove('display-none')
+    document.querySelector(".analyzer-container").classList.add('display-block')
+    document.querySelector(".pokemon-container").classList.remove('display-block')
+    document.querySelector(".pokemon-container").classList.add('display-none')
+
+
+})
+
+function myPokedexChart(mypokedexArray){
+    new Chart(document.getElementById("my-pokedex"), {
+        type: 'horizontalBar',
+        data: {
+            labels: Object.keys(pokemonListCount(mypokedexArray,"type")),
+            datasets: [
+            {
+              label: "Population (millions)",
+              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+              data: Object.values(pokemonListCount(mypokedexArray,"type"))
+            }
+          ]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        callback: function (value) { if (Number.isInteger(value)) { return value; } },
+                        stepSize: 1
+                    }
+                }]
+            },
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Pokemons por tipo'
+          }
+        }
+    })
+}
+
+
+function pokemonListCount(pokedex,atr) {
+    let atrCountObj = {}
+    for (pokemon of pokedex) {
+        for (item of pokemon[atr]) {
+            if (typeof atrCountObj != undefined || !Object.keys(atrCountObj).includes(item)) {
+                atrCountObj[item] = pokedex.reduce((count, pokemon) => (count + pokemon[atr].includes(item)), 0)
+            }
+        }
+    }
+    keysAtrCountObjSorted = Object.keys(atrCountObj).sort(function(a,b){return atrCountObj[b]-atrCountObj[a]})
+    valuesAtrCountObjSorted = keysAtrCountObjSorted.map(key => atrCountObj[key])
+    atrCountObjSorted = {}
+    keysAtrCountObjSorted.forEach((key, i) => atrCountObjSorted[key] = valuesAtrCountObjSorted[i])
+    return atrCountObjSorted
+}
+
+
+function myWeaknessChart(mypokedexArray){
+    new Chart(document.getElementById("my-weakness"), {
+        type: 'horizontalBar',
+        data: {
+            labels: Object.keys(pokemonListCount(mypokedexArray,"weaknesses")),
+            datasets: [
+            {
+              label: "Population (millions)",
+              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+              data: Object.values(pokemonListCount(mypokedexArray,"weaknesses"))
+            }
+          ]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        callback: function (value) { if (Number.isInteger(value)) { return value; } },
+                        stepSize: 1
+                    }
+                }]
+            },
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Fraquezas mais comuns'
+          }
+        }
+    })
+}
+
+function findTallestPokemon(pokedex) {
+    return pokedex.filter(pokemon => Number(pokemon.height.split(" ")[0]) == Math.max.apply(Math, pokedex.map(pokemon => Number(pokemon.height.split(" ")[0]))))
+}
+function findHeaviestPokemon(pokedex) {
+    return pokedex.filter(pokemon => Number(pokemon.weight.split(" ")[0]) == Math.max.apply(Math, pokedex.map(pokemon => Number(pokemon.weight.split(" ")[0]))))
+}
+function findRarestPokemon(pokedex) {
+    return pokedex.filter(pokemon => Number(pokemon.spawn_chance) == Math.min.apply(Math, pokedex.map(pokemon => Number(pokemon.spawn_chance))))
+}
 window.addEventListener('click', outsideClick)
 
 function outsideClick(e){
-    if (e.target == modal) {
-        modal.classList.remove('display-block')
+    if (e.target == document.querySelector(".modal")) {
+        document.querySelector(".modal").classList.remove('display-block')
       }
 }
