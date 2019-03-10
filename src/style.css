@@ -130,7 +130,8 @@ main {
     transform: scale(1.2);
 }
 
-.modal {
+.modal,
+.modal-analyzer {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -158,9 +159,44 @@ main {
     flex-direction: column;
 }
 
-.btn-mypokedex {}
+.analyzer-container {
+    background-color: rgba(247, 233, 247, 0.867);
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    z-index: 2000;
+    width: 75vw;
+    margin: 50px auto auto auto;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
 
-.btn-mypokedex:focus {}
+.charts {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pie-chart {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.means {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: left;
+    margin: auto;
+    font-size: 20px;
+}
+
+.btn-mypokedex {}
 
 .display-none {
     display: none;
