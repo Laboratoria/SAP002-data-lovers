@@ -98,3 +98,4 @@ function outsideClick(e){
         modal.classList.remove('display-block')
       }
 }
+//////
