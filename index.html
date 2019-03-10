@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
     <title>Data Lovers</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="src/style.css" />
     <link rel="shortcut icon" href="https://assets.pokemon.com/static2/_ui/img/favicon.ico">
 </head>
@@ -23,8 +24,8 @@
                     <div class="dropdown-types">
                         <p class="buttonDropDown">TIPO:</p>
                         <select id="dropdown-type">
-                            <option id="all" value="All" class="options-type">TODOS</option>
-                            <option id="grass" value="Grass" class="options-type">PLANTA</option>
+                            <option value="All" class="options-type">TODOS</option>
+                            <option value="Grass" class="options-type">PLANTA</option>
                             <option value="Poison" class="options-type">VENENOSO</option>
                             <option value="Fire" class="options-type">FOGO</option>
                             <option value="Water" class="options-type">ÁGUA</option>
@@ -44,13 +45,14 @@
                     <div class="dropdown-order">
                         <p class="buttonDropDown">ORDENAR:</p>
                         <select id="dropdown-order">
-                            <option value="pokedex-num" class="options-order">POKÉDEX</option>
+                            <option value="pokedex-num" class="options-order">POKEDEX</option>
                             <option value="alpha" class="options-order">A-Z</option>
                             <option value="height" class="options-order">ALTURA</option>
                             <option value="weight" class="options-order">PESO</option>
                             <option value="spawn_chance" class="options-order">RARIDADE</option>
                         </select>
                     </div>
+                    <button class="analyze-pokedex">Analisar pokedex <img src="https://image.flaticon.com/icons/svg/188/188940.svg"></button>
                 </section>
             </div>
             <hr class="pulaLinha1">
@@ -62,7 +64,6 @@
         </main>
         <div class="modal">
             <section id="pokemon-container" class="pokemon-container">
-
             </section>
         </div>
 
