@@ -4084,3 +4084,12 @@ const POKEMON = {
         ]
     }]
 };;
+
+for (const element of POKEMON["pokemon"]) {
+    if (element.next_evolution)
+    console.log(element.img);
+}
+function showNextGeneration(){
+    let nextGeneration = document.getElementById("nextGeneration");
+    
+}

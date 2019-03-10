@@ -260,3 +260,4 @@ function outsideClick(e){
         document.querySelector(".modal").classList.remove('display-block')
       }
 }
+//////
