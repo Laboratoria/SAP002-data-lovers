@@ -163,7 +163,6 @@ function candy (){
     let showPokemon = document.getElementById('show-pokemon');
 
     let candy = getPokemon().map(monster => monster.candy_count)
-    console.log(candy)
 
     let candyFilter = candy.filter(i => typeof i ==="number")
     console.log(candyFilter)
@@ -174,11 +173,18 @@ function candy (){
     let result = candyTotal/candyFilter.length;
     console.log(result)
     
+    let max = candyFilter.reduce(function(a,b){
+        return Math.max(a,b)
+    })
+
+    console.log(max)
     
     const table= `
-        <tr></tr>
+        <tr class=""></tr>
         <p>Media de candy por pokemon</p>
         <td>${result}</td> 
+        <p>Maximo</p>
+        <td>${max}</td>
     `;
 
     showPokemon.innerHTML= table;
