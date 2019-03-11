@@ -1,3 +1,4 @@
+
 window.onload = function() {
     // alert("carregou");
     showPokemons(getPokemons())
@@ -260,4 +261,3 @@ function outsideClick(e){
         document.querySelector(".modal").classList.remove('display-block')
       }
 }
-//////
