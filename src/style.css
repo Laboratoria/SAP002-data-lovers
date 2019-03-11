@@ -4,7 +4,7 @@ body{
     background-color: rgb(142, 216, 231);
 }
 .top{
-    background-color: rgb(230, 86, 86);
+    background-color: rgb(235, 55, 55);
     display: flex;
     justify-content: space-around;
 }
@@ -21,7 +21,7 @@ body{
 .select-nav{
     display: flex;
     justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Varela Round', sans-serif;
     background-color: rgb(255, 213, 97);
     border: solid rgb(53, 90, 212) 2px;
     border-radius: 50px;
@@ -38,6 +38,7 @@ body{
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
+    font-family: 'Varela Round', sans-serif;
 
 }
 

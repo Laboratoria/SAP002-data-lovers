@@ -12,8 +12,8 @@ orderAzSelect.addEventListener('change', function(){
     if(orderAzSelect.selectedIndex === 1){
        return orderAz();
     }else{ alert('Selecione uma opção!')
-    }
-})
+    };
+});
 
 function orderAz (){
     let showPokemon = document.getElementById('show-pokemon');
@@ -48,8 +48,8 @@ eggKmSelect.addEventListener('change', function(){
         showKm10()
     }else{
         return alert('Selecione uma opção!')
-    }
-})
+    };
+});
 
 function allPokemon (){
     let showPokemon = document.getElementById('show-pokemon');
@@ -88,7 +88,6 @@ function showNotInEggs (){
         `).join('')
     }`
 };
-
    
 function showKm2 (){
     let showPokemon = document.getElementById('show-pokemon');
@@ -145,13 +144,43 @@ function showKm10 (){
     }`
 };
    
+
+
+let candySelect = document.getElementById('candy')
+candySelect.addEventListener('change', function(){
+    if(candySelect.selectedIndex === 1){ 
+        console.log(candy())
+    }else{alert("Selecione uma opção!")}
+    
+});
    
 // total de candy_count
 // media de candy por pokemons
+// media de pokemons que tem 100 candy
 
-let candy =  getPokemon().map(monster => monster.candy_count)
-console.log(candy)
-let candyFilter = candy.filter((candy) => typeof candy === "number")
-console.log(candyFilter)
-let candyTotal = candyFilter.reduce((acc,cur) => (acc+cur)/candyFilter.length)
-console.log(candyTotal)
+function candy (){
+
+    let showPokemon = document.getElementById('show-pokemon');
+
+    let candy = getPokemon().map(monster => monster.candy_count)
+    console.log(candy)
+
+    let candyFilter = candy.filter(i => typeof i ==="number")
+    console.log(candyFilter)
+
+    let candyTotal = candyFilter.reduce((acc,cur) => acc+cur)
+    console.log(candyTotal)
+
+    let result = candyTotal/candyFilter.length;
+    console.log(result)
+    
+    
+    const table= `
+        <tr></tr>
+        <p>Media de candy por pokemon</p>
+        <td>${result}</td> 
+    `;
+
+    showPokemon.innerHTML= table;
+
+}
