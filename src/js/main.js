@@ -1,9 +1,5 @@
-//**************Ju form */
-
 window.onload = function() {
-    // alert("carregou");
     openPoke();
-
 };
 
 // function getPokemon(){
@@ -28,7 +24,6 @@ window.onload = function() {
 
 
 //filtro tipos 
-
 function openPoke(type) {
     fetch('./src/data/pokemon/pokemon.json').then(response => {
         return response.json();
@@ -44,14 +39,14 @@ function openPoke(type) {
         pokemonData.innerHTML = `
         ${pokemons.map((pokemon) => `
         <div class="card">
-            <h3>${pokemon["name"]}</h3>
-            <img src="${pokemon["img"]}">
-            <h3>Altura: ${pokemon["height"]}</h3>
-            <h3>Peso: ${pokemon["weight"]}</h3>
-            <h3>Candies: ${candiesCount(pokemon["candy_count"])}</h3>
-            ${pokemon["type"].map(tipo => `
-            <button class="type-poke">${tipo}</button>
-            `).join("")}
+        <h3>${pokemon["name"]}</h3>
+        <img src="${pokemon["img"]}">
+        <h3>Altura: ${pokemon["height"]}</h3>
+        <h3>Peso: ${pokemon["weight"]}</h3>
+        <h3>Candies: ${candiesCount(pokemon["candy_count"])}</h3>
+        ${pokemon["type"].map(tipo => `
+        <button class="type-poke">${translate(tipo)}</button>
+        `).join("")}
         </div>
         `).join("")}
         `
@@ -88,30 +83,19 @@ function orderBy (order) {
         pokemonData.innerHTML = `
         ${pokemons.map((pokemon) => `
         <div class="card">
-            <h3>${pokemon["name"]}</h3>
-            <img src="${pokemon["img"]}">
-            <h3>Altura: ${pokemon["height"]}</h3>
-            <h3>Peso: ${pokemon["weight"]}</h3>
-            <h3>Candies: ${candiesCount(pokemon["candy_count"])}</h3>
-            ${pokemon["type"].map(tipo => `
-            <button class="type-poke">${tipo}</button>
-            `).join("")}
+        <h3>${pokemon["name"]}</h3>
+        <img src="${pokemon["img"]}">
+        <h3>Altura: ${pokemon["height"]}</h3>
+        <h3>Peso: ${pokemon["weight"]}</h3>
+        <h3>Candies: ${candiesCount(pokemon["candy_count"])}</h3>
+        ${pokemon["type"].map(tipo => `
+        <button class="type-poke">${translate(tipo)}</button>
+        `).join("")}
         </div>
         `).join("")}
         `
     });
 }
-
-// function openTab(tabName) {
-//     var i, x;
-//     x = document.getElementsByClassName("sideBarSubMenu");
-//     for (i = 0; i < x.length; i++) {
-//         x[i].style.maxHeight = null;
-//         x[i].style.display = "none";
-//     }
-//     document.getElementById(tabName).style.display = "block";
-//     document.getElementById(tabName).style.maxHeight = document.getElementById(tabName).scrollHeight + "px";
-// }
 
 function candiesCount (name){
     console.log(name);
@@ -120,6 +104,4 @@ function candiesCount (name){
     }else{
         return name;
     }
-
 }
-

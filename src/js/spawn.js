@@ -1,17 +1,10 @@
 window.onload = function() {
     showPeriodos();
 };
-
-let manha = document.querySelector ('#manha');
-let tarde = document.querySelector ('#tarde');
-let noite = document.querySelector ('#noite');
-let madrugada = document.querySelector ('#madrugada');
-
 //Função showTheBest que procura a maior quantidade de poke por periodo e mostra a estatistica do melhor periodo para a captura;
 //Fetch vai abrir o arquivo json, se a resposta for positiva, ele retorna o objeto;
-
 function showTheBest(){
-    fetch('./data/pokemon/pokemon.json').then(response => {
+    fetch('./src/data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => { //devolveu o data que é o objeto json? beleza; 
         function showPokemon(){ // Na função showPokemon ele utiliza esse objeto data para localizar as informações;
@@ -42,69 +35,69 @@ function showTheBest(){
             let bestContainer = document.getElementById("manha");
             switch (best){ //switch case para comparação tipo if e else, porém mais organizado e facil de entender o condicional;
                 case manha.length:
-                    bestContainer.innerHTML = `
-                    <header>
-                        <h1>Manha 6h as 12h</h1>
-                    </header>
-                    ${manha.map((pokemon) => `
-                    <div class="minicard">
-                        <h3>${pokemon["name"]}</h3>
-                        <img src="${pokemon["img"]}">
-                        <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                        ${pokemon["type"].map(tipo => `
-                        <button class="type-poke">${tipo}</button>
-                        `).join("")}
-                    </div>
-                    `).join("")}
-                    `
+                bestContainer.innerHTML = `
+                <header>
+                <h1>Manha 6h as 12h</h1>
+                </header>
+                ${manha.map((pokemon) => `
+                <div class="minicard">
+                <h3>${pokemon["name"]}</h3>
+                <img src="${pokemon["img"]}">
+                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+                ${pokemon["type"].map(tipo => `
+                <button class="type-poke">${translate(tipo)}</button>
+                `).join("")}
+                </div>
+                `).join("")}
+                `
                 case tarde.length:
-                    bestContainer.innerHTML = `
-                    <header>
-                        <h1>Tarde 12h as 18h</h1>
-                    </header>
-                    ${tarde.map((pokemon) => `
-                    <div class="minicard">
-                        <h3>${pokemon["name"]}</h3>
-                        <img src="${pokemon["img"]}">
-                        <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                        ${pokemon["type"].map(tipo => `
-                        <button class="type-poke">${tipo}</button>
-                        `).join("")}
-                    </div>
-                    `).join("")}
-                    `
+                bestContainer.innerHTML = `
+                <header>
+                <h1>Tarde 12h as 18h</h1>
+                </header>
+                ${tarde.map((pokemon) => `
+                <div class="minicard">
+                <h3>${pokemon["name"]}</h3>
+                <img src="${pokemon["img"]}">
+                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+                ${pokemon["type"].map(tipo => `
+                <button class="type-poke">${translate(tipo)}</button>
+                `).join("")}
+                </div>
+                `).join("")}
+                `
                 case noite.length:
-                    bestContainer.innerHTML = `
-                    <header>
-                        <h1>Noite 18h as 24h</h1>
-                    </header>
-                    ${noite.map((pokemon) => `
-                    <div class="minicard">
-                        <h3>${pokemon["name"]}</h3>
-                        <img src="${pokemon["img"]}">
-                        <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                        ${pokemon["type"].map(tipo => `
-                        <button class="type-poke">${tipo}</button>
-                        `).join("")}
-                    </div>
-                    `).join("")}
-                    `
+                bestContainer.innerHTML = `
+                <header>
+                <h1>Noite 18h as 24h</h1>
+                </header>
+                ${noite.map((pokemon) => `
+                <div class="minicard">
+                <h3>${pokemon["name"]}</h3>
+                <img src="${pokemon["img"]}">
+                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+                ${pokemon["type"].map(tipo => `
+                <button class="type-poke">${translate(tipo)}</button>
+                `).join("")}
+                </div>
+                `).join("")}
+                `
                 case madruga.length:
-                    bestContainer.innerHTML = `
-                    <header>
-                        <h1>Madrugada 00h as 6h</h1>
-                    </header>
-                    ${madruga.map((pokemon) => `
-                    <div class="minicard">
-                        <h3>${pokemon["name"]}</h3>
-                        <img src="${pokemon["img"]}">
-                        <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                        ${pokemon["type"].map(tipo => `
-                        <button class="type-poke">${tipo}</button>
-                        `).join("")}
-                    </div>
-                    `).join("")}
-                    `
+                bestContainer.innerHTML = `
+                <header>
+                <h1>Madrugada 00h as 6h</h1>
+                </header>
+                ${madruga.map((pokemon) => `
+                <div class="minicard">
+                <h3>${pokemon["name"]}</h3>
+                <img src="${pokemon["img"]}">
+                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+                ${pokemon["type"].map(tipo => `
+                <button class="type-poke">${translate(tipo)}</button>
+                `).join("")}
+                </div>
+                `).join("")}
+                `
             }
         }
         document.getElementById("menu1").classList.remove("activeMenu");
@@ -114,7 +107,7 @@ function showTheBest(){
 }
 
 function showPeriodos(type){
-    fetch('./data/pokemon/pokemon.json').then(response => {
+    fetch('./src/data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => {
         function showPokemon(){
@@ -129,16 +122,16 @@ function showPeriodos(type){
             let pokemonManha = document.getElementById("manha");
             pokemonManha.innerHTML = `
             <header>
-                <h1>Manhã 6h as 12h</h1>
+            <h1>Manhã 6h as 12h</h1>
             </header>
             ${manha.map((pokemon) => `
             <div class="minicard">
-                <h3>${pokemon["name"]}</h3>
-                <img src="${pokemon["img"]}">
-                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${tipo}</button>
-                `).join("")}
+            <h3>${pokemon["name"]}</h3>
+            <img src="${pokemon["img"]}">
+            <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+            ${pokemon["type"].map(tipo => `
+            <button class="type-poke">${translate(tipo)}</button>
+            `).join("")}
             </div>
             `).join("")}
             `
@@ -154,16 +147,16 @@ function showPeriodos(type){
             let pokemonTarde = document.getElementById("tarde");
             pokemonTarde.innerHTML = `
             <header>
-                <h1>Tarde 12h ás 18h</h1>
+            <h1>Tarde 12h ás 18h</h1>
             </header>
             ${tarde.map((pokemon) => `
             <div class="minicard">
-                <h3>${pokemon["name"]}</h>
-                <img src="${pokemon["img"]}">
-                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${tipo}</button>
-                `).join("")}
+            <h3>${pokemon["name"]}</h>
+            <img src="${pokemon["img"]}">
+            <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+            ${pokemon["type"].map(tipo => `
+            <button class="type-poke">${translate(tipo)}</button>
+            `).join("")}
             </div>
             `).join("")}
             `
@@ -179,16 +172,16 @@ function showPeriodos(type){
             let pokemonNoite = document.getElementById("noite");
             pokemonNoite.innerHTML = `
             <header>
-                <h1>Noite 18h ás 24h</h1>
+            <h1>Noite 18h ás 24h</h1>
             </header>
             ${noite.map((pokemon) => `
             <div class="minicard">
-                <h3>${pokemon["name"]}</h3>
-                <img src="${pokemon["img"]}">
-                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${tipo}</button>
-                `).join("")}
+            <h3>${pokemon["name"]}</h3>
+            <img src="${pokemon["img"]}">
+            <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+            ${pokemon["type"].map(tipo => `
+            <button class="type-poke">${translate(tipo)}</button>
+            `).join("")}
             </div>
             `).join("")}
             `
@@ -204,16 +197,16 @@ function showPeriodos(type){
             let pokemonMadruga = document.getElementById("madrugada");
             pokemonMadruga.innerHTML = `
             <header>
-                <h1>Madrugada 00h as 6h</h1>
+            <h1>Madrugada 00h as 6h</h1>
             </header>
             ${madruga.map((pokemon) => `
             <div class="minicard">
-                <h3>${pokemon["name"]}</h3>
-                <img src="${pokemon["img"]}">
-                <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
-                ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${tipo}</button>
-                `).join("")}
+            <h3>${pokemon["name"]}</h3>
+            <img src="${pokemon["img"]}">
+            <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
+            ${pokemon["type"].map(tipo => `
+            <button class="type-poke">${translate(tipo)}</button>
+            `).join("")}
             </div>
             `).join("")}
             `
@@ -223,7 +216,6 @@ function showPeriodos(type){
         showPokemon();
     });
 }
-
 
 var menu = document.getElementsByClassName("collapsible");
 for(var i = 0; i < menu.length; i++) {
@@ -238,4 +230,39 @@ for(var i = 0; i < menu.length; i++) {
             content.style.maxHeight = content.scrollHeight + "px";
         }
     });
+}
+
+function translate (type){
+    switch (type){
+        case "Water":
+        return "Água"
+        case "Dragon":
+        return "Dragão"
+        case "Electric":
+        return "Elétrico"
+        case "Ghost":
+        return "Fantasma"
+        case "Fire":
+        return "Fogo"
+        case "Ice":
+        return "Gelo"
+        case "Bug":
+        return "Inseto"
+        case "Fighting":
+        return "Lutador"
+        case "Normal":
+        return "Normal"
+        case "Rock":
+        return "Pedra"
+        case "Grass":
+        return "Planta"
+        case "Psychic":
+        return "Psíquico"
+        case "Ground":
+        return "Terra"
+        case "Poison":
+        return "Venenoso"
+        case "Flying":
+        return "Voador"
+    }
 }
