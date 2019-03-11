@@ -4096,6 +4096,7 @@ function showNextEvolution(){
     ${getPokemons().map((next_evolution)=>`
         <div class="evolution">
         <p src="${next_evolution["name"]}" class="name-evolution"</p>
-        
-        )}
+
+        `)}
+        `
 }
