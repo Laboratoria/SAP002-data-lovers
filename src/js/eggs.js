@@ -1,4 +1,4 @@
-fetch('./src/data/pokemon/pokemon.json').then(response => {
+fetch('./data/pokemon/pokemon.json').then(response => {
     return response.json();
 }).then(data => {
     function showPokemonEggs(){

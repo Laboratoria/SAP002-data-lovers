@@ -4,7 +4,7 @@ window.onload = function() {
 //Função showTheBest que procura a maior quantidade de poke por periodo e mostra a estatistica do melhor periodo para a captura;
 //Fetch vai abrir o arquivo json, se a resposta for positiva, ele retorna o objeto;
 function showTheBest(){
-    fetch('./src/data/pokemon/pokemon.json').then(response => {
+    fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => { //devolveu o data que é o objeto json? beleza; 
         function showPokemon(){ // Na função showPokemon ele utiliza esse objeto data para localizar as informações;
@@ -107,7 +107,7 @@ function showTheBest(){
 }
 
 function showPeriodos(type){
-    fetch('./src/data/pokemon/pokemon.json').then(response => {
+    fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => {
         function showPokemon(){

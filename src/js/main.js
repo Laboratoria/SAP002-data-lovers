@@ -25,7 +25,7 @@ window.onload = function() {
 
 //filtro tipos 
 function openPoke(type) {
-    fetch('./src/data/pokemon/pokemon.json').then(response => {
+    fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => {
         let pokemons = data["pokemon"].filter (poke => {
@@ -54,7 +54,7 @@ function openPoke(type) {
 }
 
 function orderBy (order) {
-    fetch('./src/data/pokemon/pokemon.json').then(response => {
+    fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => {
         let pokemons =  data["pokemon"];
