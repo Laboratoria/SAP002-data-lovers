@@ -1,76 +1,73 @@
-function init() {
-    // declara variável que é um ponteiro para o elemento button no HTML
-    // estou usando o método querySelector do DOM para buscar o elemento pelo seu ID (#btnIndicators)
-    // o hash # indica que está usando um id, seria identico a usar o método getElementById
-    let btnIndicators = document.querySelector("#btnIndicators");
+let searIndicators = document.querySelector("#butSearch");
+searIndicators.addEventListener("click", createTable);
 
-    // adicionando um "escutador de eventos" para o evento click do mouse no botão que tem o id btnIndicators
-    // falando para executar a função de nome createIndicatorsTable
-    btnIndicators.addEventListener("click", createIndicatorsTable);
-}
+function createTable() {
+    // busca os valores dos filtros selecionados pelo usuário
+    let selCountry = document.querySelector("#selCountry");
+    let countryFilter = selCountry.options[selCountry.selectedIndex].value;
+    let selTheme = document.querySelector("#selTheme");
+    let themeFilter = selTheme.options[selTheme.selectedIndex].value;
 
-// declaração da função createIndicatorsTable e da lógica dela
-function createIndicatorsTable() {
-    let countrySelect = document.querySelector("#country");
-    let countryCode = countrySelect.options[countrySelect.selectedIndex].value;
-    let filterSelect = document.querySelector("#filter");
-    let filterWord = filterSelect.options[filterSelect.selectedIndex].value;
-    let initialYear = document.querySelector("#initialYear").value;
-
-    // seleciona os indicadores do país escolhido
-    // e aplica o flitro de indicadores
-    let countryData = WORLDBANK[countryCode].indicators.filter(indicator => {
-        if (indicator.indicatorName.toUpperCase().includes(filterWord)) return true;
-        //if (indicator.indicatorCode === "GAFGFA.JHHJHA.GHGH") return true;
-        return false;
+    // filtra os dados usando o código do país e a palavra chave que deve estar contida nome do indicador
+    let countryData = WORLDBANK[countryFilter].indicators.filter(indicator => {
+        return (indicator.indicatorName.toUpperCase().includes(themeFilter));
     });
 
+    // ordena o array pelo nome do indicador usando uma função de comparação pelo indicatorName
     countryData.sort(function(a, b) {return a.indicatorName.localeCompare(b.indicatorName);});
 
-    // monta a tabela de indicadores
-    let indicatorsTable = document.createElement("table");
-
-    countryData.forEach(indicator => {
-        // monta linha com o código e nome do indicador
-        let row = document.createElement('tr');
-        let cell = document.createElement('td');
-        let qtyYearCols = 2018 - parseInt(initialYear);
-        cell.textContent = indicator.indicatorCode;
-        row.appendChild(cell);
-        row.setAttribute("class", "indicator");
-        cell = document.createElement('td');
-        cell.setAttribute("colSpan", qtyYearCols - 1);
-        cell.textContent = indicator.indicatorName;
-        row.appendChild(cell);
-        indicatorsTable.appendChild(row);
-
-        // monta linhas com os anos e valores do indicador
-        let rowYear = document.createElement('tr');
-        rowYear.setAttribute("class", "year");
-        let rowValue = document.createElement('tr');
-        for(let year = parseInt(initialYear); year < 2018; year++) {
-            // cria célula do ano
-            cell = document.createElement('td');
-            cell.textContent = year;
-            rowYear.appendChild(cell);
-            
-            // cria célula do valor
-            cell = document.createElement('td');
-            cell.textContent = indicator.data[year];
-            rowValue.appendChild(cell);
-        }
-        indicatorsTable.appendChild(rowYear);
-        indicatorsTable.appendChild(rowValue);
-    });
-
-
-    let indicatorsTableSection = document.querySelector("#indicatorsTableSection");
-
-    // se a tabela já existe, remove
-    if(indicatorsTableSection.firstChild) {
-        indicatorsTableSection.removeChild(indicatorsTableSection.firstChild);
+    let table = document.querySelector("#tabIndicators");
+    // verifica se o corpo da tabela já tem alguma linha além do header, se tiver exclui todas menos o header
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
     }
 
-    // adiciona a tabela à seção
-    indicatorsTableSection.appendChild(indicatorsTable);
+    // define as constantes dos anos inicial e final que aparecem na tabela
+    // se mudar isso tem que ajustar também no HTML o header da tabela
+    const initialYear = 2013;
+    const endYear = 2017;
+    const qtyYearCells = 5;
+
+    // monta a nova tabela com os dados já ordenados e calcula a média
+    countryData.forEach(indicator => {
+        let row = table.insertRow();
+        row.setAttribute("class", "valueRow");
+
+        // cria a célula do nome do indicador
+        let cell = row.insertCell(-1);
+        cell.textContent = indicator.indicatorName;
+
+        let total = 0.00;
+        // cria as células dos valores do indicador para cada ano
+        for (let year=initialYear; year<=endYear; year++) {
+            cell = row.insertCell(-1);
+
+            // transforma o valor de string em número para poder fazer a totalização
+            let indicatorValue = parseFloat(indicator.data[year]);
+            if (isNaN(indicatorValue)) {
+              cell.textContent = "--";
+            } else {
+              // se for um número válido, soma na totalização e apresenta o valor com duas casas decimais
+              total += indicatorValue;
+              cell.textContent = indicatorValue.toFixed(2);
+            }
+        }
+
+        // calcula a média dos valores do indicador pela quantidade de anos apresentada 
+        let average = total / qtyYearCells;
+        // e cria a célula da média 
+        cell = row.insertCell(-1);
+        cell.textContent = average.toFixed(2);
+    });
+
+    let secDados = document.querySelector("#secDados");
+    if (table.rows.length > 1) {
+      // se a tabela montada ficou com mais de uma linha, retira a imagem de fundo e deixa a tabela visível
+      secDados.setAttribute("class", "secDados");
+      table.setAttribute("class", "visible");
+    } else {
+      // se a tabela montada ficou somente com o header, coloca a imagem de fundo e deixa a tabela invisível
+      secDados.setAttribute("class", "secDadosImage");
+      table.setAttribute("class", "invisible");
+    }
 }

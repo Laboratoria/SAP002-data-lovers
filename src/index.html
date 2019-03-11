@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="./data/worldbank/worldbank.js"></script>
-    <script src="main.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="data/worldbank/worldbank.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
-  <body onload="init();">
+  <body>
 
-      <header>
-          <nav class="smallTitle">
-            <h1><a href = "#">Mulheres no mercado de trabalho</a></h1>
-          </nav>
-          <nav class="bigTitle">
-           <img class='backgroundImg'src="work.jpg">
-           <h1>MULHERES NO MERCADO DE TRABALHO</h1>
-           <p>Brasil - Peru - México - Chile</p>
-         </nav>
-        </header>
+    <header>
+      <nav class="smallTitle">
+        <h1><a href = "#">Mulheres no mercado de trabalho</a></h1>
+      </nav>
+      <br/>
+      <nav class="bigTitle">
+        <h1>MULHERES NO MERCADO DE TRABALHO</h1>
+        <p>Brasil - Peru - México - Chile</p>
+      </nav>
+      <hr/>
+    </header>
 
-     <nav id="filterControls">
+    <nav id="navFilter">
+      <div>
         <label>Selecione o país:</label>
-        <select id="country">
+        <select id="selCountry">
           <option value="BRA">Brasil</option>
           <option value="CHL">Chile</option>
           <option value="MEX">México</option>
           <option value="PER">Perú</option>
         </select>
-  
-        <label>Selecione o filtro:</label>
-        <select id="filter">
+      </div>
+
+      <div>
+        <label>Selecione o tema:</label>
+        <select id="selTheme">
           <option value="EMPLEO">Emprego</option>
           <option value="MUJERES">Mulheres</option>
-          <option value="FUERZA LABORAL">Força de Trabalho</option>
-          <option value="EDUCACION">Educação</option>
+          <option value="TRABAJO">Trabalho</option>
+          <option value="EDUCACIÓN">Educação</option>
         </select>
-
-        <label>Informe o ano inicial:</label>
-        <input id="initialYear" type="number" min="2000" max="2017" value="2000" />
-  
-        <button id="btnIndicators">Mostrar Indicadores</button>
+      </div>
+      
+      <button id="butSearch">Mostrar Indicadores</button> 
     </nav>
 
-    <section id="indicatorsTableSection">
+    <section id="secDados" class="secDadosImage">
+
+      <table id="tabIndicators" class="invisible">
+        <tr class="headerRow">
+          <td>Indicador</td>
+          <td>2013</td>
+          <td>2014</td>
+          <td>2015</td>
+          <td>2016</td>
+          <td>2017</td>
+          <td>Média</td>
+        </tr>
+      </table>
+
     </section>
 
+    <script src="main.js"></script>
   </body>
 </html>
