@@ -1,5 +1,5 @@
 window.onload = function() {
-    showPeriodos();
+    showPeriods();
 };
 //Função showTheBest que procura a maior quantidade de poke por periodo e mostra a estatistica do melhor periodo para a captura;
 //Fetch vai abrir o arquivo json, se a resposta for positiva, ele retorna o objeto;
@@ -8,38 +8,38 @@ function showTheBest(){
         return response.json();
     }).then(data => { //devolveu o data que é o objeto json? beleza; 
         function showPokemon(){ // Na função showPokemon ele utiliza esse objeto data para localizar as informações;
-            let manha = data["pokemon"].filter(poke => {  // cada uma das let, filtam os pokes por periodo (manhã, tarde, noite e madrugada); -Filter (função) é tipo um for, ele percorre toda a array do pokemon, 
+            let morning = data["pokemon"].filter(poke => {  // cada uma das let, filtam os pokes por periodo (manhã, tarde, noite e madrugada); -Filter (função) é tipo um for, ele percorre toda a array do pokemon, 
                 let time = Number(poke["spawn_time"].split(":",1)); //e para cada elemento desse array denominamos "Poke". É criada uma função ({}) para validar se esse elemento esta dentro da condição, se sim, é adiciondo na var manhã;
                 return time >= 6 && time < 12 //Como ele está fazendo essa verificação? ele pega o horairo que o pokemon aparece, separa a hora dos minutos, pega somente a hora e verifica se está entre 6 e 12 (no range do return);
             });
-            let tarde = data["pokemon"].filter(poke => {
+            let afternoon = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 return time >= 12 && time < 18
             });
-            let noite = data["pokemon"].filter(poke => {
+            let night = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 return time >= 18 && time < 24
             });
-            let madruga = data["pokemon"].filter(poke => {
+            let dawn = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 return time >= 0 && time < 6
             });
             //teste estatistica
             //pega a quantidade de cada array e verifica qual a maior;
-            let best = Math.max.apply(Math,[manha.length,tarde.length,noite.length,madruga.length ]);
+            let best = Math.max.apply(Math,[morning.length,afternoon.length,night.length,dawn.length ]);
             // console.log(best);
-            // document.getElementById("manha").innerHTML = ``;
-            document.getElementById("tarde").innerHTML = ``;
-            document.getElementById("noite").innerHTML = ``;
-            document.getElementById("madrugada").innerHTML = ``;
-            let bestContainer = document.getElementById("manha");
+            // document.getElementById("morning").innerHTML = ``;
+            document.getElementById("afternoon").innerHTML = ``;
+            document.getElementById("night").innerHTML = ``;
+            document.getElementById("dawn").innerHTML = ``;
+            let bestContainer = document.getElementById("morning");
             switch (best){ //switch case para comparação tipo if e else, porém mais organizado e facil de entender o condicional;
-                case manha.length:
+                case morning.length:
                 bestContainer.innerHTML = `
                 <header>
-                <h1>Manha 6h as 12h</h1>
+                <h1>Manhã 6h as 12h</h1>
                 </header>
-                ${manha.map((pokemon) => `
+                ${morning.map((pokemon) => `
                 <div class="minicard">
                 <h3>${pokemon["name"]}</h3>
                 <img src="${pokemon["img"]}">
@@ -50,12 +50,12 @@ function showTheBest(){
                 </div>
                 `).join("")}
                 `
-                case tarde.length:
+                case afternoon.length:
                 bestContainer.innerHTML = `
                 <header>
                 <h1>Tarde 12h as 18h</h1>
                 </header>
-                ${tarde.map((pokemon) => `
+                ${afternoon.map((pokemon) => `
                 <div class="minicard">
                 <h3>${pokemon["name"]}</h3>
                 <img src="${pokemon["img"]}">
@@ -66,12 +66,12 @@ function showTheBest(){
                 </div>
                 `).join("")}
                 `
-                case noite.length:
+                case night.length:
                 bestContainer.innerHTML = `
                 <header>
                 <h1>Noite 18h as 24h</h1>
                 </header>
-                ${noite.map((pokemon) => `
+                ${night.map((pokemon) => `
                 <div class="minicard">
                 <h3>${pokemon["name"]}</h3>
                 <img src="${pokemon["img"]}">
@@ -82,12 +82,12 @@ function showTheBest(){
                 </div>
                 `).join("")}
                 `
-                case madruga.length:
+                case dawn.length:
                 bestContainer.innerHTML = `
                 <header>
                 <h1>Madrugada 00h as 6h</h1>
                 </header>
-                ${madruga.map((pokemon) => `
+                ${dawn.map((pokemon) => `
                 <div class="minicard">
                 <h3>${pokemon["name"]}</h3>
                 <img src="${pokemon["img"]}">
@@ -106,12 +106,12 @@ function showTheBest(){
     });
 }
 
-function showPeriodos(type){
+function showPeriods(type){
     fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
     }).then(data => {
         function showPokemon(){
-            let manha = data["pokemon"].filter(poke => {
+            let morning = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 if (type != null){
                     return time >= 6 && time < 12 && poke["type"].includes(type)
@@ -119,12 +119,12 @@ function showPeriodos(type){
                     return time >= 6 && time < 12
                 }
             });
-            let pokemonManha = document.getElementById("manha");
-            pokemonManha.innerHTML = `
+            let pokemonMorning = document.getElementById("morning");
+            pokemonMorning.innerHTML = `
             <header>
             <h1>Manhã 6h as 12h</h1>
             </header>
-            ${manha.map((pokemon) => `
+            ${morning.map((pokemon) => `
             <div class="minicard">
             <h3>${pokemon["name"]}</h3>
             <img src="${pokemon["img"]}">
@@ -135,7 +135,7 @@ function showPeriodos(type){
             </div>
             `).join("")}
             `
-            let tarde = data["pokemon"].filter(poke => {
+            let afternoon = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 if (type != null){
                     return time >= 12 && time < 18 && poke["type"].includes(type)
@@ -144,12 +144,12 @@ function showPeriodos(type){
                 }
                 
             });
-            let pokemonTarde = document.getElementById("tarde");
-            pokemonTarde.innerHTML = `
+            let pokemonAfternoon = document.getElementById("afternoon");
+            pokemonAfternoon.innerHTML = `
             <header>
             <h1>Tarde 12h ás 18h</h1>
             </header>
-            ${tarde.map((pokemon) => `
+            ${afternoon.map((pokemon) => `
             <div class="minicard">
             <h3>${pokemon["name"]}</h>
             <img src="${pokemon["img"]}">
@@ -160,7 +160,7 @@ function showPeriodos(type){
             </div>
             `).join("")}
             `
-            let noite = data["pokemon"].filter(poke => {
+            let night = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 if (type != null){
                     return time >= 18 && time < 24 && poke["type"].includes(type)
@@ -169,12 +169,12 @@ function showPeriodos(type){
                 }
                 
             });
-            let pokemonNoite = document.getElementById("noite");
-            pokemonNoite.innerHTML = `
+            let pokemonNight = document.getElementById("night");
+            pokemonNight.innerHTML = `
             <header>
             <h1>Noite 18h ás 24h</h1>
             </header>
-            ${noite.map((pokemon) => `
+            ${night.map((pokemon) => `
             <div class="minicard">
             <h3>${pokemon["name"]}</h3>
             <img src="${pokemon["img"]}">
@@ -185,7 +185,7 @@ function showPeriodos(type){
             </div>
             `).join("")}
             `
-            let madruga = data["pokemon"].filter(poke => {
+            let dawn = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
                 if (type != null){
                     return time >= 0 && time < 6 && poke["type"].includes(type)
@@ -194,12 +194,12 @@ function showPeriodos(type){
                 }
                 
             });
-            let pokemonMadruga = document.getElementById("madrugada");
-            pokemonMadruga.innerHTML = `
+            let pokemonDawn = document.getElementById("dawn");
+            pokemonDawn.innerHTML = `
             <header>
             <h1>Madrugada 00h as 6h</h1>
             </header>
-            ${madruga.map((pokemon) => `
+            ${dawn.map((pokemon) => `
             <div class="minicard">
             <h3>${pokemon["name"]}</h3>
             <img src="${pokemon["img"]}">
@@ -217,7 +217,7 @@ function showPeriodos(type){
     });
 }
 
-var menu = document.getElementsByClassName("collapsible");
+var menu = document.getElementsByClassName("open-menu");
 for(var i = 0; i < menu.length; i++) {
     menu[i].addEventListener("click", function() {
         this.classList.toggle("active");
