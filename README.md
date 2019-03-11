@@ -74,7 +74,7 @@ Após a busca incial foi realizada uma pesquisa com usuários. Conversamos com a
 
 Protótipo elaborado com a ferramenta Marvel: [protótipo](https://marvelapp.com/6ddi6b7/screen/53819908) 
 
-<img  src="protótipo.PNG">  
+<img  src='assets/img/protótipo.PNG'/>  
 
   
 
