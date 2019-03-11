@@ -1,66 +1,159 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
+*{
+  margin:0;
+}
+
 body {
+	color: #333;
+  text-align:center;
   background-image: url("assets/img/back.jpg");
+  background-color: black ;
   background-repeat: no-repeat;
-  background-color: black;
   font-family: 'Roboto Condensed', 'Times New Roman', serif;
 }
 
-* {
-    box-sizing: border-box;
-  }
-
-.nav {
-    display: flex;
-    justify-content: right;   
-    height: 60px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-   
+.grow1 {
+	flex-grow: 1;
+}
+.grow2 {
+	flex-grow: 2;
+}
+.item {
+	margin: 5px;
+	background: rgba(10,10,12,.9);
+	text-align: center;
+	font-size: 1.5em;
+  padding: 5px;
 }
 
-.champion-history {
-    text-align: right;
+.item-nav {
+	margin: 5px;
+	font-size: 1.5em;
+  padding: 5px;
 }
 
-.champion-history:hover {
-    cursor:pointer;
-    color:#d1d3d5;
-}
-
-.select-icon {
-  background-image: url("assets/img/icon-game-lol.png");
-  background-repeat: no-repeat;
-  padding: 3vw 2vw 1vw 50vw;
-  margin-top: 0.5vw;
-}
-
-.tilte {
-  text-align: center;
-  color:#d1d3d5;
-  display: flex;
-  padding: 16px;
-  width: 200px;
- 
-}
-
-
-
-.drop-color,
-.nav-color{
+.drop-color{
   background-color:black;
   border: 1px black;
   color: #c9aa71;
   font-weight: 700;
-  text-align: right;
   padding: 4px;
+  z-index: 1;
+  }
+  
+  .box-drop{
+    width:200px;
+  }
+
+.container {
+	width:100%;
+	margin: 0 auto;
+	display: flex;
+  background-color:black;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  position: fixed;
   z-index: 1;
 }
 
-.box-drop{
-  width:200px;
+.nav-title{
+  color: #d1d3d5;
+  padding: 10px;
+}
+
+.logo-container{
+  display: flex;
+  justify-content: center;
+  padding: 80px 0 0 0;
+  width: 70%;
+  margin: auto;
+  flex-wrap: wrap;  
+}
+
+.containerAsine{
+  display: flex;
+  max-width: 90%;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.item2 {
+	background: rgba(10,10,12,.9);
+	text-align: center;
+	font-size: 1em;
+}
+
+.bc-black{
+  background: rgba(10,10,12,.9);
+}
+
+.m-five{
+  margin: 5px;
+}
+
+.fle-one{
+  flex: 1;
+}
+
+.img-header{
+  padding: 30px;
+}
+
+.tex-name {
+  border-top: 1px solid #927345;
+}
+
+.item-statistics{
+  max-width: 34%;
+}
+.item-s-table{
+  display:flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  color:#c9aa71;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+.h1-estatistic{
+  text-align: center;
+  color:#d1d3d5;
+  font-weight: 400;
+}
+
+.bar-chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+   
+.pie-chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding:10px;
+}
+
+.champions-container {
+  display: flex;
+  justify-content: center;    
+  margin: auto;
+  flex-wrap: wrap;    
+  padding: 10px; 
 }
 
 .card-color {
@@ -72,28 +165,11 @@ body {
   transition: .4s;
 }
 
-.logo-container{
-  display: flex;
-  justify-content: center;
-  padding: 60px 0 0 0;
-  width: 70%;
-  margin: auto;
-  flex-wrap: wrap;  
-  
-}
-
-  
-.champions-container {
-  display: flex; 
-  
-}
-
-
 .champions-img{
-  width: 18vw;
-  height: 20vw;
+  width: 14vw;
+  height: 16vw;
   margin: 1vw;
-  padding: 10px;
+  padding: 5px;
   border-radius: 15px;
 }
 
@@ -103,40 +179,36 @@ body {
   padding: 10px;
   border-radius: 20px;
 }
-
   
-.champion-name .champion-tag {
+.champion-name, .champion-tag {
   text-align: center;
   margin: auto;
   font-size: 1rem;
   width: 70%;
-  padding: 15px;
+  padding: 5px;
 }
 
 .champion-info{
   color:#d1d3d5;
   font-size: 1rem;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  padding: 2px;
 }
   
 .card {   
-  padding: 15px;
   text-align: center;
   transition: .4s;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
-  width: 20vw;
-  height: 40vw;
-  padding: 5px;
+  width: 17vw;
+  height: 37vw;
   border-radius: 20px;
 }
 
 .card:hover{
     transform: rotateY(180deg);
 }
-  
   
 .thefront{
   position: absolute;
@@ -148,7 +220,6 @@ body {
   overflow: hidden;
 }
   
- 
 .theback{
   position: absolute;
   top: 0;
@@ -165,41 +236,10 @@ body {
   padding: 5px;
 }
 
-.show-champions {
-  justify-content: center;    
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;    
-  padding: 10px;
+.flex-direction-row{
+flex-direction: row;
 }
 
-.tex-name {
-  border-top: 1px solid #927345;
+.flex-direction-column{
+flex-direction: column;
 }
-  
-.bar-chart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
- 
-.pie-chart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding:60px;
-}
-
-.estatistic{
-  padding-top: 15vw; 
-}
-
-
-.h1-estatistic{
-  text-align: center;
-  color:#d1d3d5;
-  font-weight: 400;
-}
- 
-  

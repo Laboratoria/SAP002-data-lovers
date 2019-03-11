@@ -7,55 +7,59 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>   
-    <nav class='nav nav-color '>
-      <div class='select-icon' ></div>
-      <div class='tilte'> CHAMPION FILTER </div>
-      <select class="drop-menu-categories drop-color box-drop" >        
-        <option class="menu" value="none" selected>TYPE OF CHAMPION</option>     
-        <option class="menu" value="Assassin" >ASSASSIN</option>
-        <option class="menu" value="Marksman">MARKSMAN</option>
-        <option class="menu" value="Fighter">FIGHTER</option>
-        <option class="menu" value="Mage">MAGE</option>
-        <option class="menu" value="Tank">TANK</option>
-        <option  class="menu" value="Support">SUPPORT</option>
-      </select>
-      <select class="drop-menu-order drop-color box-drop" >
-        <option class="menu" value="none" selected>ORDER</option>
-        <option class="menu" value="AZ">A - Z</option>
-        <option class="menu" value="ZA">Z - A</option>
-        <option class="menu" value="attack" >ATTACK</option>
-        <option class="menu" value="defense">DEFENSE</option>
-        <option class="menu" value="difficulty">DIFFICULTY</option>
-        <option class="menu" value="magic">MAGIC</option>  
-      </select>
-      <!-- <select class="drop-menu-statistic drop-color box-drop" >
-        <option class="menu" value="none" selected>STATISTICS</option>
-        <option class="menu" value=" attack" >Attack</option>
-        <option class="menu" value="defence">Defence</option>
-        <option class="menu" value="magic">Magic</option>  
-      </select> -->
-    </nav>
-    <section class="logo-container">
+    <header>
+      <nav class="container column">
+        <div class="item-nav grow2">
+          <img src="assets/img/icon-game-lol.png"/>
+        </div>
+        <div class="item-nav grow2 nav-title">
+         CHAMPION FILTER
+        </div>
+        <div class="item-nav grow2">
+          <select class="drop-menu-categories drop-color box-drop" >        
+            <option class="menu" value="none" selected>TYPE OF CHAMPION</option>     
+            <option class="menu" value="Assassin" >ASSASSIN</option>
+            <option class="menu" value="Marksman">MARKSMAN</option>
+            <option class="menu" value="Fighter">FIGHTER</option>
+            <option class="menu" value="Mage">MAGE</option>
+            <option class="menu" value="Tank">TANK</option>
+            <option  class="menu" value="Support">SUPPORT</option>
+          </select>
+          <select class="drop-menu-order drop-color box-drop" >
+            <option class="menu" value="none" selected>ORDER</option>
+            <option class="menu" value="AZ">A - Z</option>
+            <option class="menu" value="ZA">Z - A</option>
+            <option class="menu" value="attack" >ATTACK</option>
+            <option class="menu" value="defense">DEFENSE</option>
+            <option class="menu" value="difficulty">DIFFICULTY</option>
+            <option class="menu" value="magic">MAGIC</option>  
+          </select>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="logo-container">
         <img src="assets/img/header.png" alt="">
-    </section>  
-    <section class="champions-container">
-        <div  class="show-champions" ></div>
-    </section>  
-
-    <section class="estatistic"></section>
-      <h1 class="h1-estatistic">Estatistics</h1>
-      <div class="bar-chart" id="chart_div"></div>  
-      <section class="pie-chart">
-        <div id="piechart" ></div>  
-        <div id="piechart2" ></div>  
       </section>
-    </section>
-
-
-    <script src="./data/lol/lol.js"></script> 
-   
-    
+      <section>
+        <div class="containerAsine flex-direction-row">
+          <div class="item-statistics">
+            <div class="item-s-table bc-black m-five  fle-one">
+              <table class="tableCalc table" id="t01">
+              </table>
+            </div>
+            <div class="item-s-bar bc-black bar-chart m-five" id="chart_div">
+            </div>
+            <div class="item-s-pie item2 bc-black m-five" id="piechart"> 
+            </div>
+            <div class="item-s-pie-two bc-black m-five" id="piechart2">  
+            </div>
+          </div>
+          <div class="champions-container item-show-champions m-five fle-one">
+          </div>   
+        </div>
+      </section>
+    </main>
      <script src="main.js"></script>
-     
   </body>
 </html>
