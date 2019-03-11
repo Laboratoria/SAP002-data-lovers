@@ -88,9 +88,11 @@ function showPokemons(pokemons) {
                     <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
                     </div>
                     <div class="pokemon-data">
-                    <p><strong>${selectedPokemon["name"]}</strong></p>
+                    <h1><strong>${selectedPokemon["name"]}</strong></h1>
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
+                    <p><strong>Doces para evoluir: </strong>${selectedPokemon["candy_count"]}</p>
+                    <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"])}</p>
                     </div>
                         `
                 setPokedexButtonValue()
@@ -106,6 +108,19 @@ function showPokemons(pokemons) {
             }
         )
     }
+}
+
+function translateWeaknesses(array){
+    let pokemonWeaknesses = array;
+    fraquezasIngles = ["Grass","Poison","Fire","Water","Bug","Normal","Electric","Ground","Fighting","Psychic","Rock","Flying","Ghost","Ice","Dragon"];
+    fraquezasPortugues = ["planta","venenoso","fogo","água","inseto","normal","elétrico","terra","lutador","psíquico","pedra","voador","fantasma","gelo","dragão"];
+    for (weaknesses of fraquezasIngles){
+        let index = pokemonWeaknesses.indexOf(weaknesses);
+        if (index != -1){
+            pokemonWeaknesses[index]=fraquezasPortugues[fraquezasIngles.indexOf(pokemonWeaknesses[index])];
+        }  
+    }
+return pokemonWeaknesses.join(", ");
 }
 
 function setPokedexButtonValue(){
