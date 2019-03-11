@@ -44,24 +44,14 @@ header {
     
 .navegation li {
     margin-right: 50px; 
-    /* quando muda pra % da erro */
     list-style-type: none;
     font-size: 16px;
     display: flex;
     justify-content: flex-end; 
 }
 
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    background-color: rgb(176, 201, 230);
-}
-
 aside {
     width: 200px;
-    height:280px; 
     background-color: #3f59af;
     margin-right: 2%;
     margin-left: 2%;
@@ -70,7 +60,8 @@ aside {
 
 aside ul {
     list-style: none;
-    padding-left: 0px;
+    padding-left: 0%;
+    margin: 0%;
 }
 
 .active, aside li {
@@ -81,30 +72,28 @@ aside ul {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     color:#3f59af;
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
 }
 
-aside li:hover {
-    background-color:rgb(176, 201, 230);
-}
-
-.sideBarSubMenu li{
+.submenu li {
     background-color: #3f59af;
     color:  #ffcb05;
 }
 
-.container {
+.container-cards {
     background-color: #3f59af;
     width:80%;
     display: flex;
     justify-content: space-evenly;
     flex-flow:wrap;
-    margin-top: 4%;
+    margin-top: 3%;
 }
 
 .card {
     background-color:white;
     width:17%;
-    height:auto;
+    height:23vw;
     border: white;
     border-radius: 5%;
     margin-bottom: 3%;  
@@ -119,56 +108,90 @@ aside li:hover {
     height:7%;
     border: white;
     border-radius: 7%;
-    background-color: #3f59af;
     font-family: "Roboto", sans-serif;
     font-size: 12px;
     color: white;
 }
 
-/* .color-Grass {
-    background-color: green
-} */
+a {
+    text-decoration: none;
+}
 
+a:hover {
+    background-color: rgb(176, 201, 230);
+}
+
+aside li:hover {
+    background-color:rgb(176, 201, 230);
+}
+
+
+.color-Grass {
+    background-color: rgb(94, 250, 32);
+}
+
+.color-Water {
+    background-color: blue;
+}
+
+.color-Dragon {
+    background-color: rgb(128, 0, 0);
+}
+
+.color-Electric {
+    background-color: rgb(253, 228, 0);
+}
+
+.color-Ghost {
+    background-color: purple;
+}
+
+.color-Fire {
+    background-color: orangered;
+}
+
+.color-Ice {
+    background-color: rgb(29, 199, 230);
+}
+
+.color-Bug {
+    background-color: green;
+}
+
+.color-Fighting {
+    background-color: rgb(255, 136, 0);
+}
+
+.color-Normal {
+    background-color: grey;
+}
+
+.color-Rock {
+    background-color: rgba(192, 114, 12, 0.829);
+}
+
+.color-Psychic {
+    background-color: rgb(231, 13, 86);
+}
+
+.color-Ground {
+    background-color: goldenrod;
+}
+
+.color-Poison {
+    background-color: rgb(230, 88, 230);
+}
+
+.color-Flying {
+    background-color: rgb(7, 19, 109);
+}
 
 footer {
     background-color: #FFCA08;
     width: 100%;
 }
 
-/* eggs */
-
-section{
-    background-color:green;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width:80%;
-    height: auto;
-    margin-top:10%;
-}
-
-section header{
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width:40%;
-    height: 15%;
-    font-family: "Roboto", sans-serif;
-    font-size: 25px;
-    color: #FFCA08;
-    border: none;
-    border-radius:100px;
-}
-
-section header img{
-    width:140px;
-    height:auto%;
-
-}
-
-.eggs {
+.container-eggs {
     background-color: #005797;
     width:100%;
     display: flex;    
@@ -177,47 +200,169 @@ section header img{
     justify-content: space-evenly;
 }
 
-.eggs h1 {
-    display: flex;    
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
+.title-eggs {
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
 }
 
-/* .ovin{
-    background-color: black;
-} */
+.title-eggs h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    color: #FFCA08;
+    margin: 0;
+}
 
-/* # 5k {
-    display: flex;    
+.title-eggs img {
+    height: 5vw;
+    width: auto;
+}
+
+#doisKm {
+    display: flex;
     flex-wrap: wrap;
-    align-content: center;
     justify-content: center;
-} */
+}
+
+#doisKm img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.eggs-dois-km {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:80%;
+    margin-top: 3%;
+}
+
+#cincoKm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#cincoKm img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.eggs-cinco-km {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:80%;
+    margin-top: 3%;
+}
+
+#dezKm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#dezKm img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.eggs-dez-km {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:80%;
+    margin-top: 3%;
+}
+
+.container-pokemons {
+    margin-top: 3%;
+    width: 70%;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #3f59af;
+    text-align: center;
+}
+
+#morning {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#morning header {
+    margin-bottom: 3%;
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 2%;
+}
 
 
-/* spawn */
+#afternoon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#afternoon header{
+    margin-bottom: 3%;
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 2%;
+}
+
+#night {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#night header{
+    margin-bottom: 3%;
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 2%;
+}
+
+#dawn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#dawn header{
+    margin-bottom: 3%;
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 2%;
+}
+
 .minicard {
     background-color:white;
-    width:18%;
-    height:244px;
+    width:17%;
+    height:20vw;
     border: white;
     border-radius: 5%;
-    margin-bottom: 3%;  
+    margin-bottom: 3%;
+    margin-left: 2%;  
     padding: 3%;
     text-align: center;
     align-self: auto;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     color: #3f59af;
-
-
 }
-
-/* .minicard img{
-    width:80px;
-    height:80px;
-} */
 
 .minicard button {
     height:7%;
@@ -229,37 +374,8 @@ section header img{
     color: white;
 }
 
-
-.collapsible {
-    padding: 5px;
-    padding-left: 20px;
-    /* border: 1px solid black; */
-    font-size: 18x;
-    background-color: #FFCA08;
-    color:#3f59af;
-}
-
-/* .activeMenu, .collapsible:hover {
-    background-color: rgb(14, 199, 231);
-} */
-
-/* add icon */
-.collapsible:after {
-    content: '\2193'; /* Unicode caracter */
-    font-size: 13px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2191"; /* Unicode caracter */
-}
-
-.sideBarSubMenu {
+.submenu {
     display: none;
-    background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     max-height: 0;
     transition: max-height 0.2s ease-out;

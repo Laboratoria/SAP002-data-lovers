@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <title>POKÉMON GO</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -15,50 +16,58 @@
             <ul>
                 <li><a href="index.html">POKÉMONS</a></li>
                 <li><a href="eggs.html">OVOS</a></li>
-                <li><a href="#">QUANDO ENCONTRAR</a></li> 
+                <li><a href="#">QUANDO ENCONTRAR</a></li>
             </ul>
         </nav>
         <img class="imagem-header" src="imagens/banner/header.jpg">
-    </header> 
+    </header>
+
     <aside>
         <ul>
-            <li onclick="showPeriodos()" id="menu1">HORÁRIOS</li>
+            <li onclick="showPeriods()" id="menu1">HORÁRIOS</li>
             <li onclick="showTheBest()" id="menu2">MELHOR HORÁRIO PARA CAPTURAR</li>
-            <li class="collapsible" >HORÁRIO POR TIPO</li>
-            <ul id="sub3" class="sideBarSubMenu">
-                <li onclick="showPeriodos('Water')">Água</li>
-                <li onclick="showPeriodos('Dragon')">Dragão</li>
-                <li onclick="showPeriodos('Electric')">Elétrico</li>
-                <li onclick="showPeriodos('Ghost')">Fantasma</li>
-                <li onclick="showPeriodos('Fire')">Fogo</li>
-                <li onclick="showPeriodos('Ice')">Gelo</li>
-                <li onclick="showPeriodos('Bug')">Inseto</li>
-                <li onclick="showPeriodos('Fighting')">Lutador</li>
-                <li onclick="showPeriodos('Normal')">Normal</li>
-                <li onclick="showPeriodos('Rock')">Pedra</li>
-                <li onclick="showPeriodos('Grass')">Planta</li>
-                <li onclick="showPeriodos('Psychic')">Psíquico</li>
-                <li onclick="showPeriodos('Ground')">Terra</li>
-                <li onclick="showPeriodos('Poison')">Venenoso</li>
-                <li onclick="showPeriodos('Flying')">Voador</li>
-            </ul> 
+            <li class="open-menu">HORÁRIO POR TIPO</li>
+            <ul class="submenu">
+                <li onclick="showPeriods('Water')">Água</li>
+                <li onclick="showPeriods('Dragon')">Dragão</li>
+                <li onclick="showPeriods('Electric')">Elétrico</li>
+                <li onclick="showPeriods('Ghost')">Fantasma</li>
+                <li onclick="showPeriods('Fire')">Fogo</li>
+                <li onclick="showPeriods('Ice')">Gelo</li>
+                <li onclick="showPeriods('Bug')">Inseto</li>
+                <li onclick="showPeriods('Fighting')">Lutador</li>
+                <li onclick="showPeriods('Normal')">Normal</li>
+                <li onclick="showPeriods('Rock')">Pedra</li>
+                <li onclick="showPeriods('Grass')">Planta</li>
+                <li onclick="showPeriods('Psychic')">Psíquico</li>
+                <li onclick="showPeriods('Ground')">Terra</li>
+                <li onclick="showPeriods('Poison')">Venenoso</li>
+                <li onclick="showPeriods('Flying')">Voador</li>
+            </ul>
         </ul>
-    </aside> 
-    <div class="container">
-        <section id="manha">
+    </aside>
+
+    <section class="container-pokemons">
+        <section id="morning">
         </section>
-        <section id="tarde">
+
+        <section id="afternoon">
         </section>
-        <section id="noite">
+
+        <section id="night">
         </section>
-        <section id="madrugada">
+
+        <section id="dawn">
         </section>
-    </div>
-    <footer class="further-information">
-        <div>
-            <p><center>Copyright &copy , Your Website 2019 </center></p>
-        </div>
+    </section>
+
+    <footer class="footer-information">
+        <p>
+            <center>Copyright &copy , Your Website 2019 </center>
+        </p>
     </footer>
+
     <script type="text/javascript" src="js/spawn.js"></script>
 </body>
+
 </html>

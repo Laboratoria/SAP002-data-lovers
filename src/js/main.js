@@ -2,28 +2,6 @@ window.onload = function() {
     openPoke();
 };
 
-// function getPokemon(){
-//     return POKEMON["pokemon"];
-// }
-
-// function showPokemon(){
-//     let pokeDiv = document.getElementById("cards");
-//     pokeDiv.innerHTML = `
-//     ${getPokemon().map((pokemon) => `
-//     <div class="card">
-//         <h3>${pokemon["name"]}</h3>
-//         <img src="${pokemon["img"]}">
-//         <h3>Altura: ${pokemon["height"]}</h3>
-//         <h3>Peso: ${pokemon["weight"]}</h3>
-//         <h3>Candies: ${pokemon["candy_count"]}</h3>
-//         <button class="type-poke">${pokemon["type"][0]}</button>
-//     </div>
-//     `).join("")}
-//     `
-// }
-
-
-//filtro tipos 
 function openPoke(type) {
     fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
@@ -45,7 +23,7 @@ function openPoke(type) {
         <h3>Peso: ${pokemon["weight"]}</h3>
         <h3>Candies: ${candiesCount(pokemon["candy_count"])}</h3>
         ${pokemon["type"].map(tipo => `
-        <button class="type-poke">${translate(tipo)}</button>
+        <button class="type-poke color-${tipo}">${translate(tipo)}</button>
         `).join("")}
         </div>
         `).join("")}

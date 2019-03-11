@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8">
   <title>POKÉMON GO</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -15,21 +16,22 @@
       <ul>
         <li><a href="#">POKÉMONS</a></li>
         <li><a href="eggs.html">OVOS</a></li>
-        <li><a href="spawn.html">QUANDO ENCONTRAR</a></li> 
+        <li><a href="spawn.html">QUANDO ENCONTRAR</a></li>
       </ul>
     </nav>
     <img class="imagem-header" src="imagens/banner/header.jpg">
-  </header>  
+  </header>
+
   <aside>
     <ul>
-      <li class="collapsible">ORDENAR</li>
-      <ul id="sub1" class="sideBarSubMenu">
+      <li class="open-menu">ORDENAR</li>
+      <ul class="submenu">
         <li onclick="orderBy('asc')">A - Z</li>
         <li onclick="orderBy('dec')">Z - A</li>
         <li onclick="openPoke()">NÚMERO</li>
       </ul>
-      <li class="collapsible">FILTRAR</li>
-      <ul id="sub2" class="sideBarSubMenu">
+      <li class="open-menu">FILTRAR</li>
+      <ul class="submenu">
         <li onclick="openPoke('Water')">Água</li>
         <li onclick="openPoke('Dragon')">Dragão</li>
         <li onclick="openPoke('Electric')">Elétrico</li>
@@ -44,26 +46,28 @@
         <li onclick="openPoke('Psychic')">Psíquico</li>
         <li onclick="openPoke('Ground')">Terra</li>
         <li onclick="openPoke('Poison')">Venenoso</li>
-        <li onclick="openPoke('Flying')">Voador</li>              
+        <li onclick="openPoke('Flying')">Voador</li>
       </ul>
     </ul>
   </aside>
-  <div class="container" id="cards">
-    <div class="card">
+
+  <section class="container-cards" id="cards">
+    <section class="card">
       <h3>Nome do pokemon</h3>
       <img src="">
       <h3>Altura</h3>
       <h3>Peso</h3>
       <h3>Candies</h3>
       <button class="type-poke">Tipo</button>
-    </div>
-  </div>
-  <footer class="further-information">
-    <div>
-      <p><center>Copyright &copy , Your Website 2019 </center></p>
-    </div>
+    </section>
+  </section>
+
+  <footer class="footer-information">
+    <p>
+      <center>Copyright &copy, Your Website 2019 </center>
+    </p>
   </footer>
-  <!-- <script type="text/javascript" src="./data/pokemon/pokemon.js"></script> -->
+
   <script type="text/javascript" src="js/spawn.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
