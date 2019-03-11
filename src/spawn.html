@@ -2,24 +2,23 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>POKÉMON GO</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/src/style.css">
 </head>
 
 <body>
-    <nav class="navegation">
-        <img src="/src/data/pokemon/imagens/banner/iconGo.png">
-        <ul>
-            <li><a href="index.html">POKÉMONS</a></li>
-            <li><a href="eggs.html">OVOS</a></li>
-            <li><a href="#">QUANDO ENCONTRAR</a></li> 
-        </ul>
-    </nav>
     <header>
-        <h1>CONHEÇA SEU</h1>
-        <img class=logo src="/src/data/pokemon/imagens/banner/pokemon-logo.png">
-        <img class=ash src="/src/data/pokemon/imagens/banner/ashPikachu.png">
+        <nav class="navegation">
+            <img src="/src/imagens/banner/logo.png">
+            <ul>
+                <li><a href="../index.html">POKÉMONS</a></li>
+                <li><a href="/src/eggs.html">OVOS</a></li>
+                <li><a href="#">QUANDO ENCONTRAR</a></li> 
+            </ul>
+        </nav>
+        <img class="imagem-header" src="/src/imagens/banner/header.jpg">
     </header> 
     <aside>
         <ul>
@@ -27,9 +26,21 @@
             <li onclick="showTheBest()" id="menu2">MELHOR HORÁRIO PARA CAPTURAR</li>
             <li class="collapsible" >HORÁRIO POR TIPO</li>
             <ul id="sub3" class="sideBarSubMenu">
-                <li>Planta</li>
+                <li onclick="showPeriodos('Water')">Água</li>
+                <li onclick="showPeriodos('Dragon')">Dragão</li>
+                <li onclick="showPeriodos('Electric')">Elétrico</li>
+                <li onclick="showPeriodos('Ghost')">Fantasma</li>
                 <li onclick="showPeriodos('Fire')">Fogo</li>
-                <li>Water</li>
+                <li onclick="showPeriodos('Ice')">Gelo</li>
+                <li onclick="showPeriodos('Bug')">Inseto</li>
+                <li onclick="showPeriodos('Fighting')">Lutador</li>
+                <li onclick="showPeriodos('Normal')">Normal</li>
+                <li onclick="showPeriodos('Rock')">Pedra</li>
+                <li onclick="showPeriodos('Grass')">Planta</li>
+                <li onclick="showPeriodos('Psychic')">Psíquico</li>
+                <li onclick="showPeriodos('Ground')">Terra</li>
+                <li onclick="showPeriodos('Poison')">Venenoso</li>
+                <li onclick="showPeriodos('Flying')">Voador</li>
             </ul> 
         </ul>
     </aside> 
@@ -43,11 +54,11 @@
         <section id="madrugada">
         </section>
     </div>
-    <footer>
+    <footer class="further-information">
         <div>
             <p><center>Copyright &copy , Your Website 2019 </center></p>
         </div>
     </footer>
-    <script type="text/javascript" src="js/spawn.js"></script>
+    <script type="text/javascript" src="/src/js/spawn.js"></script>
 </body>
 </html>

@@ -4,65 +4,70 @@ body {
     height: auto;
     width: 100%;
     display: flex;
-    /* align-content: flex-start; */
     flex-flow: row wrap;
+    background-color: #3f59af;
+}
+
+header {
+    background-color: #ffcb05;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.imagem-header {
+    margin-top: 5%;
+    width: 100%;
 }
 
 .navegation {
-    background-color: yellow;
-    position: fixed;
-    /* align-items:center; */
-    height: 80px;
+    background-color: #ffcb05;
+    height: 10%;
     width: 100%;
-    font-family: "Montserrat";
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    color:#3f59af;
 }
 
 .navegation img {
     width: auto;
-    height: 70%;
-    justify-content: flex-start;
+    height: 80%;
+    margin-left: 5%;
 }
 
 .navegation ul {
     display: flex;
-    margin: 0;
-    
 }   
     
 .navegation li {
-    margin-right: 50px;
+    margin-right: 50px; 
+    /* quando muda pra % da erro */
     list-style-type: none;
-    font-size: 18px;
-    justify-content: flex-end;
-    
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-end; 
 }
 
-
-header {
-    background-color: yellow;
-    width: 100%;
-    height:auto;
-    margin: 0;
-    padding: 0;
-    
+a {
+    text-decoration: none;
 }
 
-.logo {
-    width: 50%;
-    height: auto;
-    
-}
-.ash {
-    width: 12%;
-    height: auto;
-    
+a:hover {
+    background-color: rgb(176, 201, 230);
 }
 
 aside {
     width: 200px;
     height:280px; 
-    /* background-color: rgb(199, 204, 199); */
+    background-color: #3f59af;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 3%;
 }
+
 aside ul {
     list-style: none;
     padding-left: 0px;
@@ -71,28 +76,172 @@ aside ul {
 .active, aside li {
     padding: 5px;
     padding-left: 20px;
-    border: 1px solid black;
-    font-size: 18x;
-    background-color: #005797;
-    color: white;
+    background-color: #ffcb05;
+    border: 1px solid #3f59af;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color:#3f59af;
 }
 
 aside li:hover {
-    background-color: rgb(14, 199, 231);
+    background-color:rgb(176, 201, 230);
 }
+
+.sideBarSubMenu li{
+    background-color: #3f59af;
+    color:  #ffcb05;
+}
+
+.container {
+    background-color: #3f59af;
+    width:80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow:wrap;
+    margin-top: 4%;
+}
+
+.card {
+    background-color:white;
+    width:17%;
+    height:auto;
+    border: white;
+    border-radius: 5%;
+    margin-bottom: 3%;  
+    padding: 3%;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #3f59af;
+}
+
+.card button {
+    height:7%;
+    border: white;
+    border-radius: 7%;
+    background-color: #3f59af;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: white;
+}
+
+/* .color-Grass {
+    background-color: green
+} */
+
+
+footer {
+    background-color: #FFCA08;
+    width: 100%;
+}
+
+/* eggs */
+
+section{
+    background-color:green;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width:80%;
+    height: auto;
+    margin-top:10%;
+}
+
+section header{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width:40%;
+    height: 15%;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    color: #FFCA08;
+    border: none;
+    border-radius:100px;
+}
+
+section header img{
+    width:140px;
+    height:auto%;
+
+}
+
+.eggs {
+    background-color: #005797;
+    width:100%;
+    display: flex;    
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.eggs h1 {
+    display: flex;    
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+/* .ovin{
+    background-color: black;
+} */
+
+/* # 5k {
+    display: flex;    
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+} */
+
+
+/* spawn */
+.minicard {
+    background-color:white;
+    width:18%;
+    height:244px;
+    border: white;
+    border-radius: 5%;
+    margin-bottom: 3%;  
+    padding: 3%;
+    text-align: center;
+    align-self: auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #3f59af;
+
+
+}
+
+/* .minicard img{
+    width:80px;
+    height:80px;
+} */
+
+.minicard button {
+    height:7%;
+    border: white;
+    border-radius: 7%;
+    background-color: #3f59af;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: white;
+}
+
 
 .collapsible {
     padding: 5px;
     padding-left: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-size: 18x;
-    background-color: #005797;
-    color: white;
+    background-color: #FFCA08;
+    color:#3f59af;
 }
 
-.activeMenu, .collapsible:hover {
+/* .activeMenu, .collapsible:hover {
     background-color: rgb(14, 199, 231);
-}
+} */
 
 /* add icon */
 .collapsible:after {
@@ -114,100 +263,4 @@ aside li:hover {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     max-height: 0;
     transition: max-height 0.2s ease-out;
-}
-
-.sideBarSubMenu li{
-    background-color: #874ee4;
-}
-
-.container {
-    background-color: rgb(0, 247, 255);
-    width:80%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow:wrap;
-    
-}
-.card {
-    background-color: rgb(226, 235, 235);
-    width:180px;
-    height:auto;
-    margin-bottom: 10px;
-    padding:40px;
-}
-
-.card button {
-    background-color: brown;
-    color: white;
-    font-size: 10px;
-}
-
-footer {
-    background-color: yellow;
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    background-color: rgb(17, 121, 240);
-}
-
-/* eggs */
-section{
-    background-color: rgb(212, 0, 255);
-    display: flex;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    width:80%;
-    height: auto;
-}
-
-section header{
-    background-color: rgb(255, 0, 140);
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width:100%;
-    height: 80px;
-}
-
-section header img{
-    width:50px;
-    height:50px;
-}
-.eggs {
-    background-color: rgb(0, 247, 255);
-    width:100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    flex-wrap: wrap;
-}
-.eggs img{
-    background-color: bisque;
-    width:120px;
-    height:auto;
-}
-
-/* spawn */
-.minicard {
-    background-color: rgb(226, 235, 235);
-    width:96px;
-    height:auto;
-    margin-bottom: 10px;
-}
-
-.minicard img{
-    width:80px;
-    height:80px;
-}
-
-.minicard button {
-    background-color: gray;
-    color: white;
-    font-size: 10px;
 }

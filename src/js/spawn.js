@@ -2,6 +2,11 @@ window.onload = function() {
     showPeriodos();
 };
 
+let manha = document.querySelector ('#manha');
+let tarde = document.querySelector ('#tarde');
+let noite = document.querySelector ('#noite');
+let madrugada = document.querySelector ('#madrugada');
+
 //Função showTheBest que procura a maior quantidade de poke por periodo e mostra a estatistica do melhor periodo para a captura;
 //Fetch vai abrir o arquivo json, se a resposta for positiva, ele retorna o objeto;
 
@@ -35,7 +40,7 @@ function showTheBest(){
             document.getElementById("noite").innerHTML = ``;
             document.getElementById("madrugada").innerHTML = ``;
             let bestContainer = document.getElementById("manha");
-            switch (best){ //switch case para comparação tipo if e else, porém mais organizado;
+            switch (best){ //switch case para comparação tipo if e else, porém mais organizado e facil de entender o condicional;
                 case manha.length:
                     bestContainer.innerHTML = `
                     <header>
@@ -139,7 +144,12 @@ function showPeriodos(type){
             `
             let tarde = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
-                return time >= 12 && time < 18
+                if (type != null){
+                    return time >= 12 && time < 18 && poke["type"].includes(type)
+                }else {
+                    return time >= 12 && time < 18
+                }
+                
             });
             let pokemonTarde = document.getElementById("tarde");
             pokemonTarde.innerHTML = `
@@ -159,7 +169,12 @@ function showPeriodos(type){
             `
             let noite = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
-                return time >= 18 && time < 24
+                if (type != null){
+                    return time >= 18 && time < 24 && poke["type"].includes(type)
+                }else{
+                    return time >= 18 && time < 24
+                }
+                
             });
             let pokemonNoite = document.getElementById("noite");
             pokemonNoite.innerHTML = `
@@ -179,7 +194,12 @@ function showPeriodos(type){
             `
             let madruga = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
-                return time >= 0 && time < 6
+                if (type != null){
+                    return time >= 0 && time < 6 && poke["type"].includes(type)
+                }else{
+                    return time >= 0 && time < 6
+                }
+                
             });
             let pokemonMadruga = document.getElementById("madrugada");
             pokemonMadruga.innerHTML = `

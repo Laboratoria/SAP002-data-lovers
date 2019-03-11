@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>POKÉMON GO</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="/src/style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navegation">
+      <img src="src/imagens/banner/logo.png">
+      <ul>
+        <li><a href="#">POKÉMONS</a></li>
+        <li><a href="/src/eggs.html">OVOS</a></li>
+        <li><a href="/src/spawn.html">QUANDO ENCONTRAR</a></li> 
+      </ul>
+    </nav>
+    <img class="imagem-header" src="src/imagens/banner/header.jpg">
+  </header>  
+  <aside>
+    <ul>
+      <li class="collapsible">ORDENAR</li>
+      <ul id="sub1" class="sideBarSubMenu">
+        <li onclick="orderBy('asc')">A - Z</li>
+        <li onclick="orderBy('dec')">Z - A</li>
+        <li onclick="openPoke()">NÚMERO</li>
+      </ul>
+      <li class="collapsible">FILTRAR</li>
+      <ul id="sub2" class="sideBarSubMenu">
+        <li onclick="openPoke('Water')">Água</li>
+        <li onclick="openPoke('Dragon')">Dragão</li>
+        <li onclick="openPoke('Electric')">Elétrico</li>
+        <li onclick="openPoke('Ghost')">Fantasma</li>
+        <li onclick="openPoke('Fire')">Fogo</li>
+        <li onclick="openPoke('Ice')">Gelo</li>
+        <li onclick="openPoke('Bug')">Inseto</li>
+        <li onclick="openPoke('Fighting')">Lutador</li>
+        <li onclick="openPoke('Normal')">Normal</li>
+        <li onclick="openPoke('Rock')">Pedra</li>
+        <li onclick="openPoke('Grass')">Planta</li>
+        <li onclick="openPoke('Psychic')">Psíquico</li>
+        <li onclick="openPoke('Ground')">Terra</li>
+        <li onclick="openPoke('Poison')">Venenoso</li>
+        <li onclick="openPoke('Flying')">Voador</li>              
+      </ul>
+      <!-- <li onclick="openTab('sub3');">menu 3</li>
+        <ul id="sub3" class="sideBarSubMenu">
+          <li>sub 1</li>
+          <li>sub 2</li>
+          <li>sub 3</li>
+        </ul>  -->
+      </ul>
+    </aside>
+    <div class="container" id="cards">
+      <div class="card">
+        <h3>Nome do pokemon</h3>
+        <img src="">
+        <h3>Altura</h3>
+        <h3>Peso</h3>
+        <h3>Candies</h3>
+        <button class="type-poke">Tipo</button>
+      </div>
+    </div>
+    <!-- <section id="cards">
+      <div id="pokemon-div" class="pokemon"></div>
+    </section> -->
+    <footer class="further-information">
+      <div>
+        <p><center>Copyright &copy , Your Website 2019 </center></p>
+      </div>
+    </footer>
+    <!-- <script type="text/javascript" src="./data/pokemon/pokemon.js"></script> -->
+    <script type="text/javascript" src="/src/js/spawn.js"></script>
+    <script type="text/javascript" src="/src/js/main.js"></script>
+  </body>
+  </html>
