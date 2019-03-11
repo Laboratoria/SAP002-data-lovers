@@ -21,28 +21,6 @@ Este projeto foi desenvolvido no Bootcamp da [Laboratoria](https://www.laborator
  
 Em League of Legends, os jogadores assumem o papel de "invocadores", controlando campeões com habilidades únicas e que lutam com seu time contra outros invocadores ou campeões controlados pelo computador. No modo mais popular do jogo, o objetivo de cada time é destruir o nexus da equipe adversária, uma construção localizada na base e protegida por outras estruturas. Cada partida de League of Legends é distinta, pois os campeões sempre começam fracos e progridem através da acumulação de ouro e da experiência ao longo do jogo (Fonte: [Wikipedia).](https://pt.wikipedia.org/wiki/League_of_Legends)  
 
-# Critérios Obrigatórios:
-
-#### Breve documentação  no README.md
-#### Desenho da interface de usuário
-#### Protótipo
-#### Testes de usabilidade
-#### Implementação de Interface de Usuário (HTML/CSS/JS)
-
-1. Mostrar os dados em uma interface: card, tabela ou lista. 
-2. Permitir ao usuário filtrar e ordenar os dados.
-3. Calcular estatísticas como média aritmética, máximo e/ou mínimo de algum
-   atributo numérico, ou contar quantas vezes aparece um determinado valor,
-   por exemplo.
-
-## Parte Opcional (Hacker edition)
-
-Features/características extras sugeridas:
-* No lugar de consumir os dados de forma estática, trabalhar com
-  eles de forma dinâmica, carregando um arquivo JSON por meio de um `fetch`.
-* Agregar visualizações gráficas por meio das blibliotecas de gráficos  [Chart.js](https://www.chartjs.org/) ou [Google Charts](https://developers.google.com/chart/).
-
-   
 ## Etapa 1 - Planejamento
 
 O planejamento foi realizado com auxílio da ferramenta Trello.
@@ -56,17 +34,19 @@ Foi realizada uma pesquisa online para conhecer aplicações com informações s
 Após a busca incial foi realizada uma pesquisa com usuários. Conversamos com algumas pessoas que jogam Lol para verificar como a aplicação poderia ser útil. 
   
   
-
 *****_Definição do usuário_*****
 
-  
+ 
+> _Jogadores iniciantes que queiram conhecer informações dos campeões, como seu tipo e forças_
 
-> _Um jogador novato que queira conhecer informações dos campeões, como seu tipo e forças_
-
-  
 
 ********
 
+
+![data-lovers](https://github.com/JaquelineGDS/data-lovers/blob/master/src/assets/img/persona01.png) 
+  
+ 
+![data-lovers](https://github.com/JaquelineGDS/data-lovers/blob/master/src/assets/img/persona02.png) 
   
 
 
@@ -74,9 +54,9 @@ Após a busca incial foi realizada uma pesquisa com usuários. Conversamos com a
 
 Protótipo elaborado com a ferramenta Marvel: [protótipo](https://marvelapp.com/6ddi6b7/screen/53819908) 
 
-<img  src='assets/img/protótipo.png'/>  
+![data-lovers](https://github.com/JaquelineGDS/data-lovers/blob/master/src/assets/img/prot%C3%B3tipo.PNG)
 
-  
+
 
 ## Etapa 4 - Teste com usuário  
 
