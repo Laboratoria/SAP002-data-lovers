@@ -88,8 +88,8 @@ function showPokemons(pokemons) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
                 document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
-                    <figure class="pokemon-img">
-                        <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
+                    <figure class="pokemon-img-container">
+                        <img src = "${selectedPokemon["img"]}"/>
                     </figure> 
                     <div class="pokemon-data">
                     <h1><strong>${selectedPokemon["name"]}</strong></h1>
@@ -123,7 +123,7 @@ function translateWeaknesses(array) {
     let pokemonWeaknesses = array;
     weaknessesEnglish = ["Grass", "Poison", "Fire", "Water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock", "Flying", "Ghost", "Ice", "Dragon"];
     weaknessesPortuguese = ["planta", "venenoso", "fogo", "água", "inseto", "normal", "elétrico", "terra", "lutador", "psíquico", "pedra", "voador", "fantasma", "gelo", "dragão"];
-    for (weaknesses of fraquezasIngles) {
+    for (weaknesses of weaknessesEnglish) {
         let index = pokemonWeaknesses.indexOf(weaknesses);
         if (index != -1) {
             pokemonWeaknesses[index] = weaknessesPortuguese[weaknessesEnglish.indexOf(pokemonWeaknesses[index])]
@@ -156,7 +156,7 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
     function () {
         document.querySelector(".analyzer-container").innerHTML = `
     <span class="ring"><span class="close">&times;</span></span>
-    <h3 class="my-pokedex-title">Minha Pokedex</h3>
+    <h1 class="my-pokedex-title">Minha Pokedex</h1>
     <hr class="pulaLinha1">
     <section class="charts">
         <div class="chart">

@@ -157,9 +157,9 @@ body {
     position: relative;
 }
 .pokemon-img-container{
-    width: 190px;
-    padding-top: 40px;
-    background-image: radial-gradient(rgba(148, 129, 254, 0.5), rgba(148, 129, 254, 0.01), rgba(255, 255, 255, 0));
+    padding-top: 33px;
+    height: 80px;
+
 }
 .analyzer-container {
     background-image: url(images/Pokedex_Background.png);
@@ -168,7 +168,6 @@ body {
     z-index: 2000;
     width: 75vw;
     margin: 50px auto auto auto;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -190,10 +189,14 @@ body {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 18px;
 }
 
 .my-pokedex-title {
-    padding-top: 25px;
+    padding-top: 45px;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 33px;
 }
 
 .means {
@@ -202,7 +205,11 @@ body {
     width: 80%;
     text-align: left;
     margin: auto;
-    font-size: 20px;
+    font-size: 25px;
+    color: whitesmoke;
+    line-height: 1.5em;
+    padding: 30px;
+    background-color: rgba(108, 114, 119, 0.171);
 }
 
 .close {
