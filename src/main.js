@@ -1,8 +1,5 @@
-window.onload = function () {
-    // alert("carregou");
+window.onload = function() {
     showPokemons(getPokemons())
-    localStorage.setItem('mypokedex', '')
-
 }
 
 function getPokemons() {
@@ -34,12 +31,17 @@ dropDownOrder.addEventListener('change',
         showPokemons(pokemons)
     }
 )
+compareById = (a, b) => Number(a["id"]) - Number(b["id"])
+compareByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+compareByWeight = (a, b) => Number(a["weight"].split(" ")[0]) - Number(b["weight"].split(" ")[0])
+compareByName = (a, b) => a["name"].localeCompare(b["name"])
+compareBySpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
+compareByPokedexNum = (a, b) => Number(a["num"]) - Number(b["num"])
 
 function orderPokemons(order) {
     switch (order) {
         case "pokedex-num":
             pokemons.sort(compareById)
-
             break
         case "height":
             pokemons.sort(compareByHeight)
@@ -57,13 +59,6 @@ function orderPokemons(order) {
     }
 }
 
-compareById = (a, b) => Number(a["id"]) - Number(b["id"])
-compareByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
-compareByWeight = (a, b) => Number(a["weight"].split(" ")[0]) - Number(b["weight"].split(" ")[0])
-compareByName = (a, b) => a["name"].localeCompare(b["name"])
-compareBySpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
-compareByPokedexNum = (a, b) => Number(a["num"]) - Number(b["num"])
-
 function showPokemons(pokemons) {
     orderPokemons(order)
     document.querySelector(".pokemons-div").innerHTML = `
@@ -74,15 +69,19 @@ function showPokemons(pokemons) {
         </div>
         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
        </figure>`).join("")}`
-
-    for (pokemonFigure of document.querySelectorAll(".pokemon-img")) {
+       for(pokemonFigure of document.querySelectorAll(".pokemon-img")){
         pokemonFigure.addEventListener('click',
             function (e) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
-                document.getElementById("pokemon-container").innerHTML = `
+                document.getElementById("pokemon-container").innerHTML=`
+                    <span class="ring"><span class="close">&times;</span></span>
                     <figure class="pokemon-img">
-                    <img src = "${selectedPokemon["img"]}"/>
+                        <img src = "${selectedPokemon["img"]}"/>
                     </figure>
+                    <div class ="button-add-pokedex-container">
+                        <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
+                    </div>
+                    
                     <div class="pokemon-data">
                     <h1><strong>${selectedPokemon["name"]}</strong></h1>
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
@@ -94,7 +93,9 @@ function showPokemons(pokemons) {
                     </div>
                     </div>
                         `
+                closeButton()
                 setPokedexButtonValue()
+
                 document.querySelector(".btn-mypokedex").addEventListener('click', () => {
                     setMyPokedex(selectedPokemon)
                 })
@@ -104,8 +105,6 @@ function showPokemons(pokemons) {
                 document.querySelector(".pokemon-container").classList.add('display-block')
                 document.querySelector(".analyzer-container").classList.remove('display-block')
                 document.querySelector(".analyzer-container").classList.add('display-none')
-
-
             }
         )
     }
@@ -136,7 +135,6 @@ function setMyPokedex(selectedPokemon) {
     if (!mypokedexArray.includes(selectedPokemon)) {
         mypokedexArray.push(selectedPokemon)
         document.querySelector(".btn-mypokedex").value = "Remover da pokedex"
-        console.log(`#pokedex-icon-${selectedPokemon["id"]}`)
         document.querySelector(`#pokedex-icon-${selectedPokemon["id"]}`).classList.remove('display-none')
     } else {
         mypokedexArray = mypokedexArray.filter(pokemon => pokemon != selectedPokemon)
@@ -146,75 +144,39 @@ function setMyPokedex(selectedPokemon) {
 }
 
 document.querySelector(".analyze-pokedex").addEventListener('click',
-    function () {
-        document.querySelector(".analyzer-container").innerHTML = `
-        <h3>Minha Pokedex</h3>
+function(){
+    document.querySelector(".analyzer-container").innerHTML = `
+    <span class="ring"><span class="close">&times;</span></span>
+    <h3 class="my-pokedex-title">Minha Pokedex</h3>
     <hr class="pulaLinha1">
     <section class="charts">
-    <div class = "pie-chart">
-    <canvas  id="my-pokedex"></canvas>
-    </div>
-    <div class = "pie-chart">
-    <canvas id="my-weakness"></canvas>
-    </div>
+        <div class="chart">
+            <canvas id="my-pokedex"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="my-weakness"></canvas>
+        </div>
     </section>
     <section class="means">
-        <p>Pokemon mais alto: ${findTallestPokemon(mypokedexArray)["name"]}</p>
-        <p>Pokemon mais pesado: ${findHeaviestPokemon(mypokedexArray)["name"]}</p>
-        <p>Pokemon mais raro: ${findRarestPokemon(mypokedexArray)["name"]} </p>
+        <p>Pokemon mais alto: ${findTallestPokemon(mypokedexArray)[0]["name"]} (${findTallestPokemon(mypokedexArray)[0]["height"]})</p>
+        <p>Pokemon mais pesado: ${findHeaviestPokemon(mypokedexArray)[0]["name"]} (${findHeaviestPokemon(mypokedexArray)[0]["weight"]})</p>
+        <p>Pokemon mais raro: ${findRarestPokemon(mypokedexArray)[0]["name"]} (${findRarestPokemon(mypokedexArray)[0]["spawn_chance"]}%)</p>
         </section>
     <section class="best-pokemons">
     </section>
     `
-        myPokedexChart(mypokedexArray)
-        myWeaknessChart(mypokedexArray)
-        document.querySelector(".modal").classList.add('display-block')
-        document.querySelector(".analyzer-container").classList.remove('display-none')
-        document.querySelector(".analyzer-container").classList.add('display-block')
-        document.querySelector(".pokemon-container").classList.remove('display-block')
-        document.querySelector(".pokemon-container").classList.add('display-none')
+    closeButton()
+    myPokedexChart(mypokedexArray)
+    myWeaknessChart(mypokedexArray)
+    document.querySelector(".modal").classList.add('display-block')
+    document.querySelector(".analyzer-container").classList.remove('display-none')
+    document.querySelector(".analyzer-container").classList.add('display-block')
+    document.querySelector(".pokemon-container").classList.remove('display-block')
+    document.querySelector(".pokemon-container").classList.add('display-none')
+})
 
+function pokemonListCount(pokedex,atr) {
 
-    })
-
-function myPokedexChart(mypokedexArray) {
-    new Chart(document.getElementById("my-pokedex"), {
-        type: 'horizontalBar',
-        data: {
-            labels: Object.keys(pokemonListCount(mypokedexArray, "type")),
-            datasets: [{
-                label: "Population (millions)",
-                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                data: Object.values(pokemonListCount(mypokedexArray, "type"))
-            }]
-        },
-        options: {
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        callback: function (value) {
-                            if (Number.isInteger(value)) {
-                                return value;
-                            }
-                        },
-                        stepSize: 1
-                    }
-                }]
-            },
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: 'Pokemons por tipo'
-            }
-        }
-    })
-}
-
-
-function pokemonListCount(pokedex, atr) {
     let atrCountObj = {}
     for (pokemon of pokedex) {
         for (item of pokemon[atr]) {
@@ -233,42 +195,6 @@ function pokemonListCount(pokedex, atr) {
 }
 
 
-function myWeaknessChart(mypokedexArray) {
-    new Chart(document.getElementById("my-weakness"), {
-        type: 'horizontalBar',
-        data: {
-            labels: Object.keys(pokemonListCount(mypokedexArray, "weaknesses")),
-            datasets: [{
-                label: "Population (millions)",
-                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                data: Object.values(pokemonListCount(mypokedexArray, "weaknesses"))
-            }]
-        },
-        options: {
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        callback: function (value) {
-                            if (Number.isInteger(value)) {
-                                return value;
-                            }
-                        },
-                        stepSize: 1
-                    }
-                }]
-            },
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: 'Fraquezas mais comuns'
-            }
-        }
-    })
-}
-
 function findTallestPokemon(pokedex) {
     return pokedex.filter(pokemon => Number(pokemon.height.split(" ")[0]) == Math.max.apply(Math, pokedex.map(pokemon => Number(pokemon.height.split(" ")[0]))))
 }
@@ -280,9 +206,20 @@ function findHeaviestPokemon(pokedex) {
 function findRarestPokemon(pokedex) {
     return pokedex.filter(pokemon => Number(pokemon.spawn_chance) == Math.min.apply(Math, pokedex.map(pokemon => Number(pokemon.spawn_chance))))
 }
-window.addEventListener('click', outsideClick)
 
-function outsideClick(e) {
+function closeButton(){
+    for (close of document.querySelectorAll('.close')){
+        close.addEventListener('click',
+    function(){
+        console.log('clicou')
+        document.querySelector(".modal").classList.remove('display-block')
+        })
+    }
+}
+
+window.addEventListener('click', outsideClick)
+function outsideClick(e){
+
     if (e.target == document.querySelector(".modal")) {
         document.querySelector(".modal").classList.remove('display-block')
     }
