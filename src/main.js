@@ -11,12 +11,11 @@ const getJson = async function(file){
       for(let key in content['data']){
           data.push(content['data'][key]);
       }
-     
-   
-      const divShowChampions = document.querySelector(".item-show-champions");
-      const categoriesChampions = document.querySelector(".drop-menu-categories");
-      const sortChampions = document.querySelector(".drop-menu-order");
-      const tableCalc = document.querySelector(".tableCalc");
+        
+      const divShowChampions = document.querySelector(".js-show-champions");
+      const categoriesChampions = document.querySelector(".js-drop-menu-categories");
+      const sortChampions = document.querySelector(".js-drop-menu-order");
+      const tableCalc = document.querySelector(".js-table-calc");
       
       categoriesChampions.addEventListener("change", filteres);
       sortChampions.addEventListener("change", filteres);
@@ -52,35 +51,35 @@ const getJson = async function(file){
           orderingData = filteres;
         }
         showAllChampions(orderingData);
-        mostrarstatistica(orderingData);
+        showEstatistic(orderingData);
       }
       
       function showAllChampions(dataOrdening) {
       
         divShowChampions.innerHTML = `
          ${dataOrdening.map((champion) => `
-         <section class="champions-container">
+         <section class="champions-container box-alignment">
              <div  class="show-champions">
-               <div class='card card-color'>
-               <div class='thefront'>
+               <div class='card text-color card-color general-color-back'>
+               <div class='card-front'>
                     <img src="${champion['splash']}" class='champions-img' />
-                   <div class="tex-name">
+                   <div class="card-border">
                       <h2 class="champion-name">${champion['name']}</h2>
                       <h3 class="champion-tag">${champion['tags'].join(' - ')}</h3>
                    </div>  
-                   <div class= 'champion-info'> 
-                    <ul class="info-list">                
-                      <li class="info-list champion-info"> <img src="assets/img/icon-attack.png"/> Attack: ${champion.info['attack']}</h3>
-                      <li class="info-list champion-info"> <img src="assets/img/icon-defense.png"/> Defense: ${champion.info['defense']}</h3>
-                      <li class="info-list champion-info"> <img src="assets/img/icon-magic.png"/> Magic: ${champion.info['magic']}</h3>
-                      <li class="info-list champion-info"> <img src="assets/img/icon-difficulty.png"/> Difficulty: ${champion.info['difficulty']}</h3>                
+                   <div class= 'champion-info box-alignment'> 
+                    <ul class="ibox-alignment">                
+                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-attack.png"/> Attack: ${champion.info['attack']}</h3>
+                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-defense.png"/> Defense: ${champion.info['defense']}</h3>
+                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-magic.png"/> Magic: ${champion.info['magic']}</h3>
+                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-difficulty.png"/> Difficulty: ${champion.info['difficulty']}</h3>                
                     </ul>
                    </div>
                  </div>
-                 <div class='theback'>
+                 <div class='card-back'>
                     <h2 class="champion-name">${champion['name']}</h2>
                     <h3 class="champion-name">${champion['title']}</h3>
-                    <h3 class="champion-info">Attack ${champion['blurb']}</h3>
+                    <h3 class="champion-info color-table-info">Attack ${champion['blurb']}</h3>
                     <div><img src="${champion['splash']}" class='champions-img-back'/> </div>
                  </div>
                </div>
@@ -90,7 +89,7 @@ const getJson = async function(file){
        `
       }
       
-      function mostrarstatistica(a){
+      function showEstatistic(a){
        
         let forceAttack2 = a.map(forces => forces.info['attack']);
         let minForceAttack = forceAttack2.reduce((a, b) =>  Math.min(a, b));
@@ -111,32 +110,33 @@ const getJson = async function(file){
         let medforceMagic  = parseInt(somForceMagic  / forceMagic.length);
         
         tableCalc.innerHTML = `
-        
+        <table class=" box-alignment text-color table" >
             <tr>
                 <th></th>
-                <th class="thborder">Attack</th>
-                <th class="thborder">Defense</th>
-                <th class="thborder">Magic</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Magic</th>
               </tr>
               <tr>
                 <th>Mín</th>
-                <th>${minForceAttack}</th>
-                <th>${minForceDefense}</th>
-                <th>${minForceMagic}</th>
+                <th class="color-table-info">${minForceAttack}</th>
+                <th class="color-table-info">${minForceDefense}</th>
+                <th class="color-table-info">${minForceMagic}</th>
               </tr>
               <tr>
                 <th>Média</th>
-                <th>${medforceattack}</th>
-                <th>${medforceDefense}</th>
-                <th>${medforceMagic}</th>
+                <th class="color-table-info">${medforceattack}</th>
+                <th class="color-table-info">${medforceDefense}</th>
+                <th class="color-table-info">${medforceMagic}</th>
               </tr>
               <tr>
                 <th>Máx</th>
-                <th>${maxForceAttack}</th>
-                <th>${maxForceDefense}</th>
-                <th>${maxForceMagic}</th>
+                <th class="color-table-info">${maxForceAttack}</th>
+                <th class="color-table-info">${maxForceDefense}</th>
+                <th class="color-table-info">${maxForceMagic}</th>
               </tr>
-          `
+         </table>  
+        `
       }
   
     //------------------------DADOS P/ GRAFICO------------------------------------
@@ -165,7 +165,9 @@ const getJson = async function(file){
   
          var options = {
            title: 'Average strength of the champions',
-           chartArea: {width: '55%'},
+           width: 420,
+           height: 240,
+           chartArea: {width: '42%'},
            backgroundColor: 'transparent', 
            titleTextStyle: {color: '#c9aa71', fontSize: 14} ,
            legend:{ textStyle: {color: '#c9aa71', fontSize: 12}},
@@ -174,7 +176,7 @@ const getJson = async function(file){
            colors: ['#d1d4d6'],
            is3D:true
          };
-         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+         var chart = new google.visualization.BarChart(document.getElementById('js-bar-chart'));
          chart.draw(data, options);
     }
 
@@ -205,16 +207,16 @@ const getJson = async function(file){
   
      var options = {
        title: 'Total champions by category ',
-       width: 400,
-       height: 340,
+       width: 420,
+       height: 240,
        backgroundColor: 'transparent',   
-       colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#FFA500', '#ffb444', '#B22222'],
+       colors: ['#ffd88f', '#c9aa71', '#e6693e', '#7f796e', '#457bb2', '#ffb444'],
        is3D: true, 
        legend:{ textStyle: {color: '#c9aa71', fontSize: 12}} , 
        titleTextStyle: {color: '#c9aa71', fontSize: 14}    
        
      };
-     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+     var chart = new google.visualization.PieChart(document.getElementById('js-pie-chart'));
      chart.draw(data, options);
    }
    google.charts.load('current', {'packages':['corechart']});
@@ -230,16 +232,16 @@ const getJson = async function(file){
   
      var options = {
        title: 'Total champions by category ',
-       width: 400,
-       height: 340,
+       width: 420,
+       height: 240,
        backgroundColor: 'transparent',   
-       colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#FFA500', '#ffb444', '#B22222'],
+       colors: ['#7f796e', '#457bb2'],
        is3D: true, 
        legend:{ textStyle: {color: '#c9aa71', fontSize: 12}} , 
        titleTextStyle: {color: '#c9aa71', fontSize: 14}    
        
      };
-     var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
+     var chart2 = new google.visualization.PieChart(document.getElementById('js-pie-chart-two'));
      chart2.draw(data, options);
    }
   
