@@ -45,7 +45,7 @@ function showTheBest(){
                 <img src="${pokemon["img"]}">
                 <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
                 ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${translate(tipo)}</button>
+                <button class="type-poke color-${tipo}">${translate(tipo)}</button>
                 `).join("")}
                 </div>
                 `).join("")}
@@ -61,7 +61,7 @@ function showTheBest(){
                 <img src="${pokemon["img"]}">
                 <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
                 ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${translate(tipo)}</button>
+                <button class="type-poke color-${tipo}">${translate(tipo)}</button>
                 `).join("")}
                 </div>
                 `).join("")}
@@ -77,7 +77,7 @@ function showTheBest(){
                 <img src="${pokemon["img"]}">
                 <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
                 ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${translate(tipo)}</button>
+                <button class="type-poke color-${tipo}">${translate(tipo)}</button>
                 `).join("")}
                 </div>
                 `).join("")}
@@ -93,7 +93,7 @@ function showTheBest(){
                 <img src="${pokemon["img"]}">
                 <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
                 ${pokemon["type"].map(tipo => `
-                <button class="type-poke">${translate(tipo)}</button>
+                <button class="type-poke color-${tipo}">${translate(tipo)}</button>
                 `).join("")}
                 </div>
                 `).join("")}
@@ -130,7 +130,7 @@ function showPeriods(type){
             <img src="${pokemon["img"]}">
             <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
             ${pokemon["type"].map(tipo => `
-            <button class="type-poke">${translate(tipo)}</button>
+            <button class="type-poke color-${tipo}">${translate(tipo)}</button>
             `).join("")}
             </div>
             `).join("")}
@@ -155,7 +155,7 @@ function showPeriods(type){
             <img src="${pokemon["img"]}">
             <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
             ${pokemon["type"].map(tipo => `
-            <button class="type-poke">${translate(tipo)}</button>
+            <button class="type-poke color-${tipo}">${translate(tipo)}</button>
             `).join("")}
             </div>
             `).join("")}
@@ -180,7 +180,7 @@ function showPeriods(type){
             <img src="${pokemon["img"]}">
             <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
             ${pokemon["type"].map(tipo => `
-            <button class="type-poke">${translate(tipo)}</button>
+            <button class="type-poke color-${tipo}">${translate(tipo)}</button>
             `).join("")}
             </div>
             `).join("")}
@@ -205,7 +205,7 @@ function showPeriods(type){
             <img src="${pokemon["img"]}">
             <h5>Chances de encontrar: ${pokemon["avg_spawns"]}%</h5>
             ${pokemon["type"].map(tipo => `
-            <button class="type-poke">${translate(tipo)}</button>
+            <button class="type-poke color-${tipo}">${translate(tipo)}</button>
             `).join("")}
             </div>
             `).join("")}
