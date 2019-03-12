@@ -1,16 +1,29 @@
 window.onload = function() {
     showPokemons(getPokemons())
+
 }
+
+// function fetchPokemons() {
+//     fetch("src/data/pokemon/pokemon.json")
+//         .then(function(resp) {
+//             return resp.json()
+//         })
+//         .then(function(data) {
+//             pokemonsAll = data["pokemon"]
+//         })
+// }
+
 
 function getPokemons() {
     return POKEMON["pokemon"]
 }
-
 let pokemons = getPokemons()
 const dropDownOrder = document.getElementById("dropdown-order")
 let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
 let mypokedexArray = []
+
+
 
 dropDownFilter.addEventListener('change',
     function() {
@@ -83,7 +96,7 @@ function showPokemons(pokemons) {
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
                     <p><strong>Doces para evoluir: </strong>${selectedPokemon["candy_count"]} ${selectedPokemon["candy"]}</p>
-                    <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"])}</p>
+                    <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"]).join(", ")}</p>
                     <div class ="button-add-pokedex-container">
                     <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
                     </div>
@@ -108,15 +121,15 @@ function showPokemons(pokemons) {
 
 function translateWeaknesses(array) {
     let pokemonWeaknesses = array;
-    fraquezasIngles = ["Grass", "Poison", "Fire", "Water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock", "Flying", "Ghost", "Ice", "Dragon"];
-    fraquezasPortugues = ["planta", "venenoso", "fogo", "água", "inseto", "normal", "elétrico", "terra", "lutador", "psíquico", "pedra", "voador", "fantasma", "gelo", "dragão"];
+    weaknessesEnglish = ["Grass", "Poison", "Fire", "Water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock", "Flying", "Ghost", "Ice", "Dragon"];
+    weaknessesPortuguese = ["planta", "venenoso", "fogo", "água", "inseto", "normal", "elétrico", "terra", "lutador", "psíquico", "pedra", "voador", "fantasma", "gelo", "dragão"];
     for (weaknesses of fraquezasIngles) {
         let index = pokemonWeaknesses.indexOf(weaknesses);
         if (index != -1) {
-            pokemonWeaknesses[index] = fraquezasPortugues[fraquezasIngles.indexOf(pokemonWeaknesses[index])];
+            pokemonWeaknesses[index] = weaknessesPortuguese[weaknessesEnglish.indexOf(pokemonWeaknesses[index])]
         }
     }
-    return pokemonWeaknesses.join(", ");
+    return pokemonWeaknesses;
 }
 
 function setPokedexButtonValue() {
@@ -207,7 +220,6 @@ function closeButton() {
     for (close of document.querySelectorAll('.close')) {
         close.addEventListener('click',
             function () {
-                console.log('clicou')
                 document.querySelector(".modal").classList.remove('display-block')
             })
     }
