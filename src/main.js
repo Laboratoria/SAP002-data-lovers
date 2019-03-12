@@ -58,7 +58,6 @@ function orderPokemons(order) {
             break
         case "height":
             pokemons.sort(compareByHeight)
-            console.log('entrou height')
             break
         case "weight":
             pokemons.sort(compareByWeight)
@@ -88,6 +87,7 @@ function showPokemons(pokemons) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
                 document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
+
                     <figure class="pokemon-img-container">
                         <img src = "${selectedPokemon["img"]}"/>
                     </figure> 
@@ -104,11 +104,9 @@ function showPokemons(pokemons) {
                         `
                 closeButton()
                 setPokedexButtonValue()
-
                 document.querySelector(".btn-mypokedex").addEventListener('click', () => {
                     setMyPokedex(selectedPokemon)
                 })
-
                 document.querySelector(".modal").classList.add('display-block')
                 document.querySelector(".pokemon-container").classList.remove('display-none')
                 document.querySelector(".pokemon-container").classList.add('display-block')
