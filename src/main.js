@@ -12,8 +12,7 @@ for (let button of countryButtons){
   );
 }
 
-// let indicatorsTheme = document.getElementById("select-theme");
-// indicatorsTheme.addEventListener("change", (event) =>  )
+
 
 
 //continuação da adicão de "addEventListener", agora nos seletores
