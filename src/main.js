@@ -5,7 +5,7 @@ const getJson = async function(file){
   }
   
   const init = async function(){
-    const content = await getJson('./data/lol/lol.json');
+    const content = await getJson('src/data/lol/lol.json');
 
     let data = [];
       for(let key in content['data']){
