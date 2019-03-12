@@ -8,52 +8,72 @@
   <title>Amantes de los Datos</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
 </head>
 
 <body>
   <header class="main-title">
     <h1 class="page-title">Ayudante de Geopolítica</h1>
-    <p class="proposal">Datos demográficos para facilitar sus estudios</p>
   </header>
 
-  <nav class="choose-countries">
-    Elige el país que desea consultar aquí:
-    <ul class="nav-choose-country">
-      <li><button class="nav-btn"  id="brasil" >Brasil</button></li>
-      <li><button class="nav-btn"  id="chile">Chile</button> </li> 
-      <li> <button class="nav-btn"  id="mexico">México</button> </li>
-      <li><button class="nav-btn"  id="peru">Peru</button></li> 
-    </ul>
-      
-    <form class="nav-filters">
-      <label>
-          Elige el indicador geopolítico
-          <select  class="custom-select" id="select-indicator"></select>
-        </label>
 
-      <label>
-        Eligir el año
-        <select class="custom-select" multiple id="select-year"></select>
-        </label>
-    </form>
-  </nav>
+
+  <section class ="content">
+      <p class="proposal">Datos demográficos para facilitar sus estudios</p>
+
+   </section>
+
+   <section class="content">
+      <div class="map">
+          <div class="map-wrd"id="country-map"> </div>
+      </div>
+      <nav class="choose-countries"><nav class="choose-countries">
+          <span>Elige el país que desea consultar aquí:</span>
+          <ul class="nav-choose-country">
+            <li class="nav-li">
+              <button class="nav-btn" data-select_country='country-btn' id="brasil" >Brasil</button>
+            </li>
+            <li class="nav-li">
+              <button class="nav-btn" data-select_country='country-btn' id="chile">Chile</button>
+            </li> 
+            <li class="nav-li">
+              <button class="nav-btn" data-select_country='country-btn' id="mexico">México</button>
+            </li>
+            <li class="nav-li">
+              <button class="nav-btn" data-select_country='country-btn'  id="peru">Peru</button>
+            </li> 
+          </ul>  
+    
+      <form class="nav-filters">
+        <select  class="custom-select" id="select-indicator"> </select>
+        <select class="custom-select year" multiple id="select-years"> </select>
+       
+      </form>
+    </nav>
+  </section>
+
+
 
   <main class="main-content" id="main-content">
-    <section class="content-map"> <img id="maps" class="map"src="/src/img/wrd.png" alt="mapa" > </section>
-    <section class="content-graph" id=> </section>
+    <section class="content-graph" id="chart_div"> </section>
     <section class="content-table">        
       <div id="indicator"> </div>
       <table class="table" id="table"></table>
     </section>
-      
   </main>
 
-  <footer>
-    ¡Hola Mundo!
+
+
+  <footer class="credits">
+    ¡Hola Mundo! <img src="img/lab.png"> Laboratória <span>Ana Carolina Biscalchin e Ligia Lucca</span>
   </footer>
 
   <script src="./data/worldbank/worldbank.js"></script>
+  <script src="chart.js"></script>
   <script src="main.js"></script>
- </body>
+  
+</body>
 
 </html>

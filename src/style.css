@@ -1,36 +1,69 @@
-*{
-margin: 0;
-padding: 0;
-}
-
 body {
+  margin: 0;
+  padding: 0;
   background: #F1F1F1;
   font-family: Raleway;
  }
 
 .main-title {
-  background-color: #8AC6E2;
   padding: 10px;
+  background-color: #8AC6E2;
   font-family: Oswald;
   font-size: 20px;
+  display:flex; 
+  justify-content: center;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 .proposal {
-  width: auto;
-  height: auto;
-  margin: auto;
   padding: 10px;
- }
+}
+
+.content {
+  display: flex; 
+  padding: 10px;
+  width: 100%;
+  margin-top: 200px;
+}
 
 .choose-countries {
-  width:auto; 
-  height: auto;
-  margin-bottom: 20px;
-  background-color:#F1F1F1;
-  padding: 20px;
+  padding: 10px;
 }
+
+.map{
+  width: 430px;
+  height: 280px;
+  box-sizing: border-box;
+  box-shadow: #858585  3px  3px;
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+.map-wrd {
+  content: url(img/wrd.png);
+  width: 100%;
+}
+.map-brasil {
+  content: url(img/BRA.png);
+  width: 100%;
+}
+.map-chile {
+  content: url(img/CHL.png);
+  width: 100%;
+}
+.map-mexico {
+  content: url(img/MEX.png);
+  width: 100%;
+}
+.map-peru {
+  content: url(img/PER.png);
+  width: 100%;
+}
+
 .nav-choose-country{
-  display: flex;
+  display: inline-flex;
   list-style: none;
   justify-content: space-evenly;
 }
@@ -44,61 +77,63 @@ body {
   background-color: transparent;
   border-radius: 0.3em;
   font-family: Raleway;
-
+ 
 }
 
 .nav-btn:hover {
   background-color: #92D08B;
 }
-
-.nav-filters {
-  width: 100%;
-  display: flex;
-  text-decoration: none;
+.nav-filters{
+  display:flex;
+ 
 }
-
 .custom-select {
-  display: block;
   box-sizing: border-box;
-  border: 1px solid #aaa;
-  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  box-shadow: #858585  3px  3px;
   border-radius: .3em;
   margin: .6em;   
   padding: .6em 1.4em .5em .8em;
   height: 3.4em;
-  width: auto;
+  width: 80%;
   font-family: Raleway;
   font-size: 15px;
   overflow: hidden;
+  align-content: center;
 }  
+
+.year {
+  padding: .6em 1.4em .5em .8em;
+  height: 3.4em;
+width: 20%;
+}
 
 .custom-select:hover {
   border-color: #92D08B;
- 
-}
+ }
 
 .custom-select:focus {
   border-color:  #92D08B;
- 
   color: #222; 
   outline: none;
 }
 
+
+
 .main-content {
-  display: flex;
-  align-content: center;
-  width: 100%;
-  height: auto;
+width: 80%;
+height: auto;
+margin: 10px;
+ 
+
+
+
+
 }
 
+.content-graph {
 
-.map {
-width: 300px;
-height: 200px;
-box-shadow: #858585 0 3px 0 3px;
-border-radius: 0.3em;
+
 }
-
 
 .table {
   border-color: black;
@@ -106,4 +141,9 @@ border-radius: 0.3em;
 
  
 
-  
+.credits {
+  padding: 20px;
+  background-color: #858585;
+  justify-content: space-around;
+
+}
