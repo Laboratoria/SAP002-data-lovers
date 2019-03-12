@@ -4084,3 +4084,19 @@ const POKEMON = {
         ]
     }]
 };;
+
+for (const element of POKEMON["pokemon"]) {
+    if (element.next_evolution)
+    console.log(element.img);
+}
+function showNextEvolution(){
+    let nextEvolution = document.getElementById("nextEvolution");
+
+    nextEvolution.innerHTML=`
+    ${getPokemons().map((next_evolution)=>`
+        <div class="evolution">
+        <p src="${next_evolution["name"]}" class="name-evolution"</p>
+
+        `)}
+        `
+}
