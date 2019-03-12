@@ -11,6 +11,8 @@ let orderAzSelect = document.getElementById('orderAz')
 orderAzSelect.addEventListener('change', function(){
     if(orderAzSelect.selectedIndex === 1){
        return orderAz();
+    }else if(orderAzSelect.selectedIndex === 2){
+      return orderZa ();
     }else{ alert('Selecione uma opção!')
     };
 });
@@ -24,6 +26,26 @@ function orderAz (){
 
     showPokemon.innerHTML=`
     ${orderPokemonName.map((i) =>`
+    <div class='list-pokemon'>
+            <img src='${i.img}' class= 'pokemon-img'/>
+        <div class= text-name> 
+            <h3 class='pokemon-name'>${i.name}</h3>
+        </div>
+    </div>
+
+    `).join('')
+    }`
+};
+
+function orderZa (){
+    let showPokemon = document.getElementById('show-pokemon');
+    
+    let orderPokemonName = getPokemon().sort(function(a,b){
+        return a.name.localeCompare(b.name);
+    });
+
+    showPokemon.innerHTML=`
+    ${orderPokemonName.reverse().map((i) =>`
     <div class='list-pokemon'>
             <img src='${i.img}' class= 'pokemon-img'/>
         <div class= text-name> 
@@ -144,49 +166,59 @@ function showKm10 (){
     }`
 };
    
-
-
-let candySelect = document.getElementById('candy')
-candySelect.addEventListener('change', function(){
+let candySelect = document.getElementById("candy")
+candySelect.addEventListener("change", function(){
     if(candySelect.selectedIndex === 1){ 
-        console.log(candy())
+        google.charts.load("current", {"packages":["corechart"]});
+        google.charts.setOnLoadCallback(drawGraphic)
     }else{alert("Selecione uma opção!")}
-    
 });
-   
-// total de candy_count
-// media de candy por pokemons
-// media de pokemons que tem 100 candy
 
-function candy (){
+function drawGraphic() {
 
-    let showPokemon = document.getElementById('show-pokemon');
-
+    let showPokemon = document.getElementById('show-pokemon')
     let candy = getPokemon().map(monster => monster.candy_count)
-
     let candyFilter = candy.filter(i => typeof i ==="number")
-    console.log(candyFilter)
-
     let candyTotal = candyFilter.reduce((acc,cur) => acc+cur)
-    console.log(candyTotal)
-
     let result = candyTotal/candyFilter.length;
-    console.log(result)
     
     let max = candyFilter.reduce(function(a,b){
         return Math.max(a,b)
     })
 
-    console.log(max)
+    let min = candyFilter.reduce(function(a,b){
+        return Math.min(a,b)
+    })
     
     const table= `
-        <tr class=""></tr>
-        <p>Media de candy por pokemon</p>
-        <td>${result}</td> 
-        <p>Maximo</p>
-        <td>${max}</td>
+        <p>Gráfico de candy</p>
+
     `;
 
     showPokemon.innerHTML= table;
 
+    let data = google.visualization.arrayToDataTable([
+        ['candy', "quantidade"],
+        ['Média de candy por pokémon', result],
+        ['Máximo de candy por pokémon', max],
+        ['Mínimo de candy por pokémon',  min],
+    ]);
+
+    let options = {
+        title: "Candy's",
+        pieHole: 0.4,
+    };
+
+    let chart = new google.visualization.PieChart(document.getElementById('graphic'));
+    chart.draw(data, options);
 }
+
+
+// function clearOption(){
+//    let clearAz = document.getElementById("orderAz").reset();
+//    let clearEgg  = document.getElementById("eggKm").reset();
+//    let clearCandy = document.getElementById("candy").reset();
+
+// }
+
+

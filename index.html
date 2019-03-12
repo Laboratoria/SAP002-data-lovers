@@ -12,7 +12,8 @@
       <nav class="top-nav">
 			  <select id="orderAz" class="select-nav">
 				  <option selected>Ordenar</option>
-				  <option>A a Z</option>
+          <option>A a Z</option>
+          <option>Z a A</option>
 			  </select>
 				<select id="eggKm" class="select-nav">
 					<option selected>Km/Ovos</option>
@@ -26,15 +27,18 @@
           <option>Media de candy</option>
         </select>
       </nav>
-  	</header>
+    </header>
     <main>
       <section id="general-pokemon">
         <div id="show-pokemon" class="icon-pokemon" ></div>
       </section>
+      <section class="container-graphic">
+        <div id="graphic" class="graphic-candy"></div>
+      </section>
     </main>
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="src/data/pokemon/pokemon.js"></script>
-    <!-- <script src="data/pokemon/pokemon.js"></script> -->
     <script src="src/main.js"></script>
+    
   </body>
 </html>

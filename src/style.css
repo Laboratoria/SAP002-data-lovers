@@ -59,3 +59,17 @@ body{
 .pokemon-img{
     width: 70%;
 }
+
+
+.container-graphic{
+    display: flex;
+    align-content: center;
+
+}
+
+.graphic-candy{
+    width: 50%;
+    display: flex;
+    
+}
+
