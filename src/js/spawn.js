@@ -1,16 +1,15 @@
 window.onload = function() {
     showPeriods();
 };
-//Função showTheBest que procura a maior quantidade de poke por periodo e mostra a estatistica do melhor periodo para a captura;
-//Fetch vai abrir o arquivo json, se a resposta for positiva, ele retorna o objeto;
+
 function showTheBest(){
     fetch('./data/pokemon/pokemon.json').then(response => {
         return response.json();
-    }).then(data => { //devolveu o data que é o objeto json? beleza; 
-        function showPokemon(){ // Na função showPokemon ele utiliza esse objeto data para localizar as informações;
-            let morning = data["pokemon"].filter(poke => {  // cada uma das let, filtam os pokes por periodo (manhã, tarde, noite e madrugada); -Filter (função) é tipo um for, ele percorre toda a array do pokemon, 
-                let time = Number(poke["spawn_time"].split(":",1)); //e para cada elemento desse array denominamos "Poke". É criada uma função ({}) para validar se esse elemento esta dentro da condição, se sim, é adiciondo na var manhã;
-                return time >= 6 && time < 12 //Como ele está fazendo essa verificação? ele pega o horairo que o pokemon aparece, separa a hora dos minutos, pega somente a hora e verifica se está entre 6 e 12 (no range do return);
+    }).then(data => { 
+        function showPokemon(){ 
+            let morning = data["pokemon"].filter(poke => {  
+                let time = Number(poke["spawn_time"].split(":",1));
+                return time >= 6 && time < 12 
             });
             let afternoon = data["pokemon"].filter(poke => {
                 let time = Number(poke["spawn_time"].split(":",1));
@@ -24,16 +23,12 @@ function showTheBest(){
                 let time = Number(poke["spawn_time"].split(":",1));
                 return time >= 0 && time < 6
             });
-            //teste estatistica
-            //pega a quantidade de cada array e verifica qual a maior;
             let best = Math.max.apply(Math,[morning.length,afternoon.length,night.length,dawn.length ]);
-            // console.log(best);
-            // document.getElementById("morning").innerHTML = ``;
             document.getElementById("afternoon").innerHTML = ``;
             document.getElementById("night").innerHTML = ``;
             document.getElementById("dawn").innerHTML = ``;
             let bestContainer = document.getElementById("morning");
-            switch (best){ //switch case para comparação tipo if e else, porém mais organizado e facil de entender o condicional;
+            switch (best){ 
                 case morning.length:
                 bestContainer.innerHTML = `
                 <header>
