@@ -2,7 +2,7 @@ function myPokedexChart(mypokedexArray) {
     new Chart(document.getElementById("my-pokedex"), {
         type: 'horizontalBar',
         data: {
-            labels: Object.keys(pokemonListCount(mypokedexArray, "type")),
+            labels: translateWeaknesses(Object.keys(pokemonListCount(mypokedexArray, "type"))),
             datasets: [{
                 label: "Número de pokemons",
                 backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#A7CEE8", "#CBB5D4", "#A6DFD3", "#F4E3DF", "#E4B3AF", "#225270", "#5B3C68", "#277766", "#947D76", "#8F413B"],
@@ -34,7 +34,7 @@ function myWeaknessChart(mypokedexArray) {
     new Chart(document.getElementById("my-weakness"), {
         type: 'horizontalBar',
         data: {
-            labels: Object.keys(pokemonListCount(mypokedexArray, "weaknesses")),
+            labels: translateWeaknesses(Object.keys(pokemonListCount(mypokedexArray, "weaknesses"))),
             datasets: [{
                 label: "Número de pokemons",
                 backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#A7CEE8", "#CBB5D4", "#A6DFD3", "#F4E3DF", "#E4B3AF", "#225270", "#5B3C68", "#277766", "#947D76", "#8F413B"],
