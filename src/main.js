@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     showPokemons(getPokemons())
 }
 
@@ -69,19 +69,15 @@ function showPokemons(pokemons) {
         </div>
         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
        </figure>`).join("")}`
-       for(pokemonFigure of document.querySelectorAll(".pokemon-img")){
+    for (pokemonFigure of document.querySelectorAll(".pokemon-img")) {
         pokemonFigure.addEventListener('click',
             function (e) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
-                document.getElementById("pokemon-container").innerHTML=`
+                document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
                     <figure class="pokemon-img">
                         <img src = "${selectedPokemon["img"]}"/>
-                    </figure>
-                    <div class ="button-add-pokedex-container">
-                        <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
-                    </div>
-                    
+                    </figure> 
                     <div class="pokemon-data">
                     <h1><strong>${selectedPokemon["name"]}</strong></h1>
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
@@ -144,8 +140,8 @@ function setMyPokedex(selectedPokemon) {
 }
 
 document.querySelector(".analyze-pokedex").addEventListener('click',
-function(){
-    document.querySelector(".analyzer-container").innerHTML = `
+    function () {
+        document.querySelector(".analyzer-container").innerHTML = `
     <span class="ring"><span class="close">&times;</span></span>
     <h3 class="my-pokedex-title">Minha Pokedex</h3>
     <hr class="pulaLinha1">
@@ -165,17 +161,17 @@ function(){
     <section class="best-pokemons">
     </section>
     `
-    closeButton()
-    myPokedexChart(mypokedexArray)
-    myWeaknessChart(mypokedexArray)
-    document.querySelector(".modal").classList.add('display-block')
-    document.querySelector(".analyzer-container").classList.remove('display-none')
-    document.querySelector(".analyzer-container").classList.add('display-block')
-    document.querySelector(".pokemon-container").classList.remove('display-block')
-    document.querySelector(".pokemon-container").classList.add('display-none')
-})
+        closeButton()
+        myPokedexChart(mypokedexArray)
+        myWeaknessChart(mypokedexArray)
+        document.querySelector(".modal").classList.add('display-block')
+        document.querySelector(".analyzer-container").classList.remove('display-none')
+        document.querySelector(".analyzer-container").classList.add('display-block')
+        document.querySelector(".pokemon-container").classList.remove('display-block')
+        document.querySelector(".pokemon-container").classList.add('display-none')
+    })
 
-function pokemonListCount(pokedex,atr) {
+function pokemonListCount(pokedex, atr) {
 
     let atrCountObj = {}
     for (pokemon of pokedex) {
@@ -207,18 +203,19 @@ function findRarestPokemon(pokedex) {
     return pokedex.filter(pokemon => Number(pokemon.spawn_chance) == Math.min.apply(Math, pokedex.map(pokemon => Number(pokemon.spawn_chance))))
 }
 
-function closeButton(){
-    for (close of document.querySelectorAll('.close')){
+function closeButton() {
+    for (close of document.querySelectorAll('.close')) {
         close.addEventListener('click',
-    function(){
-        console.log('clicou')
-        document.querySelector(".modal").classList.remove('display-block')
-        })
+            function () {
+                console.log('clicou')
+                document.querySelector(".modal").classList.remove('display-block')
+            })
     }
 }
 
 window.addEventListener('click', outsideClick)
-function outsideClick(e){
+
+function outsideClick(e) {
 
     if (e.target == document.querySelector(".modal")) {
         document.querySelector(".modal").classList.remove('display-block')
