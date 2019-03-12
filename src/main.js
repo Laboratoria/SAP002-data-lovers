@@ -69,10 +69,10 @@ const getJson = async function(file){
                    </div>  
                    <div class= 'champion-info box-alignment'> 
                     <ul class="ibox-alignment">                
-                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-attack.png"/> Attack: ${champion.info['attack']}</h3>
-                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-defense.png"/> Defense: ${champion.info['defense']}</h3>
-                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-magic.png"/> Magic: ${champion.info['magic']}</h3>
-                      <li class="box-alignment color-table-info champion-info"> <img src="assets/img/icon-difficulty.png"/> Difficulty: ${champion.info['difficulty']}</h3>                
+                      <li class="box-alignment color-table-info champion-info"> <img src="src/assets/img/icon-attack.png"/> Attack: ${champion.info['attack']}</h3>
+                      <li class="box-alignment color-table-info champion-info"> <img src="src/assets/img/icon-defense.png"/> Defense: ${champion.info['defense']}</h3>
+                      <li class="box-alignment color-table-info champion-info"> <img src="src/assets/img/icon-magic.png"/> Magic: ${champion.info['magic']}</h3>
+                      <li class="box-alignment color-table-info champion-info"> <img src="src/assets/img/icon-difficulty.png"/> Difficulty: ${champion.info['difficulty']}</h3>                
                     </ul>
                    </div>
                  </div>
