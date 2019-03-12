@@ -87,14 +87,10 @@ function showPokemons(pokemons) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
                 document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
-                    <div class = "pokemon-title">
-                    <figure>
-                    <img src="./images/whitepokeball.png" class="">
-                    </figure>
-                    <figure class="pokemon-img">
-                    <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
-                    </figure>
-                    </div>
+
+                    <figure class="pokemon-img-container">
+                        <img src = "${selectedPokemon["img"]}"/>
+                    </figure> 
                     <div class="pokemon-data">
                     <h1><strong>${selectedPokemon["name"]}</strong></h1>
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
@@ -158,7 +154,7 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
     function () {
         document.querySelector(".analyzer-container").innerHTML = `
     <span class="ring"><span class="close">&times;</span></span>
-    <h3 class="my-pokedex-title">Minha Pokedex</h3>
+    <h1 class="my-pokedex-title">Minha Pokedex</h1>
     <hr class="pulaLinha1">
     <section class="charts">
         <div class="chart">
