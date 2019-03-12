@@ -44,18 +44,18 @@ body {
     text-align: center;
 }
 
-section {
+.section-dropdown {
     display: flex;
     align-self: baseline;
     text-align: center;
 }
 
-select {
+#dropdown-type, #dropdown-order {
     background-color: rgb(232, 223, 241);
     color: #7E459B;
-    width: 139px;
-    height: 50px;
-    font-size: 16px;
+    width: 180px;
+    height: 45px;
+    font-size: 19px;
     border: 1px solid #7E459B;
     border-radius: 30px;
     margin-left: 10px;
@@ -63,7 +63,7 @@ select {
     padding: 10px 25px;
 }
 
-option {
+.options-type, .options-order{
     font-size: 16px;
     text-align: center;
 }
@@ -77,7 +77,7 @@ option {
     width: 90%;
 }
 
-main {
+.main {
     background-image: linear-gradient(rgba(226, 180, 226, 0.867), rgb(182, 199, 228));
     display: flex;
 }
@@ -149,13 +149,18 @@ main {
     z-index: 2000;
     width: 50vw;
     margin: 50px auto auto auto;
+    text-align: center;
     font-size: 26px;
     line-height: 1.5em;
     display: flex;
     flex-direction: column;
     position: relative;
 }
-
+.pokemon-img-container{
+    width: 190px;
+    padding-top: 40px;
+    background-image: radial-gradient(rgba(148, 129, 254, 0.5), rgba(148, 129, 254, 0.01), rgba(255, 255, 255, 0));
+}
 .analyzer-container {
     background-image: url(images/Pokedex_Background.png);
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
@@ -236,8 +241,8 @@ main {
 .btn-mypokedex {
     background-color: rgb(232, 223, 241);
     color: #7E459B;
-    width: 35%;
-    height: 20%;
+    width: 250px;
+    height: 55px;
     font-size: 22px;
     border: 1px solid #7E459B;
     border-radius: 30px;

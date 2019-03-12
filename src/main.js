@@ -76,7 +76,7 @@ function showPokemons(pokemons) {
                 document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
                     <figure class="pokemon-img">
-                        <img src = "${selectedPokemon["img"]}"/>
+                        <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
                     </figure> 
                     <div class="pokemon-data">
                     <h1><strong>${selectedPokemon["name"]}</strong></h1>
