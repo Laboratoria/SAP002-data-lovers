@@ -87,18 +87,19 @@ function showPokemons(pokemons) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
                 document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
-                    <div class = "pokemon-title">
-                    <figure>
-                    <img src="./images/whitepokeball.png" class="">
-                    </figure>
                     <figure class="pokemon-img">
                     <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
                     </figure>
+                    <div class = "pokemon-title">
+                    <figure class="white-pokeball-container">
+                    <img src="src/images/whitepokeball.png" class="white-pokeball-img">
+                    </figure>
+                    <span class="pokemon-name">${selectedPokemon["num"]} ${selectedPokemon["name"]}<span>
                     </div>
                     <div class="pokemon-data">
-                    <h1><strong>${selectedPokemon["name"]}</strong></h1>
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
+                    <p><strong>Tipo: </strong>${translateWeaknesses(selectedPokemon["type"]).join("/")}</p>
                     <p><strong>Doces para evoluir: </strong>${selectedPokemon["candy_count"]} ${selectedPokemon["candy"]}</p>
                     <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"]).join(", ")}</p>
                     <div class ="button-add-pokedex-container">
@@ -158,7 +159,7 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
     function () {
         document.querySelector(".analyzer-container").innerHTML = `
     <span class="ring"><span class="close">&times;</span></span>
-    <h3 class="my-pokedex-title">Minha Pokedex</h3>
+    <h1 class="my-pokedex-title">Minha Pokedex</h1>
     <hr class="pulaLinha1">
     <section class="charts">
         <div class="chart">
