@@ -9,7 +9,6 @@ body {
     color: #47525E;
 }
 
-
 .pokemon-header {
     display: flex;
     flex-direction: column;
@@ -105,8 +104,8 @@ main {
     position: relative;
 }
 
-.pokemon-img-container {
-    width: 35px;;
+.pokemon-img {
+    width: 100%;
 }
 
 .pokedex-icon {
@@ -144,7 +143,7 @@ main {
 
 .pokemon-container {
     background-image: url(images/Pokedex_Background.png);
-    color:whitesmoke;
+    color: whitesmoke;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 7px;
     z-index: 2000;
@@ -234,7 +233,6 @@ main {
     cursor: pointer;
 }
 
-
 .btn-mypokedex {
     background-color: rgb(232, 223, 241);
     color: #7E459B;
@@ -246,7 +244,7 @@ main {
     margin-top: 35px;
     margin-bottom: 15px;
     cursor: pointer;
-    padding: 10px 25px;   
+    padding: 10px 25px;
 }
 
 .display-none {
@@ -256,4 +254,3 @@ main {
 .display-block {
     display: block;
 }
-

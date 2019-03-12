@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
     showPokemons(getPokemons())
 }
 
@@ -13,7 +13,7 @@ const dropDownFilter = document.getElementById("dropdown-type")
 let mypokedexArray = []
 
 dropDownFilter.addEventListener('change',
-    function () {
+    function() {
         let type = dropDownFilter.value
         pokemons = getPokemons()
         if (type != "All") {
@@ -25,7 +25,7 @@ dropDownFilter.addEventListener('change',
 )
 
 dropDownOrder.addEventListener('change',
-    function () {
+    function() {
         order = dropDownOrder.value
         orderPokemons(order)
         showPokemons(pokemons)
