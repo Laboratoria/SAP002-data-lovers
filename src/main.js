@@ -58,7 +58,6 @@ function orderPokemons(order) {
             break
         case "height":
             pokemons.sort(compareByHeight)
-            console.log('entrou height')
             break
         case "weight":
             pokemons.sort(compareByWeight)
@@ -88,9 +87,14 @@ function showPokemons(pokemons) {
                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
                 document.getElementById("pokemon-container").innerHTML = `
                     <span class="ring"><span class="close">&times;</span></span>
+                    <div class = "pokemon-title">
+                    <figure>
+                    <img src="./images/whitepokeball.png" class="">
+                    </figure>
                     <figure class="pokemon-img">
-                        <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
-                    </figure> 
+                    <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
+                    </figure>
+                    </div>
                     <div class="pokemon-data">
                     <h1><strong>${selectedPokemon["name"]}</strong></h1>
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
@@ -104,11 +108,9 @@ function showPokemons(pokemons) {
                         `
                 closeButton()
                 setPokedexButtonValue()
-
                 document.querySelector(".btn-mypokedex").addEventListener('click', () => {
                     setMyPokedex(selectedPokemon)
                 })
-
                 document.querySelector(".modal").classList.add('display-block')
                 document.querySelector(".pokemon-container").classList.remove('display-none')
                 document.querySelector(".pokemon-container").classList.add('display-block')
@@ -123,7 +125,7 @@ function translateWeaknesses(array) {
     let pokemonWeaknesses = array;
     weaknessesEnglish = ["Grass", "Poison", "Fire", "Water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock", "Flying", "Ghost", "Ice", "Dragon"];
     weaknessesPortuguese = ["planta", "venenoso", "fogo", "água", "inseto", "normal", "elétrico", "terra", "lutador", "psíquico", "pedra", "voador", "fantasma", "gelo", "dragão"];
-    for (weaknesses of fraquezasIngles) {
+    for (weaknesses of weaknessesEnglish) {
         let index = pokemonWeaknesses.indexOf(weaknesses);
         if (index != -1) {
             pokemonWeaknesses[index] = weaknessesPortuguese[weaknessesEnglish.indexOf(pokemonWeaknesses[index])]

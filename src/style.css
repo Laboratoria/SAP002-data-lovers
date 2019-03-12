@@ -50,7 +50,8 @@ body {
     text-align: center;
 }
 
-#dropdown-type, #dropdown-order {
+#dropdown-type,
+#dropdown-order {
     background-color: rgb(232, 223, 241);
     color: #7E459B;
     width: 180px;
@@ -63,7 +64,8 @@ body {
     padding: 10px 25px;
 }
 
-.options-type, .options-order{
+.options-type,
+.options-order {
     font-size: 16px;
     text-align: center;
 }
@@ -111,7 +113,7 @@ body {
 .pokedex-icon {
     width: 25%;
     padding: 0;
-    z-index: 10;
+    z-index: 5;
     position: absolute;
 }
 
@@ -156,11 +158,13 @@ body {
     flex-direction: column;
     position: relative;
 }
-.pokemon-img-container{
+
+.pokemon-img-container {
     width: 190px;
     padding-top: 40px;
     background-image: radial-gradient(rgba(148, 129, 254, 0.5), rgba(148, 129, 254, 0.01), rgba(255, 255, 255, 0));
 }
+
 .analyzer-container {
     background-image: url(images/Pokedex_Background.png);
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
@@ -214,6 +218,7 @@ body {
     font-size: 28px;
     height: 30px;
     width: 30px;
+    line-height: 30px;
     float: right;
     text-align: center;
 }
@@ -250,6 +255,34 @@ body {
     margin-bottom: 15px;
     cursor: pointer;
     padding: 10px 25px;
+}
+
+.analyze-pokedex {
+    background-color: transparent;
+    border: none;
+    color: #47525E;
+}
+
+.analyze-pokedex:hover {
+    filter: brightness(110%)
+}
+
+.pokedex-btn-container {
+    position: fixed;
+    top: 5%;
+    left: 8%;
+    z-index: 10;
+    width: 10%;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.analyze-pokedex-text {
+    padding-top: 10px;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.08em;
 }
 
 .display-none {
