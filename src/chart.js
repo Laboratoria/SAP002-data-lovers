@@ -1,19 +1,13 @@
 
-function getDataToChart(indicator){
-  // let indicator = getIndicatorByCode(localStorage.indicator);
+function getDataToChart(indicator, years){
   let data = indicator.data;
-  let array = [['Año', '%']];
-  Object.entries(data).map((el)=> {
-    if (el[1] !== "") {
-      array.push(el)
-    }
-  });
-
-  if (array.length > 1) {
-    return array;
-  }
-  return "";
+  let dataArray = years.map((year)=>[year, data[year]]);
+  dataArray.unshift(['Año','%']);
+  return dataArray; 
 }
+
+
+
 
 function drawChart(title, contentTable){
   google.charts.load('current', {'packages':['corechart']});

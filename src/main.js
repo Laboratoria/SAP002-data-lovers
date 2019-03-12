@@ -6,12 +6,15 @@ const indicatorsSelector = document.getElementById("select-indicator");
 //2° passo: Através de um "for of", é adicionado um "addEventListener" para "ouvir" qual botão foi clicado;
 //O "event" chama função "addIndicators" e manda o id do botão clicado para que a função busque os indicadores
 for (let button of countryButtons){
-  button.addEventListener(
-    'click', (event) => {
+  button.addEventListener("click", (event) => {
       selectCountry(event.srcElement.id);
     }
   );
 }
+
+// let indicatorsTheme = document.getElementById("select-theme");
+// indicatorsTheme.addEventListener("change", (event) =>  )
+
 
 //continuação da adicão de "addEventListener", agora nos seletores
 indicatorsSelector.addEventListener("change", (event) => {selectIndicator(event.target.value)});
@@ -89,7 +92,7 @@ function addCountryMap(country){
 
 function getIndicatorByCode(code) {
   let indicators = getIndicatorsByCountry(localStorage.country).filter((element)=> element.indicatorCode === code);
-  return indicators[0];
+  return indicators[0]; 
 }
 
 function selectIndicator(indicatorCode){
@@ -100,7 +103,6 @@ function selectIndicator(indicatorCode){
 
 const yearsSelector = document.getElementById("select-years");
 yearsSelector.addEventListener("change",(event)=>{getMultipleYears(event)});
-//yearsSelector.addEventListener("change",(event)=>{selectYear(event.target.value)});
 
 function getMultipleYears(e) {
   let opts = e.target.options;
@@ -114,17 +116,24 @@ function getMultipleYears(e) {
   selectYear(selected);
 }
 
-function selectYear(year){
+function selectYear(yearsArray){
+  
   let indicator = getIndicatorByCode(localStorage.indicator);
   let chartTitle = indicator.indicatorName;
-  let chartData = getDataToChart(indicator);
-  // yearsSelector.val();
+  let chartData = getDataToChart(indicator, yearsArray);
   console.log(chartData);
-  console.log(yearsSelector.val);
+  
   if (typeof(chartData) === 'object') {
     drawChart(chartTitle, chartData);
   } else {
     noData();
-  }
-}
+  } 
+} 
+
+const reset = document.getElementById("reset");
+reset.addEventListener("click",(event) => {
+  location.reload();
+})
+
+
 
