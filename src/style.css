@@ -8,50 +8,31 @@ body {
 	color: #333;
   text-align:center;
   background-image: url("assets/img/back.jpg");
-  background-color: black ;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
   font-family: 'Roboto Condensed', 'Times New Roman', serif;
 }
 
-.grow1 {
-	flex-grow: 1;
-}
-.grow2 {
-	flex-grow: 2;
-}
-.item {
-	margin: 5px;
-	background: rgba(10,10,12,.9);
-	text-align: center;
-	font-size: 1.5em;
-  padding: 5px;
-}
-
-.item-nav {
-	margin: 5px;
-	font-size: 1.5em;
-  padding: 5px;
-}
-
-.drop-color{
-  background-color:black;
-  border: 1px black;
+.text-color{
   color: #c9aa71;
-  font-weight: 700;
-  padding: 4px;
-  z-index: 1;
-  }
-  
-  .box-drop{
-    width:200px;
-  }
+  /* card-color table */
+}
 
-.container {
+
+.general-color-back {
+  background: rgba(10,10,12,.9);
+}
+
+.box-alignment{
+ display: flex;
+ text-align: center;
+
+}
+
+.nav-container {
+  background-color: black;
 	width:100%;
-	margin: 0 auto;
-	display: flex;
-  background-color:black;
-  padding: 5px;
+	padding: 5px;
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
@@ -59,13 +40,31 @@ body {
   z-index: 1;
 }
 
-.nav-title{
-  color: #d1d3d5;
+.nav-item {
+	margin: 5px;
+	font-size: 1.5em;
+  padding: 5px;
+}
+
+.nav-title {
+  font-weight: 400;
   padding: 10px;
 }
 
+.nav-grow {
+	flex-grow: 2;
+}
+
+
+.drop-menu{
+  border: 1px black;
+  font-weight: 700;
+  padding: 4px;
+  z-index: 1;
+  width: 200px;
+}
+ 
 .logo-container{
-  display: flex;
   justify-content: center;
   padding: 80px 0 0 0;
   width: 70%;
@@ -73,54 +72,30 @@ body {
   flex-wrap: wrap;  
 }
 
-.containerAsine{
-  display: flex;
+.main-container{
   max-width: 90%;
   justify-content: space-between;
   align-content: center;
   margin: 0 auto;
   align-items: flex-start;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.item2 {
-	background: rgba(10,10,12,.9);
-	text-align: center;
-	font-size: 1em;
-}
-
-.bc-black{
-  background: rgba(10,10,12,.9);
-}
-
-.m-five{
-  margin: 5px;
-}
-
-.fle-one{
-  flex: 1;
-}
 
 .img-header{
   padding: 30px;
 }
 
-.tex-name {
-  border-top: 1px solid #927345;
-}
-
-.item-statistics{
+.statistics-container{
   max-width: 34%;
-}
-.item-s-table{
-  display:flex;
-  justify-content: center;
-  padding: 10px;
 }
 
 table {
   border-collapse: collapse;
-  color:#c9aa71;
+  justify-content: center;
+  padding: 10px;
+ 
 }
 
 th, td {
@@ -128,41 +103,70 @@ th, td {
   text-align: center;
 }
 
-.h1-estatistic{
-  text-align: center;
-  color:#d1d3d5;
-  font-weight: 400;
-}
 
-.bar-chart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+.chart-alignment {
   padding: 10px;
+  margin:10px  
 }
    
-.pie-chart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding:10px;
-}
-
 .champions-container {
-  display: flex;
   justify-content: center;    
   margin: auto;
   flex-wrap: wrap;    
   padding: 10px; 
+  flex: 1;
+}
+
+.card {   
+  text-align: center;
+  transition: .4s;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  width: 17vw;
+  height: 39vw;
+  border-radius: 20px;
 }
 
 .card-color {
   text-align: left;
   border: 1px rgba(10,10,12,.9);
   font-weight: 700;
-  background-color:  rgba(10,10,12,.9);
-  color: #c9aa71;
   transition: .4s;
+}
+
+.card-border {
+  border-top: 1px solid #927345;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+  
+.card-front{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+  
+.card-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
+  backface-visibility: hidden;
+  overflow: hidden;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  background-color: #b6a079;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .champions-img{
@@ -180,66 +184,30 @@ th, td {
   border-radius: 20px;
 }
   
-.champion-name, .champion-tag {
+.champion-name,
+.champion-tag {
   text-align: center;
   margin: auto;
-  font-size: 1rem;
   width: 70%;
   padding: 5px;
 }
 
 .champion-info{
-  color:#d1d3d5;
   font-size: 1rem;
   display: flex;
   flex-wrap: wrap;
-  padding: 2px;
-}
-  
-.card {   
-  text-align: center;
-  transition: .4s;
-  transform-style: preserve-3d;
-  transition: all 0.8s ease;
-  width: 17vw;
-  height: 37vw;
-  border-radius: 20px;
+  padding: 9px;
 }
 
-.card:hover{
-    transform: rotateY(180deg);
-}
-  
-.thefront{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;   
-  backface-visibility: hidden;
-  overflow: hidden;
-}
-  
-.theback{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;   
-  backface-visibility: hidden;
-  overflow: hidden;
-  color: #333;
-  text-align: center;
-  transform: rotateY(180deg);
-  background-color: #b6a079;
-  border-radius: 20px;
-  padding: 5px;
+ul{
+  list-style-type: none;
 }
 
-.flex-direction-row{
-flex-direction: row;
+.color-table-info{
+  color:#d1d3d5;
+
 }
 
-.flex-direction-column{
-flex-direction: column;
-}
+
+
+
