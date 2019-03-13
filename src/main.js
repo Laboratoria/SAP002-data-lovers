@@ -12,8 +12,6 @@ let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
 let mypokedexArray = []
 
-
-
 dropDownFilter.addEventListener('change',
     function() {
         let type = dropDownFilter.value
@@ -60,69 +58,23 @@ function orderPokemons(order) {
     }
 }
 
-// function showPokemons(pokemons) {
-//     orderPokemons(order)
-//     document.querySelector(".pokemons-div").innerHTML = `
-//     ${pokemons.map((pokemon)=>
-// `      <figure class="pokemon">
-//         <div class = "display-none pokedex-icon" id = "pokedex-icon-${pokemon["id"]}">
-//         <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
-//         </div>
-//         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
-//        </figure>`).join("")}`
-//     for (pokemonFigure of document.querySelectorAll(".pokemon-img")) {
-//         pokemonFigure.addEventListener('click',
-//             function (e) {
-//                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
-//                 document.getElementById("pokemon-container").innerHTML = `
-//                     <span class="ring"><span class="close">&times;</span></span>
-//                     <figure class="pokemon-img">
-//                     <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
-//                     </figure>
-//                     <div class = "pokemon-title">
-//                     <figure class="white-pokeball-container">
-//                     <img src="src/images/whitepokeball.png" class="white-pokeball-img">
-//                     </figure>
-//                     <span class="pokemon-name">${selectedPokemon["num"]} ${selectedPokemon["name"]}<span>
-//                     </div>
-//                     <div class="pokemon-data">
-//                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
-//                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
-//                     <p><strong>Tipo: </strong>${translateWeaknesses(selectedPokemon["type"]).join("/")}</p>
-//                     <p><strong>Doces para evoluir: </strong>${selectedPokemon["candy_count"]} ${selectedPokemon["candy"]}</p>
-//                     <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"]).join(", ")}</p>
-//                     <div class ="button-add-pokedex-container">
-//                     <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
-//                     </div>
-//                     </div>
-//                         `
-//                 closeButton()
-//                 setPokedexButtonValue()
-//                 document.querySelector(".btn-mypokedex").addEventListener('click', () => {
-//                     setMyPokedex(selectedPokemon)
-//                 })
-//                 document.querySelector(".modal").classList.add('display-block')
-//                 document.querySelector(".pokemon-container").classList.remove('display-none')
-//                 document.querySelector(".pokemon-container").classList.add('display-block')
-//                 document.querySelector(".analyzer-container").classList.remove('display-block')
-//                 document.querySelector(".analyzer-container").classList.add('display-none')
-//             }
-//         )
-//     }
-// }
-
-
 function showPokemons(pokemons) {
     orderPokemons(order)
-    document.querySelector(".pokemons-div").innerHTML = `
-    ${pokemons.map((pokemon)=>
+    document.querySelector(".pokemons-div").innerHTML = pokemonGrid(pokemons)
+    modalEvent(document.querySelectorAll(".pokemon-img"))
+}
+
+function pokemonGrid(array) {
+    let stringOut = `
+    ${array.map((pokemon)=>
 `      <figure class="pokemon">
         <div class = "display-none pokedex-icon" id = "pokedex-icon-${pokemon["id"]}">
             <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
         </div>
         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
-       </figure>`).join("")}`
-       modalEvent(document.querySelectorAll(".pokemon-img"))
+        </figure>
+       `).join("")}`
+       return stringOut
 }
 
 function modalEvent(listOfImages){
@@ -142,7 +94,6 @@ function modalEvent(listOfImages){
                     <span class="pokemon-name">${selectedPokemon["num"]} ${selectedPokemon["name"]}<span>
                 </div>
                 <div class="pokemon-data">
-
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
                     <p><strong>Tipo: </strong>${translateWeaknesses(selectedPokemon["type"]).join("/")}</p>
@@ -201,12 +152,17 @@ function setMyPokedex(selectedPokemon) {
     }
 }
 
+function showPokedex(mypokedexArray){
+}
+
 document.querySelector(".analyze-pokedex").addEventListener('click',
     function () {
         document.querySelector(".analyzer-container").innerHTML = `
     <span class="ring"><span class="close">&times;</span></span>
     <h1 class="my-pokedex-title">Minha Pokedex</h1>
-    <hr class="pulaLinha1">
+    <hr class="skip-line">
+    <section class = "pokemons-div pokemons-pokedex-img">
+    </section>
     <section class="charts">
         <div class="chart">
             <canvas id="my-pokedex"></canvas>
@@ -224,6 +180,8 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
     </section>
     `
         closeButton()
+        document.querySelector(".pokemons-pokedex-img").innerHTML=pokemonGrid(mypokedexArray)
+        modalEvent(document.querySelectorAll(".pokemon-img"))
         myPokedexChart(mypokedexArray)
         myWeaknessChart(mypokedexArray)
         document.querySelector(".modal").classList.add('display-block')
@@ -234,7 +192,6 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
     })
 
 function pokemonListCount(pokedex, atr) {
-
     let atrCountObj = {}
     for (pokemon of pokedex) {
         for (item of pokemon[atr]) {
@@ -252,7 +209,6 @@ function pokemonListCount(pokedex, atr) {
     return atrCountObjSorted
 }
 
-
 function findTallestPokemon(pokedex) {
     return pokedex.filter(pokemon => Number(pokemon.height.split(" ")[0]) == Math.max.apply(Math, pokedex.map(pokemon => Number(pokemon.height.split(" ")[0]))))
 }
@@ -268,9 +224,9 @@ function findRarestPokemon(pokedex) {
 function closeButton() {
     for (close of document.querySelectorAll('.close')) {
         close.addEventListener('click',
-            function () {
-                document.querySelector(".modal").classList.remove('display-block')
-            })
+        function() {
+            document.querySelector(".modal").classList.remove('display-block')
+    })
     }
 }
 
