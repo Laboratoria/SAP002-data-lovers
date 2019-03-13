@@ -11,6 +11,7 @@ const dropDownOrder = document.getElementById("dropdown-order")
 let order = dropDownOrder.value
 const dropDownFilter = document.getElementById("dropdown-type")
 let mypokedexArray = []
+let reload = false
 
 dropDownFilter.addEventListener('change',
     function() {
@@ -21,7 +22,6 @@ dropDownFilter.addEventListener('change',
         }
         orderPokemons(order)
         showPokemons(pokemons)
-        console.log(pokemons)
     }
 )
 
@@ -73,7 +73,7 @@ function pokemonGrid(array) {
         <div class = "display-none pokedex-icon" id = "pokedex-icon-${item["id"]}">
             <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
         </div>
-        <img src= "${item["img"]}" class ="pokemon-img" id = "${item["id"]}"/>
+        <img src= "${item["img"]}" class ="pokemon-img" id = "${item["id"]}" title="${item["name"]}"/>
         </figure>
        `).join("")}`
        return stringOut
@@ -106,8 +106,8 @@ function modalEvent(listOfImages,pokemons){
                 </div>
                 </div>
                     `
-            closeButton()
-            setPokedexButtonValue()
+            closeButton(reload)
+            setPokedexButtonValue(selectedPokemon)
             document.querySelector(".btn-mypokedex").addEventListener('click', () => {
                 setMyPokedex(selectedPokemon)
             })
@@ -134,7 +134,7 @@ function translateWeaknesses(array) {
     return pokemonWeaknesses;
 }
 
-function setPokedexButtonValue() {
+function setPokedexButtonValue(selectedPokemon) {
     if (!mypokedexArray.includes(selectedPokemon)) {
         document.querySelector(".btn-mypokedex").value = "Adicionar à pokedex"
     } else {
@@ -178,10 +178,10 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
     <section class="best-pokemons">
     </section>
     `
-        closeButton()
+        reload = true
+        closeButton(reload)
         initialSettingsPokemons()
         document.querySelector(".pokemons-pokedex-img").innerHTML=pokemonGrid(mypokedexArray)
-        modalEvent(document.querySelectorAll(".pokemon-img"),mypokedexArray)
         myPokedexChart(mypokedexArray)
         myWeaknessChart(mypokedexArray)
         document.querySelector(".modal").classList.add('display-block')
@@ -228,19 +228,13 @@ function findRarestPokemon(pokedex) {
     return pokedex.filter(pokemon => Number(pokemon.spawn_chance) == Math.min.apply(Math, pokedex.map(pokemon => Number(pokemon.spawn_chance))))
 }
 
-function closeButton() {
+function closeButton(reload=false) {
     for (close of document.querySelectorAll('.close')) {
         close.addEventListener('click',
         function() {
             document.querySelector(".modal").classList.remove('display-block')
-    })
-    }
-}
-
-window.addEventListener('click', outsideClick)
-
-function outsideClick(e) {
-    if (e.target == document.querySelector(".modal")) {
-        document.querySelector(".modal").classList.remove('display-block')
+            if(reload==true){location = window.location.href
+            }
+        })
     }
 }
