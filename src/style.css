@@ -15,7 +15,7 @@ body {
   position: fixed; 
   top: 0;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 .content-proposal {
   margin-top: 110px;
@@ -40,10 +40,12 @@ body {
   padding: 10px;
 }
 .choose-countries {
+  margin-top: 50px;
   padding: 10px;
   width:100%;
 }
 .map{
+  margin-top: 50px;
   width: 430px;
   height: 280px;
   box-sizing: border-box;
