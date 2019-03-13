@@ -114,19 +114,19 @@ const init = async function () {
           <th>Magic</th>
         </tr>
         <tr>
-          <th>Mín</th>
+          <th>Minimum</th>
           <th class="color-table-info">${minForceAttack}</th>
           <th class="color-table-info">${minForceDefense}</th>
           <th class="color-table-info">${minForceMagic}</th>
         </tr>
         <tr>
-          <th>Média</th>
+          <th>Average</th>
           <th class="color-table-info">${medforceattack}</th>
           <th class="color-table-info">${medforceDefense}</th>
           <th class="color-table-info">${medforceMagic}</th>
         </tr>
         <tr>
-          <th>Máx</th>
+          <th>Maximum</th>
           <th class="color-table-info">${maxForceAttack}</th>
           <th class="color-table-info">${maxForceDefense}</th>
           <th class="color-table-info">${maxForceMagic}</th>
