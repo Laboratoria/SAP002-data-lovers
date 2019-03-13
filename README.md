@@ -31,7 +31,7 @@ O planejamento foi realizado com auxílio da ferramenta Trello.
 
 Foi realizada uma pesquisa online para conhecer aplicações com informações sobre o League of Legends e a principal referência utilizada foi o site do próprio jogo. [br.leagueoflegends.com](https://br.leagueoflegends.com/pt/)
 
-Após a busca incial foi realizada uma pesquisa com usuários. Conversamos com algumas pessoas que jogam Lol para verificar como a aplicação poderia ser útil. 
+Após a busca inicial foi realizada uma pesquisa com usuários. Conversamos com algumas pessoas que jogam Lol para verificar como a aplicação poderia ser útil. 
   
   
 *****_Definição do usuário_*****
