@@ -37,7 +37,7 @@ Após a busca incial foi realizada uma pesquisa com usuários. Conversamos com a
 *****_Definição do usuário_*****
 
  
-> _Jogadores iniciantes que queiram conhecer informações dos campeões, como seu tipo e forças_
+> _Jogadores iniciantes que queiram conhecer informações dos campeões, como seu tipo e forças._
 
 
 ********
