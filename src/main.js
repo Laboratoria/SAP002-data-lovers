@@ -142,6 +142,7 @@ function modalEvent(listOfImages){
                     <span class="pokemon-name">${selectedPokemon["num"]} ${selectedPokemon["name"]}<span>
                 </div>
                 <div class="pokemon-data">
+
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
                     <p><strong>Tipo: </strong>${translateWeaknesses(selectedPokemon["type"]).join("/")}</p>

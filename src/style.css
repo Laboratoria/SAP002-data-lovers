@@ -159,11 +159,16 @@ body {
     flex-direction: column;
     position: relative;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> faa5e772071b4156880f4c3ef6b3eb150614e374
 
 .pokemon-img-container {
     width: 190px;
     padding-top: 40px;
     background-image: radial-gradient(rgba(148, 129, 254, 0.5), rgba(148, 129, 254, 0.01), rgba(255, 255, 255, 0));
+<<<<<<< HEAD
 }
 
 .pokemon-name {
@@ -178,6 +183,10 @@ body {
 
 .white-pokeball-img {
     width: 100%;
+=======
+
+
+>>>>>>> faa5e772071b4156880f4c3ef6b3eb150614e374
 }
 
 .analyzer-container {
