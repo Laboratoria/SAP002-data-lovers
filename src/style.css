@@ -3,10 +3,11 @@ body {
   padding: 0;
   background: #F1F1F1;
   font-family: Raleway;
- }
-
+}
 .main-title {
-  padding: 10px;
+  padding: 5px;
+  height: 40px;
+  font-size: 20px;
   background-color: #8AC6E2;
   font-family: Oswald;
   display:flex; 
@@ -16,14 +17,14 @@ body {
   width: 100%;
   z-index: 0;
 }
-
 .content-proposal {
   margin-top: 110px;
-  height: 800px;
-  background-color: #b8dff2;
+  height: 700px;
+  background-color:  #F1F1F1;
   font-size: 20px;
   padding: 10px;
   display: block;
+  box-sizing: border-box;
 }
 .content-proposal-div {
   box-shadow: #858585  3px  3px;
@@ -34,9 +35,9 @@ body {
   padding: 10%;
 }
 .content {
+  margin-block-start: 150px;
   display: flex; 
   padding: 10px;
- 
 }
 .choose-countries {
   padding: 10px;
@@ -70,7 +71,6 @@ body {
   content: url(img/PER.png);
   width: 100%;
 }
-
 .nav-choose-country{
   display: inline-flex;
   list-style: none;
@@ -78,81 +78,89 @@ body {
   width: 100%;
   padding: 0;
 }
-
 .nav-btn {
-  
   height: auto;
   padding: 15px 30%;
   font-size: 25px;
   background-color: transparent;
   border-radius: 0.3em;
   font-family: Raleway;
- 
+  box-shadow: #858585  3px  3px;
 }
-
-
 .nav-btn:hover {
   background-color: #92D08B;
 }
 .nav-btn:focus {
   background-color: #92D08B;
 }
+.proposal-btn{
+  height: auto;
+  padding: 20px;
+  font-size: 25px;
+  background-color: transparent;
+  border-radius: 0.3em;
+  font-family: Raleway;
+  box-shadow: #858585  3px  3px;
+}
+a{
+  text-decoration: none;
+}
+.restart-btn {
+  height: auto;
+  padding: 10px;
+  margin-left:18px;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 0.3em;
+  font-family: Raleway;
+}
 .nav-filters{
   display:flex;
- 
+}
+.nav-filter div{
+flex: row;
 }
 .custom-select {
   box-sizing: border-box;
   box-shadow: #858585  3px  3px;
   border-radius: .3em;
+  
   margin: .6em;   
   padding: .6em 1.4em .5em .8em;
   height: 3.4em;
   width: 80%;
   font-family: Raleway;
   font-size: 15px;
-  
   align-content: center;
 }  
-
 .year {
   padding: .6em 1.4em .5em .8em;
   height: 3.4em;
   width: 20%;
 }
-
 .custom-select:hover {
   border-color: #92D08B;
- }
-
+}
 .custom-select:focus {
   border-color:  #92D08B;
   color: #222; 
   outline: none;
 }
-
-
-
 .main-content {
-width: 80%;
-height: auto;
-margin: 10px;
+  width: 100%;
+  height: 600px;
 }
-
 .content-graph {
-
-
+width: 80%;
 }
-
 .table {
   border-color: black;
 }
-
- 
-
 .credits {
-  padding: 20px;
+  padding: 10px;
   background-color: #858585;
-  justify-content: space-around;
-
+}
+.logo {
+  width: 100px;
+  height: auto;
 }

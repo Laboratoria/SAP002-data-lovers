@@ -9,78 +9,58 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:300" rel="stylesheet">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
 </head>
-
 <body>
   <header class="main-title">
-    <h1 class="page-title">Ayudante de Geopolítica</h1>
+  <span>  Ayudante de Geopolítica </span>
   </header>
-
   <section class ="content-proposal">
-      <div class="content-proposal-div">
-        <p>
-            Indicadores de desarrollo del Banco Mundial de algunos países 
-            (Brasil, Chile, México y Perú). 
-        </p>    
-        <p> Estos datos incluyen indicadores demográficos, económicos y comerciales.
-          Datos demográficos para facilitar sus estudios
-        </p>
-      </div>
-    </section>
-
-
-
-   <section class="content">
-      <div class="map">
-          <div class="map-wrd"id="country-map"> </div>
-      </div>
-      <nav class="choose-countries"><nav class="choose-countries">
-          <span>Elige el país que desea consultar aquí:</span>
-          <ul class="nav-choose-country">
-            <li class="nav-li">
-              <button class="nav-btn" data-select_country='country-btn' id="brasil" >Brasil</button>
-            </li>
-            <li class="nav-li">
-              <button class="nav-btn" data-select_country='country-btn' id="chile">Chile</button>
-            </li> 
-            <li class="nav-li">
-              <button class="nav-btn" data-select_country='country-btn' id="mexico">México</button>
-            </li>
-            <li class="nav-li">
-              <button class="nav-btn" data-select_country='country-btn'  id="peru">Peru</button>
-            </li> 
-          </ul>  
-    
-      <form class="nav-filters">
-        <select  class="custom-select" id="select-indicator"> </select>
-        <select class="custom-select year" multiple id="select-years"> </select>
-      </form>
-      <button class=nav-btn id="reset">Reanudar</button>
-    </nav>
+    <div class="content-proposal-div">
+      <h2>Datos demográficos para facilitar sus estudios</h2> 
+         
+      <p> Aquí se puede seleccionar un indicador y una serie temporal para visualizar. </p>
+      <p> Los datos de los países de trabajo de "Laboratória", incluyen indicadores 
+        demográficos, económicos y comerciales.</p>
+      <p> Los indicadores de Banco Mundial e incluyen datos de Brasil, Chile, Perú y México.</p> 
+      <button class=" nav-btn proposal-btn" href="#content"> <a href="#content" > Venir</a> </button>
+    </div>
   </section>
-
-
-
-  <main class="main-content" id="main-content">
-    <section class="content-graph" id="chart_div"> </section>
-    <section class="content-table">        
-      <div id="indicator"> </div>
-      <table class="table" id="table"></table>
+  <section id="content" class="content">
+    <div class="map">
+      <div class="map-wrd"id="country-map"> </div>
+    </div>
+    <nav class="choose-countries"><nav class="choose-countries">
+      <span>Elige el país que desea consultar aquí:</span>
+      <ul class="nav-choose-country">
+        <li class="nav-li">
+          <button class="nav-btn" data-select_country='country-btn' id="brasil" >Brasil</button>
+        </li>
+        <li class="nav-li">
+          <button class="nav-btn" data-select_country='country-btn' id="chile">Chile</button>
+        </li> 
+        <li class="nav-li">
+          <button class="nav-btn" data-select_country='country-btn' id="mexico">México</button>
+        </li>
+        <li class="nav-li">
+          <button class="nav-btn" data-select_country='country-btn'  id="peru">Peru</button>
+        </li> 
+      </ul>  
+    <section class="nav-filters">
+      <select  class="custom-select" id="select-indicator"> </select>
+      <select class="custom-select year" multiple id="select-years"> </select> 
     </section>
-  </main>
-
-
-
+    </nav>
+    <div> 
+      <button class="restart-btn" id="reset"> 
+      <img src="https://img.icons8.com/material-rounded/24/000000/restart.png" alt="restart" />
+      Reanudar</button></div>
+  </section>
+  <main class="main-content" id="chart_div">  </main>
   <footer class="credits">
-    ¡Hola Mundo! <img src="img/lab.png"> Laboratória <span>Ana Carolina Biscalchin e Ligia Lucca</span>
+    <img class="logo"src="https://lms.laboratoria.la/img/logo.png"> 
   </footer>
-
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="chart.js"></script>
   <script src="main.js"></script>
-  
 </body>
-
 </html>
