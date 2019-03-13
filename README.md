@@ -1,16 +1,42 @@
-ï»¿Personas:
+# Data Lovers
 
-UsuÃ¡ria: DÃ©bora
+
+
+## Definição do produto
+
+Desenvolvemos um produto de busca tanto por ordenação, filtragem ou média, 
+para facilitar a vida do usuário no jogo Pokémon GO
+
+
+## Considerações técnicas
+
+Trabalhamos com a manipulação do DOM e templates 
+e optamos por mostrar as informações na página através de cards.
+Utilizamos filter, map e reduce para manipular arrays e realizar cálculos.
+Implementamos eventos para dar interatividade a página
+Utilizamos git para versionamento do cógido.
+Utilizamos bibliotecas de gráficos do Google Charts para melhor visualização.
+
+
+
+## Experiência de Usuário (UX Design)
+
+Nossos usuários ambos tinham pouco tempo para jogar, 
+viabilizamos esse projeto para que eles encontrassem seus pokémons favoritos, 
+facilitando a jogatina e trazendo esse usuário para o jogo diariamente.
+
+####Personas:
+
+*Usuária: Débora
 Link: https://uploaddeimagens.com.br/imagens/persona-debora-png
 
-UsuÃ¡rio: Pedro
+*Usuário: Pedro
 Link: https://uploaddeimagens.com.br/imagens/persona-pedro-png
 
-
-ProtÃ³tipo:
+*Protótipo:
 
 https://marvelapp.com/439fgcd
- 
+
 
 
 

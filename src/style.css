@@ -1,75 +1,72 @@
 body{
-    margin: 0;
-    width: 100vw;
-    background-color: rgb(142, 216, 231);
+	margin: 0;
+	width: 100vw;
+	background-color: rgb(142, 216, 231);
 }
 .top{
-    background-color: rgb(235, 55, 55);
-    display: flex;
-    justify-content: space-around;
+	background-color: rgb(235, 55, 55);
+	display: flex;
+	justify-content: space-around;
 }
 
 .top-img{
-    padding: 10px;
+  padding: 10px;
 }
 
 .top-nav{
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .select-nav{
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Varela Round', sans-serif;
-    background-color: rgb(255, 213, 97);
-    border: solid rgb(53, 90, 212) 2px;
-    border-radius: 50px;
-    height: 50%;
-    width: 120px;
-    margin-right: 10px;    
-    cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Varela Round', sans-serif;
+	background-color: rgb(255, 213, 97);
+	border: solid rgb(53, 90, 212) 2px;
+	border-radius: 50px;
+	height: 50%;
+	width: 120px;
+	margin-right: 10px;    
+	cursor: pointer;
 }
 
 .icon-pokemon {
-    width: 80%;
-    margin: auto;
-    margin-top: 2%;
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    font-family: 'Varela Round', sans-serif;
-
+	width: 80%;
+	margin: auto;
+	margin-top: 2%;
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: center;
+	font-family: 'Varela Round', sans-serif;
 }
 
 .list-pokemon{
-    background-color:  rgba(209, 230, 248, 0.863);
-    border: solid rgb(155, 187, 255) 3px;
-    width: 20%;
-    margin: 20px;
-    padding-top: 20px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 100%;
-
+	background-color:  rgba(209, 230, 248, 0.863);
+	border: solid rgb(155, 187, 255) 3px;
+	width: 20%;
+	margin: 20px;
+	padding-top: 20px; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 100%;
 }
 
 .pokemon-img{
-    width: 70%;
+  width: 70%;
 }
 
 
 .container-graphic{
-    display: flex;
-    align-content: center;
-
+	display: flex;
+	justify-content: center;	
 }
 
 .graphic-candy{
-    width: 50%;
-    display: flex;
-    
+	width: 50%;
+	margin: 10%;
+	display: flex;
 }
 
