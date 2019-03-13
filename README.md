@@ -42,6 +42,7 @@ Após a busca incial foi realizada uma pesquisa com usuários. Conversamos com a
 
 ********
 
+Personas
 
 ![data-lovers](https://github.com/JaquelineGDS/data-lovers/blob/master/src/assets/img/persona01.png) 
   
@@ -58,7 +59,9 @@ Protótipo elaborado com a ferramenta Marvel: [protótipo](https://marvelapp.com
 
 
 
-## Etapa 4 - Teste com usuário  
+## Etapa 4 - Testes de usabilidade
+
+Foram realizados testes com usuários, que sugeriram algumas melhoras:
 
 Feedback sobre o Protótipo
  
@@ -84,6 +87,11 @@ A lógica do projeto foi implementada completamente em JavaScript (ES6), HTML e 
 
 ## Etapa 6 - Produto final
 
-Como produto final foi criada uma página web que permite visualizar os dados de todos os campeões em formato de card, filtrá-los e ordena-los. Também é possível verificar por meio de gráficos a média de forças entre os campeões e quantos pertencem a mais de uma categoria. 
+Como produto final foi criada uma página web LOL - Data Lovers, com layout simples e intuitivo  que permite visualizar os dados de todos os campeões em formato de card, filtrá-los e ordena-los. Também é possível verificar por meio de gráficos a média de forças entre os campeões e quantos pertencem a mais de uma categoria.
 
-https://jaquelinegds.github.io/data-lovers/
+Link para o produto final: https://jaquelinegds.github.io/data-lovers/
+
+
+![data-lovers](https://github.com/JaquelineGDS/data-lovers/blob/master/src/assets/img/versaoFinal.png)
+
+
