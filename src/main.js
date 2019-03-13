@@ -3,17 +3,6 @@ window.onload = function() {
 
 }
 
-// function fetchPokemons() {
-//     fetch("src/data/pokemon/pokemon.json")
-//         .then(function(resp) {
-//             return resp.json()
-//         })
-//         .then(function(data) {
-//             pokemonsAll = data["pokemon"]
-//         })
-// }
-
-
 function getPokemons() {
     return POKEMON["pokemon"]
 }
@@ -71,56 +60,118 @@ function orderPokemons(order) {
     }
 }
 
+// function showPokemons(pokemons) {
+//     orderPokemons(order)
+//     document.querySelector(".pokemons-div").innerHTML = `
+//     ${pokemons.map((pokemon)=>
+// `      <figure class="pokemon">
+//         <div class = "display-none pokedex-icon" id = "pokedex-icon-${pokemon["id"]}">
+//         <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
+//         </div>
+//         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
+//        </figure>`).join("")}`
+//     for (pokemonFigure of document.querySelectorAll(".pokemon-img")) {
+//         pokemonFigure.addEventListener('click',
+//             function (e) {
+//                 selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
+//                 document.getElementById("pokemon-container").innerHTML = `
+//                     <span class="ring"><span class="close">&times;</span></span>
+//                     <figure class="pokemon-img">
+//                     <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
+//                     </figure>
+//                     <div class = "pokemon-title">
+//                     <figure class="white-pokeball-container">
+//                     <img src="src/images/whitepokeball.png" class="white-pokeball-img">
+//                     </figure>
+//                     <span class="pokemon-name">${selectedPokemon["num"]} ${selectedPokemon["name"]}<span>
+//                     </div>
+//                     <div class="pokemon-data">
+//                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
+//                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
+//                     <p><strong>Tipo: </strong>${translateWeaknesses(selectedPokemon["type"]).join("/")}</p>
+//                     <p><strong>Doces para evoluir: </strong>${selectedPokemon["candy_count"]} ${selectedPokemon["candy"]}</p>
+//                     <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"]).join(", ")}</p>
+//                     <div class ="button-add-pokedex-container">
+//                     <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
+//                     </div>
+//                     </div>
+//                         `
+//                 closeButton()
+//                 setPokedexButtonValue()
+//                 document.querySelector(".btn-mypokedex").addEventListener('click', () => {
+//                     setMyPokedex(selectedPokemon)
+//                 })
+//                 document.querySelector(".modal").classList.add('display-block')
+//                 document.querySelector(".pokemon-container").classList.remove('display-none')
+//                 document.querySelector(".pokemon-container").classList.add('display-block')
+//                 document.querySelector(".analyzer-container").classList.remove('display-block')
+//                 document.querySelector(".analyzer-container").classList.add('display-none')
+//             }
+//         )
+//     }
+// }
+
+
 function showPokemons(pokemons) {
     orderPokemons(order)
     document.querySelector(".pokemons-div").innerHTML = `
     ${pokemons.map((pokemon)=>
 `      <figure class="pokemon">
         <div class = "display-none pokedex-icon" id = "pokedex-icon-${pokemon["id"]}">
-        <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
+            <img class = "pokedex-icon-img" src = "https://image.flaticon.com/icons/svg/188/188940.svg">
         </div>
         <img src= "${pokemon["img"]}" class ="pokemon-img" id = "${pokemon["id"]}"/>
        </figure>`).join("")}`
-    for (pokemonFigure of document.querySelectorAll(".pokemon-img")) {
-        pokemonFigure.addEventListener('click',
-            function (e) {
-                selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
-                document.getElementById("pokemon-container").innerHTML = `
-                    <span class="ring"><span class="close">&times;</span></span>
+       modalEvent(document.querySelectorAll(".pokemon-img"))
+}
 
-                    <figure class="pokemon-img-container">
-                        <img src = "${selectedPokemon["img"]}"/>
-                    </figure> 
-                    <div class="pokemon-data">
-                    <h1><strong>${selectedPokemon["name"]}</strong></h1>
+function modalEvent(listOfImages){
+    for (pokemonFigure of listOfImages) {
+    pokemonFigure.addEventListener('click',
+        function (e) {
+            selectedPokemon = pokemons.find(pokemon => pokemon["id"] == e.target.id)
+            document.getElementById("pokemon-container").innerHTML = `
+                <span class="ring"><span class="close">&times;</span></span>
+                <figure class="pokemon-img">
+                    <img src = "${selectedPokemon["img"]}" class="pokemon-img-container"/>
+                </figure>
+                <div class = "pokemon-title">
+                    <figure class="white-pokeball-container">
+                        <img src="src/images/whitepokeball.png" class="white-pokeball-img">
+                    </figure>
+                    <span class="pokemon-name">${selectedPokemon["num"]} ${selectedPokemon["name"]}<span>
+                </div>
+                <div class="pokemon-data">
+
                     <p><strong>Altura: </strong>${selectedPokemon["height"]}</p>
                     <p><strong>Peso: </strong>${selectedPokemon["weight"]}</p>
+                    <p><strong>Tipo: </strong>${translateWeaknesses(selectedPokemon["type"]).join("/")}</p>
                     <p><strong>Doces para evoluir: </strong>${selectedPokemon["candy_count"]} ${selectedPokemon["candy"]}</p>
                     <p><strong>Fraquezas: </strong>${translateWeaknesses(selectedPokemon["weaknesses"]).join(", ")}</p>
-                    <div class ="button-add-pokedex-container">
+                <div class ="button-add-pokedex-container">
                     <input type="button" class="btn-mypokedex" value="Adicionar à pokedex">
-                    </div>
-                    </div>
-                        `
-                closeButton()
-                setPokedexButtonValue()
-                document.querySelector(".btn-mypokedex").addEventListener('click', () => {
-                    setMyPokedex(selectedPokemon)
-                })
-                document.querySelector(".modal").classList.add('display-block')
-                document.querySelector(".pokemon-container").classList.remove('display-none')
-                document.querySelector(".pokemon-container").classList.add('display-block')
-                document.querySelector(".analyzer-container").classList.remove('display-block')
-                document.querySelector(".analyzer-container").classList.add('display-none')
-            }
-        )
-    }
+                </div>
+                </div>
+                    `
+            closeButton()
+            setPokedexButtonValue()
+            document.querySelector(".btn-mypokedex").addEventListener('click', () => {
+                setMyPokedex(selectedPokemon)
+            })
+            document.querySelector(".modal").classList.add('display-block')
+            document.querySelector(".pokemon-container").classList.remove('display-none')
+            document.querySelector(".pokemon-container").classList.add('display-block')
+            document.querySelector(".analyzer-container").classList.remove('display-block')
+            document.querySelector(".analyzer-container").classList.add('display-none')
+        }
+    )
+}
 }
 
 function translateWeaknesses(array) {
     let pokemonWeaknesses = array;
-    weaknessesEnglish = ["Grass", "Poison", "Fire", "Water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock", "Flying", "Ghost", "Ice", "Dragon"];
-    weaknessesPortuguese = ["planta", "venenoso", "fogo", "água", "inseto", "normal", "elétrico", "terra", "lutador", "psíquico", "pedra", "voador", "fantasma", "gelo", "dragão"];
+    weaknessesEnglish = ["Grass", "Poison", "Fire", "Water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock", "Flying", "Ghost", "Ice", "Dragon","Dark","Steel","Fairy"];
+    weaknessesPortuguese = ["planta", "venenoso", "fogo", "água", "inseto", "normal", "elétrico", "terra", "lutador", "psíquico", "pedra", "voador", "fantasma", "gelo", "dragão","noturno","aço","fada"];
     for (weaknesses of weaknessesEnglish) {
         let index = pokemonWeaknesses.indexOf(weaknesses);
         if (index != -1) {
@@ -165,9 +216,9 @@ document.querySelector(".analyze-pokedex").addEventListener('click',
         </div>
     </section>
     <section class="means">
-        <p>Pokemon mais alto: ${findTallestPokemon(mypokedexArray)[0]["name"]} (${findTallestPokemon(mypokedexArray)[0]["height"]})</p>
-        <p>Pokemon mais pesado: ${findHeaviestPokemon(mypokedexArray)[0]["name"]} (${findHeaviestPokemon(mypokedexArray)[0]["weight"]})</p>
-        <p>Pokemon mais raro: ${findRarestPokemon(mypokedexArray)[0]["name"]} (${findRarestPokemon(mypokedexArray)[0]["spawn_chance"]}%)</p>
+        <p><strong>Pokemon mais alto: </strong>${findTallestPokemon(mypokedexArray)[0]["name"]} (${findTallestPokemon(mypokedexArray)[0]["height"]})</p>
+        <p><strong>Pokemon mais pesado: </strong>${findHeaviestPokemon(mypokedexArray)[0]["name"]} (${findHeaviestPokemon(mypokedexArray)[0]["weight"]})</p>
+        <p><strong>Pokemon mais raro: </strong>${findRarestPokemon(mypokedexArray)[0]["name"]} (${findRarestPokemon(mypokedexArray)[0]["spawn_chance"]}%)</p>
         </section>
     <section class="best-pokemons">
     </section>
