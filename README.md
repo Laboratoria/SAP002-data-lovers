@@ -70,6 +70,9 @@ Depois da Definição do produto, pensamos no usuário, qual o perfil e as neces
 
 Criamos o primeiro protótipo no marvel com uma tarefa para o usuário: clicar no Bulbasaur, ler as informações sobre o mesmo na aba que aparece e fechar. 
 
+![marvel1](src/images/marvel1.png)
+![marlve2](src/images/marvel2.png)
+![marvel3](src/images/marvel3.png)
 
 #### Testes de usabilidade
 
