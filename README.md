@@ -60,9 +60,16 @@ Protótipo elaborado com a ferramenta Marvel: [protótipo](https://marvelapp.com
 
 ## Etapa 4 - Teste com usuário  
 
+Feedback sobre o Protótipo
+ 
+> _Gostei muito do layout, mas acredito que seria melhor mostrar as forças de cada campeão no inicio, qssim o filtro de forças faria mais sentido._
 
+********
 
-  
+> _Seria legal mostrar os gráficos e os campeões em um mesmo local._
+
+********
+
 
 ## Etapa 5 - Desenvolvimento
 
@@ -73,8 +80,10 @@ A lógica do projeto foi implementada completamente em JavaScript (ES6), HTML e 
 #### Equipe
 
 ##### Carla Regina Mendes 
-##### Jaqueline 
+##### Jaqueline Santos
 
 ## Etapa 6 - Produto final
 
-Como produto final foi criada uma página web que permite visualizar os dados de todos os campeões em formato de card, filtrá-los por tipo de campeão e ordenar de A-Z e Z-A. Também é possível verificar por meio de gráficos a média de forças do conjunto de jogadores e quantos pertencem a mais de um tipo de campeão.
+Como produto final foi criada uma página web que permite visualizar os dados de todos os campeões em formato de card, filtrá-los e ordena-los. Também é possível verificar por meio de gráficos a média de forças entre os campeões e quantos pertencem a mais de uma categoria. 
+
+https://jaquelinegds.github.io/data-lovers/
