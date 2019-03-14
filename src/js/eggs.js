@@ -1,9 +1,9 @@
 fetch('./data/pokemon/pokemon.json').then(response => response.json()).then(data => showPokemonEggs(data))
 
 function showPokemonEggs(data){
-    const data2k = data["pokemon"].filter((pokemon) => (pokemon["egg"] === "2 km"));
-    const data5k = data["pokemon"].filter((pokemon) => (pokemon["egg"] === "5 km"));
-    const data10k = data["pokemon"].filter((pokemon) => (pokemon["egg"] === "10 km"));
+    const data2k = data.pokemon.filter((pokemon) => (pokemon.egg === "2 km"));
+    const data5k = data.pokemon.filter((pokemon) => (pokemon.egg === "5 km"));
+    const data10k = data.pokemon.filter((pokemon) => (pokemon.egg === "10 km"));
     
     const pokemon2k = document.getElementById("doisKm");
     const pokemon5k = document.getElementById("cincoKm");
@@ -17,7 +17,7 @@ function showPokemonEggs(data){
 function buildPokemonsImages(pokemons) {
     return `
         ${pokemons.map((pokemon) =>`
-            <img src="${pokemon["img"]}">
+            <img src="${pokemon.img}">
         `).join("")}
     `;
 }
