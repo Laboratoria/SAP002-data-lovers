@@ -16,7 +16,7 @@ function showPokemonEggs(data){
 
 function buildPokemonsImages(pokemons) {
     return `
-        ${data10k.map((pokemon) =>`
+        ${pokemons.map((pokemon) =>`
             <img src="${pokemon["img"]}">
         `).join("")}
     `;
