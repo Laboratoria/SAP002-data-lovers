@@ -7,53 +7,35 @@ function getPokemon (){
     
 };
 
-const orderAzSelect = document.getElementById('orderAz')
+const orderAzSelect = document.getElementById('orderAz');
+
 orderAzSelect.addEventListener('change', function(){
+	const sortedPokemons = getPokemon().sort(function(a,b) => a.name.localeCompare(b.name));
+	
 	if(orderAzSelect.selectedIndex === 1){
-		return orderAz();
+		return renderSortedPokemons(sortedPokemons);
 	}else if(orderAzSelect.selectedIndex === 2){
-		return orderZa ();
-	}else{ alert('Selecione uma opção!');
+		return renderSortedPokemons(sortedPokemons.reverse());
+	}else {
+		alert('Selecione uma opção!');
 	};
 });
 
-function orderAz (){
-	let showPokemon = document.getElementById('show-pokemon');
-	
-	let orderPokemonName = getPokemon().sort(function(a,b){
-		return a.name.localeCompare(b.name);
-	});
-
-	showPokemon.innerHTML=`
-	${orderPokemonName.map((i) =>`
-	<div class='list-pokemon'>
-		<img src='${i.img}' class= 'pokemon-img'/>
-		<div class= text-name> 
-			<h3 class='pokemon-name'>${i.name}</h3>
-		</div>
-	</div>
-	`).join('')
-	}`
+function renderSortedPokemons (pokemons){
+	const showPokemon = document.getElementById('show-pokemon');
+	showPokemon.innerHTML= buildPokemonsView(pokemons)
 };
 
-function orderZa (){
-	let showPokemon = document.getElementById('show-pokemon');
-	
-	let orderPokemonName = getPokemon().sort(function(a,b){
-		return a.name.localeCompare(b.name);
-	});
-
-	showPokemon.innerHTML=`
-	${orderPokemonName.reverse().map((i) =>`
-	<div class='list-pokemon'>
-		<img src='${i.img}' class= 'pokemon-img'/>
-		<div class= text-name> 
-			<h3 class='pokemon-name'>${i.name}</h3>
+function buildPokemonsView(pokemons) {
+	return pokemons.map((i) =>`
+		<div class='list-pokemon'>
+			<img src='${i.img}' class= 'pokemon-img'/>
+			<div class= text-name> 
+				<h3 class='pokemon-name'>${i.name}</h3>
+			</div>
 		</div>
-	</div>
-	`).join('')
-	}`
-};
+	`).join('');
+}
 
 const eggKmSelect = document.getElementById('eggKm')
 eggKmSelect.addEventListener('change', function(){
