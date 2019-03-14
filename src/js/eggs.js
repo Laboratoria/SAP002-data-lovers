@@ -9,9 +9,9 @@ function showPokemonEggs(data){
     const pokemon5k = document.getElementById("cincoKm");
     const pokemon10k = document.getElementById("dezKm");
     
-    pokemon2k.innerHTML = buildPokemonsImages(pokemon2k);
-    pokemon5k.innerHTML = buildPokemonsImages(pokemon5k);
-    pokemon10k.innerHTML = buildPokemonsImages(pokemon10k);
+    pokemon2k.innerHTML = buildPokemonsImages(data2k);
+    pokemon5k.innerHTML = buildPokemonsImages(data5k);
+    pokemon10k.innerHTML = buildPokemonsImages(data10k);
 }
 
 function buildPokemonsImages(pokemons) {
