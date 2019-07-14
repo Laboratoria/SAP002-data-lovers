@@ -138,10 +138,10 @@ const init = async function() {
 
   const objecSize = Object.getOwnPropertyNames(data).length;
 
-  let attack = data.map(championInfo => (championInfo['info'].attack)).reduce((a, b) => a + b) / objecSize;
-  let defense = data.map(championInfo => (championInfo['info'].defense)).reduce((a, b) => a + b) / objecSize;
-  let difficulty = data.map(championInfo => (championInfo['info'].difficulty)).reduce((a, b) => a + b) / objecSize;
-  let magic = data.map(championInfo => (championInfo['info'].magic)).reduce((a, b) => a + b) / objecSize;
+  let attack = data.map(championInfo => (championInfo['info'].attack)).reduce((total,currentValue) =>  + elementB) / objecSize;
+  let defense = data.map(championInfo => (championInfo['info'].defense)).reduce((elementA, elementB) => elementA + elementB) / objecSize;
+  let difficulty = data.map(championInfo => (championInfo['info'].difficulty)).reduce((elementA, elementB) => elementA + elementB) / objecSize;
+  let magic = data.map(championInfo => (championInfo['info'].magic)).reduce((elementA, elementB) => elementA + elementB) / objecSize;
 
   // ------------------------GOOGLE CHARTS MÉDIA FORÇAS ------------------------------------
 
