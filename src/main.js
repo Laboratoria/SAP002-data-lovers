@@ -1,10 +1,10 @@
-const getJson = async function (file) {
+const getJson = async function(file) {
   const response = await fetch(file);
   const content = await response.json();
   return content;
-}
+};
 
-const init = async function () {
+const init = async function() {
   const content = await getJson('src/data/lol/lol.json');
   let data = [];
 
@@ -12,13 +12,13 @@ const init = async function () {
     data.push(content['data'][key]);
   }
 
-  const divShowChampions = document.querySelector(".js-show-champions");
-  const categoriesChampions = document.querySelector(".js-drop-menu-categories");
-  const sortChampions = document.querySelector(".js-drop-menu-order");
-  const tableCalc = document.querySelector(".js-table-calc");
+  const divShowChampions = document.querySelector('.js-show-champions');
+  const categoriesChampions = document.querySelector('.js-drop-menu-categories');
+  const sortChampions = document.querySelector('.js-drop-menu-order');
+  const tableCalc = document.querySelector('.js-table-calc');
 
-  categoriesChampions.addEventListener("change", filteres);
-  sortChampions.addEventListener("change", filteres);
+  categoriesChampions.addEventListener('change', filteres);
+  sortChampions.addEventListener('change', filteres);
 
   window.onload = filteres();
 
@@ -26,7 +26,7 @@ const init = async function () {
     let categoria = categoriesChampions.value;
     let filterData = [];
 
-    if (categoria != 'none') {
+    if (categoria !== 'none') {
       filterData = data.filter(championTag => (championTag['tags'].indexOf(categoria) >= 0));
     } else {
       filterData = data;
@@ -38,11 +38,11 @@ const init = async function () {
     let sort = sortChampions.value;
     let orderingData = [];
  
-    if (sort == 'attack' || sort == 'defense' || sort == 'magic' || sort == 'difficulty') {
+    if (sort === 'attack' || sort === 'defense' || sort === 'magic' || sort === 'difficulty') {
       orderingData = filteres.sort((a, b) => (a.info[sort] < b.info[sort] ? 1 : -1));
-    } else if (sort == 'AZ') {
+    } else if (sort === 'AZ') {
       orderingData = filteres.sort((a, b) => (a['name'] > b['name'] ? 1 : -1));
-    } else if (sort == 'ZA') {
+    } else if (sort === 'ZA') {
       orderingData = filteres.sort((a, b) => (a['name'] < b['name'] ? 1 : -1));
     } else {
       orderingData = filteres;
@@ -82,11 +82,10 @@ const init = async function () {
           </div>
         </section>
       `)}
-    `
+    `;
   }
 
   function showEstatistic(a) {
-
     let forceAttack2 = a.map(forces => forces.info['attack']);
     let minForceAttack = forceAttack2.reduce((a, b) => Math.min(a, b));
     let maxForceAttack = forceAttack2.reduce((a, b) => Math.max(a, b));
@@ -132,10 +131,10 @@ const init = async function () {
           <th class="color-table-info">${maxForceMagic}</th>
         </tr>
       </table>  
-    `
+    `;
   }
 
-  //------------------------DADOS P/ GRAFICO------------------------------------
+  // ------------------------DADOS P/ GRAFICO------------------------------------
 
   const objecSize = Object.getOwnPropertyNames(data).length;
 
@@ -144,7 +143,7 @@ const init = async function () {
   let difficulty = data.map(championInfo => (championInfo['info'].difficulty)).reduce((a, b) => a + b) / objecSize;
   let magic = data.map(championInfo => (championInfo['info'].magic)).reduce((a, b) => a + b) / objecSize;
 
-  //------------------------GOOGLE CHARTS MÉDIA FORÇAS ------------------------------------
+  // ------------------------GOOGLE CHARTS MÉDIA FORÇAS ------------------------------------
 
   google.charts.load('current', { packages: ['corechart', 'bar'] });
   google.charts.setOnLoadCallback(drawAxisTickColors);
@@ -165,10 +164,18 @@ const init = async function () {
       height: 240,
       chartArea: { width: '42%' },
       backgroundColor: 'transparent',
-      titleTextStyle: { color: '#c9aa71', fontSize: 14 },
-      legend: { textStyle: { color: '#c9aa71', fontSize: 12 } },
-      hAxis: { minValue: 0, maxValue: 10, textStyle: { bold: true, fontSize: 12, color: '#c9aa71' } },
-      vAxis: { textStyle: { fontSize: 12, bold: true, color: '#c9aa71' } },
+      titleTextStyle: { color: '#c9aa71',
+        fontSize: 14 },
+      legend: { textStyle: { color: '#c9aa71',
+        fontSize: 12 } },
+      hAxis: { minValue: 0,
+        maxValue: 10,
+        textStyle: { bold: true,
+          fontSize: 12,
+          color: '#c9aa71' } },
+      vAxis: { textStyle: { fontSize: 12,
+        bold: true,
+        color: '#c9aa71' } },
       colors: ['#d1d4d6'],
       is3D: true
     };
@@ -178,18 +185,17 @@ const init = async function () {
 
   // --- GRÁFICO QUANTIDADE POR TIPO
 
-  let assassin = data.map(championTag => (championTag['tags'].indexOf("Assassin") >= 0)).reduce((a, b) => a + b)
-  let mage = data.map(championTag => (championTag['tags'].indexOf("Mage") >= 0)).reduce((a, b) => a + b)
-  let marksman = data.map(championTag => (championTag['tags'].indexOf("Marksman") >= 0)).reduce((a, b) => a + b)
-  let fighter = data.map(championTag => (championTag['tags'].indexOf("Fighter") >= 0)).reduce((a, b) => a + b)
-  let tank = data.map(championTag => (championTag['tags'].indexOf("Tank") >= 0)).reduce((a, b) => a + b)
-  let support = data.map(championTag => (championTag['tags'].indexOf("Support") >= 0)).reduce((a, b) => a + b)
+  let assassin = data.map(championTag => (championTag['tags'].indexOf('Assassin') >= 0)).reduce((a, b) => a + b);
+  let mage = data.map(championTag => (championTag['tags'].indexOf('Mage') >= 0)).reduce((a, b) => a + b);
+  let marksman = data.map(championTag => (championTag['tags'].indexOf('Marksman') >= 0)).reduce((a, b) => a + b);
+  let fighter = data.map(championTag => (championTag['tags'].indexOf('Fighter') >= 0)).reduce((a, b) => a + b);
+  let tank = data.map(championTag => (championTag['tags'].indexOf('Tank') >= 0)).reduce((a, b) => a + b);
+  let support = data.map(championTag => (championTag['tags'].indexOf('Support') >= 0)).reduce((a, b) => a + b);
 
   google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-
     var data = google.visualization.arrayToDataTable([
       ['Categorie', 'total'],
       ['Assassin', assassin],
@@ -208,8 +214,10 @@ const init = async function () {
       backgroundColor: 'transparent',
       colors: ['#ffd88f', '#c9aa71', '#e6693e', '#7f796e', '#457bb2', '#ffb444'],
       is3D: true,
-      legend: { textStyle: { color: '#c9aa71', fontSize: 12 } },
-      titleTextStyle: { color: '#c9aa71', fontSize: 14 }
+      legend: { textStyle: { color: '#c9aa71',
+        fontSize: 12 } },
+      titleTextStyle: { color: '#c9aa71',
+        fontSize: 14 }
 
     };
     var chart = new google.visualization.PieChart(document.getElementById('js-pie-chart'));
@@ -220,7 +228,6 @@ const init = async function () {
   google.charts.setOnLoadCallback(drawChartTwo);
 
   function drawChartTwo() {
-
     var data = google.visualization.arrayToDataTable([
       ['Categorie', 'total'],
       ['Only one Categorie', 25],
@@ -234,13 +241,15 @@ const init = async function () {
       backgroundColor: 'transparent',
       colors: ['#7f796e', '#457bb2'],
       is3D: true,
-      legend: { textStyle: { color: '#c9aa71', fontSize: 12 } },
-      titleTextStyle: { color: '#c9aa71', fontSize: 14 }
+      legend: { textStyle: { color: '#c9aa71',
+        fontSize: 12 } },
+      titleTextStyle: { color: '#c9aa71',
+        fontSize: 14 }
 
     };
     var chart2 = new google.visualization.PieChart(document.getElementById('js-pie-chart-two'));
     chart2.draw(data, options);
   }
-}
+};
 
 init();

@@ -173,10 +173,10 @@ th, td {
 }
 
 .champion-info{
-    font-size: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 8px;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 
 ul{
