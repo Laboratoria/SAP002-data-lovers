@@ -1,0 +1,22 @@
+{
+  "name": "data-lovers",
+  "version": "1.0.0",
+  "description": "## Contexto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaquelineGDS/data-lovers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaquelineGDS/data-lovers/issues"
+  },
+  "homepage": "https://github.com/JaquelineGDS/data-lovers#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  }
+}

@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+*{
+  margin:0;
+}
+
+body {
+	color: #333;
+  background-image: url("assets/img/back.jpg");
+  background-attachment: fixed;
+  font-family: 'Roboto Condensed', 'Times New Roman', serif;
+}
+
+body, th, td, .card, .card-back, .champion-name, .champion-tag, .table{
+  text-align: center;
+}
+
+.text-color{
+  color: #c9aa71;
+}
+
+.general-color-back {
+  background: rgba(10,10,12,.9);
+}
+
+.box-alignment{
+ display: flex;
+}
+
+.nav-container {
+  background-color: black;
+	width:100%;
+	padding: 5px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 1;
+}
+
+.nav-item {
+	margin: 5px;
+	font-size: 1.5em;
+}
+
+.nav-title {
+  font-weight: 400;
+  padding: 10px;
+}
+
+.nav-grow {
+	flex-grow: 2;
+}
+
+.drop-menu{
+  border: 1px black;
+  font-weight: 700;
+  padding: 4px;
+  z-index: 1;
+  width: 200px;
+}
+ 
+.logo-container{
+  justify-content: center;
+  padding: 80px 0 0 0;
+  width: 70%;
+  margin: auto;
+  flex-wrap: wrap;  
+}
+
+.main-container{
+  max-width: 90%;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.img-header{
+  padding: 30px;
+}
+
+.statistics-container{
+  max-width: 34%;
+}
+
+table {
+  border-collapse: collapse;
+  justify-content: center;
+}
+
+th, td {
+  padding: 10px;
+}
+
+.chart-alignment {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+   
+.champions-container {
+  justify-content: center;    
+  margin: auto;
+  flex-wrap: wrap;     
+  flex: 1;
+  padding-bottom: 15px;
+}
+
+.card { 
+  transition: .4s;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  width: 17vw;
+  height: 39vw;
+  border-radius: 20px;
+}
+
+.card-color {
+  text-align: left;
+  border: 1px rgba(10,10,12,.9);
+  font-weight: 700;
+  transition: .4s;
+}
+
+.card-border {
+  border-top: 1px solid #927345;
+}
+
+.card:hover, .card-back{
+  transform: rotateY(180deg);
+}
+  
+.card-front, .card-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-back, .champions-img, .champion-name, .champion-tag, .nav-container, .nav-item {
+  padding: 5px;
+}
+
+.card-back{
+  color: #333;
+  background-color: #b6a079;
+  border-radius: 20px;
+}
+
+.champions-img{
+  width: 14vw;
+  height: 16vw;
+  margin: 1vw;
+  border-radius: 15px;
+}
+
+.champions-img-back{
+  width: 12vw;
+  height: 10vw;
+  padding: 10px;
+  border-radius: 20px;
+}
+  
+.champion-name,
+.champion-tag {
+  margin: auto;
+  width: 70%;
+}
+
+.champion-info{
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.color-table-info{
+  color:#d1d3d5;
+}
