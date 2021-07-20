@@ -14,7 +14,7 @@ const POKEMON = {
     "candy_count": 25,
     "egg": "2 km",
     "spawn_chance": 0.69,
-    "avg_spawns": 69,
+    "avg_spawns": 69.0,
     "spawn_time": "20:00",
     "multipliers": [1.58],
     "weaknesses": [
